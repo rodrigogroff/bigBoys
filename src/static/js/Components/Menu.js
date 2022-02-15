@@ -21,7 +21,7 @@ export default class {
           var m2 = m.subs[b]
           liItem++;
           fullMenu += '<li id="menu-item-"' + liItem + ' class="menu-item menu-item-type-post_type menu-item-object-page menu-item-' + liItem + '">'
-          fullMenu += '<a href="' + m2.link + '">' + m2.label + '</a>'
+          fullMenu += '<a style="color:white" href="' + m2.link + '">' + m2.label + '</a>'
           fullMenu += '</li>'
         }
         fullMenu += '</ul>'

@@ -3,46 +3,27 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Big Boys - Colecionáveis</title>
-	<script type="text/javascript">
-		function theChampLoadEvent(e) {
-			var t = window.onload;
-			if (typeof window.onload != "function") {
-				window.onload = e
-			} else {
-				window.onload = function () {
-					t();
-					e()
-				}
-			}
-		}
-	</script>
+	<title>Big Boys - Colecionáveis</title>	
 	<script type="text/javascript">
 		var theChampDefaultLang = 'en_US',
 			theChampCloseIconPath =
-			'https://skywarriorthemes.com/gameaddict/wp-content/plugins/super-socializer/images/close.png';
-	</script>
-	<script>
-		var theChampSiteUrl = 'https://skywarriorthemes.com/gameaddict',
+			'https://skywarriorthemes.com/gameaddict/wp-content/plugins/super-socializer/images/close.png',	
+			theChampSiteUrl = 'https://skywarriorthemes.com/gameaddict',
 			theChampVerified = 0,
-			theChampEmailPopup = 0;
-	</script>
-	<script>
-		var theChampFBKey = '',
+			theChampEmailPopup = 0,	
+			theChampFBKey = '',
 			theChampFBLang = 'en_US',
 			theChampFbLikeMycred = 0,
 			theChampSsga = 0,
 			theChampCommentNotification = 0,
 			theChampHeateorFcmRecentComments = 0,
-			theChampFbIosLogin = 0;
-	</script>
-	<script type="text/javascript">
-		var theChampFBCommentUrl = 'https://skywarriorthemes.com/gameaddict/clan-members/';
-		var theChampFBCommentColor = '';
-		var theChampFBCommentNumPosts = '';
-		var theChampFBCommentWidth = '100%';
-		var theChampFBCommentOrderby = '';
-		var theChampCommentingTabs = "wordpress,facebook,disqus",
+			theChampFbIosLogin = 0,	
+			theChampFBCommentUrl = 'https://skywarriorthemes.com/gameaddict/clan-members/',
+			theChampFBCommentColor = '',
+			theChampFBCommentNumPosts = '',
+			theChampFBCommentWidth = '100%',
+			theChampFBCommentOrderby = '',
+			theChampCommentingTabs = "wordpress,facebook,disqus",
 			theChampGpCommentsUrl = 'https://skywarriorthemes.com/gameaddict/clan-members/',
 			theChampDisqusShortname = '',
 			theChampScEnabledTabs = 'wordpress,fb',
@@ -53,10 +34,8 @@
 				"disqus": "Disqus Comments"
 			},
 			theChampGpCommentsWidth = 0,
-			theChampCommentingId = 'respond'
-	</script>
-	<script>
-		var theChampSharingAjaxUrl = 'https://skywarriorthemes.com/gameaddict/wp-admin/admin-ajax.php',
+			theChampCommentingId = 'respond',
+			theChampSharingAjaxUrl = 'https://skywarriorthemes.com/gameaddict/wp-admin/admin-ajax.php',
 			heateorSsFbMessengerAPI =
 			'https://www.facebook.com/dialog/send?app_id=595489497242932&display=popup&link=%encoded_post_url%&redirect_uri=%encoded_post_url%',
 			heateorSsWhatsappShareAPI = 'web',
@@ -73,678 +52,12 @@
 			heateorSsCopyLinkMessage = "Link copied.";
 		var heateorSsHorSharingShortUrl = "https://skywarriorthemes.com/gameaddict/clan-members/";
 		var heateorSsVerticalSharingShortUrl = "https://skywarriorthemes.com/gameaddict/clan-members/";
-	</script>
-	<style type="text/css">
-		.the_champ_horizontal_sharing .theChampSharing {
-			color: #fff;
-			border-width: 0px;
-			border-style: solid;
-			border-color: transparent;
-		}
 
-		.the_champ_horizontal_sharing .theChampTCBackground {
-			color: #666;
-		}
-
-		.the_champ_horizontal_sharing .theChampSharing:hover {
-			border-color: transparent;
-		}
-
-		.the_champ_vertical_sharing .theChampSharing {
-			color: #fff;
-			border-width: 0px;
-			border-style: solid;
-			border-color: transparent;
-		}
-
-		.the_champ_vertical_sharing .theChampTCBackground {
-			color: #666;
-		}
-
-		.the_champ_vertical_sharing .theChampSharing:hover {
-			border-color: transparent;
-		}
-
-		@media screen and (max-width:783px) {
-			.the_champ_vertical_sharing {
-				display: none !important
-			}
-		}
-
-		div.heateor_ss_mobile_footer {
-			display: none;
-		}
-
-		@media screen and (max-width:783px) {
-			div.the_champ_bottom_sharing ul.the_champ_sharing_ul i.theChampTCBackground {
-				background-color: white
-			}
-
-			div.the_champ_bottom_sharing {
-				width: 100% !important;
-				left: 0 !important;
-			}
-
-			div.the_champ_bottom_sharing li {
-				width: 12.5% !important;
-			}
-
-			div.the_champ_bottom_sharing .theChampSharing {
-				width: 100% !important;
-			}
-
-			div.the_champ_bottom_sharing div.theChampTotalShareCount {
-				font-size: 1em !important;
-				line-height: 28px !important
-			}
-
-			div.the_champ_bottom_sharing div.theChampTotalShareText {
-				font-size: .7em !important;
-				line-height: 0px !important
-			}
-
-			div.heateor_ss_mobile_footer {
-				display: block;
-				height: 40px;
-			}
-
-			.the_champ_bottom_sharing {
-				padding: 0 !important;
-				display: block !important;
-				width: auto !important;
-				bottom: -2px !important;
-				top: auto !important;
-			}
-
-			.the_champ_bottom_sharing .the_champ_square_count {
-				line-height: inherit;
-			}
-
-			.the_champ_bottom_sharing .theChampSharingArrow {
-				display: none;
-			}
-
-			.the_champ_bottom_sharing .theChampTCBackground {
-				margin-right: 1.1em !important
-			}
-		}
-	</style>
-	<meta name='robots' content='max-image-preview:large' />
-	<link rel='dns-prefetch' href='//fonts.googleapis.com' />
-	<link rel='dns-prefetch' href='//s.w.org' />
-	<link rel="alternate" type="application/rss+xml" title="Game addict &raquo; Clan Members Comments Feed"
-		href="https://skywarriorthemes.com/gameaddict/clan-members/feed/" />
-	<script type="text/javascript">
-		window._wpemojiSettings = {
-			"baseUrl": "https:\/\/s.w.org\/images\/core\/emoji\/13.0.1\/72x72\/",
-			"ext": ".png",
-			"svgUrl": "https:\/\/s.w.org\/images\/core\/emoji\/13.0.1\/svg\/",
-			"svgExt": ".svg",
-			"source": {
-				"concatemoji": "https:\/\/skywarriorthemes.com\/gameaddict\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.7.5"
-			}
-		};
-		! function (e, a, t) {
-			var n, r, o, i = a.createElement("canvas"),
-				p = i.getContext && i.getContext("2d");
-
-			function s(e, t) {
-				var a = String.fromCharCode;
-				p.clearRect(0, 0, i.width, i.height), p.fillText(a.apply(this, e), 0, 0);
-				e = i.toDataURL();
-				return p.clearRect(0, 0, i.width, i.height), p.fillText(a.apply(this, t), 0, 0), e === i.toDataURL()
-			}
-
-			function c(e) {
-				var t = a.createElement("script");
-				t.src = e, t.defer = t.type = "text/javascript", a.getElementsByTagName("head")[0].appendChild(t)
-			}
-			for (o = Array("flag", "emoji"), t.supports = {
-					everything: !0,
-					everythingExceptFlag: !0
-				}, r = 0; r < o.length; r++) t.supports[o[r]] = function (e) {
-				if (!p || !p.fillText) return !1;
-				switch (p.textBaseline = "top", p.font = "600 32px Arial", e) {
-					case "flag":
-						return s([127987, 65039, 8205, 9895, 65039], [127987, 65039, 8203, 9895, 65039]) ? !1 : !s([55356,
-							56826, 55356, 56819
-						], [55356, 56826, 8203, 55356, 56819]) && !s([55356, 57332, 56128, 56423, 56128, 56418, 56128,
-							56421, 56128, 56430, 56128, 56423, 56128, 56447
-						], [55356, 57332, 8203, 56128, 56423, 8203, 56128, 56418, 8203, 56128, 56421, 8203, 56128,
-							56430, 8203, 56128, 56423, 8203, 56128, 56447
-						]);
-					case "emoji":
-						return !s([55357, 56424, 8205, 55356, 57212], [55357, 56424, 8203, 55356, 57212])
-				}
-				return !1
-			}(o[r]), t.supports.everything = t.supports.everything && t.supports[o[r]], "flag" !== o[r] && (t.supports
-				.everythingExceptFlag = t.supports.everythingExceptFlag && t.supports[o[r]]);
-			t.supports.everythingExceptFlag = t.supports.everythingExceptFlag && !t.supports.flag, t.DOMReady = !1, t
-				.readyCallback = function () {
-					t.DOMReady = !0
-				}, t.supports.everything || (n = function () {
-					t.readyCallback()
-				}, a.addEventListener ? (a.addEventListener("DOMContentLoaded", n, !1), e.addEventListener("load", n, !
-					1)) : (e.attachEvent("onload", n), a.attachEvent("onreadystatechange", function () {
-					"complete" === a.readyState && t.readyCallback()
-				})), (n = t.source || {}).concatemoji ? c(n.concatemoji) : n.wpemoji && n.twemoji && (c(n.twemoji), c(n
-					.wpemoji)))
-		}(window, document, window._wpemojiSettings);
-	</script>
-	<style type="text/css">
-		img.wp-smiley,
-		img.emoji {
-			display: inline !important;
-			border: none !important;
-			box-shadow: none !important;
-			height: 1em !important;
-			width: 1em !important;
-			margin: 0 .07em !important;
-			vertical-align: -0.1em !important;
-			background: none !important;
-			padding: 0 !important;
-		}
-	</style>
-
-	<link rel='stylesheet' href='/src/static/css/site_catalog_min.css' type='text/css' />
-
-	<style id='gameaddict_style-inline-css' type='text/css'>
-		.psearch-content,
-		.woocommerce ul.product_list_widget li a:hover span,
-		body #latest-twitter-follow-link a,
-		.latest-twitter-tweet i.fa,
-		body .vc_images_carousel .vc_carousel-control,
-		body a,
-		.social a,
-		.dropdown-menu li>a:hover,
-		.wallnav i,
-		div.rating:after,
-		footer .copyright .social a:hover,
-		.navbar-inverse .brand:hover,
-		.member:hover>.member-social a,
-		footer ul li a:hover,
-		.breadcrumbs span a,
-		.blog-ind .post-pinfo i,
-		#respond .add-on i,
-		.widget .review>li:hover .read-more-link,
-		.post-meta i,
-		.pagination ul li a,
-		.pagination ul>a.page-selector,
-		.widget .block_tabs .tab-content .review-single a.read-more-link,
-		.ticker-title,
-		.ticker p a,
-		.wp-clanwars-pagination a,
-		.matchimages .matchpage-versus,
-		.clanwar-list .maplist,
-		.clanwar-list .maplist a,
-		.post-pinfo .fa,
-		.woocommerce div.product .woocommerce-tabs .panel h2,
-		.comment-body .comment-author .comment-info a,
-		#myModalR .modal-header h3,
-		.bbp-forum-info i,
-		.bbp-topic-title i {
-
-			color: #eb2d1c;
-		}
-
-		footer .copyright a,
-		footer ul li a:hover,
-		.cart-notification span.item-name,
-		.woocommerce div.product p.price,
-		.price span.amount,
-		.woocommerce .widget_shopping_cart .total span,
-		.nm-date span,
-		.topbar .top-ticker i,
-		.topbar-register a,
-		.dropdown-menu>li>a:hover,
-		.footer_widget h3,
-		.widget .clanwar-list .date,
-		.overall-score .rating .fa-star:before,
-		.overall-score .rating .fa-star-half:before,
-		.mcontainer,
-		.portfolio .pinfo a,
-		.owl-buttons .owl-prev:before,
-		.owl-buttons .owl-next:before,
-		.woocommerce table.shop_table tr td a,
-		.product_meta .posted_in a {
-			color: #eb2d1c !important;
-		}
-
-		.gallery-item a img,
-		.match-map .map-image img,
-		.nextmatch_wrap img,
-		.clan1img,
-		.matchimages img,
-		.blog-content blockquote,
-		.widget ul.clanwar-list li.clanwar-item:before,
-		.footer_widget h3.widget-title,
-		footer ul li,
-		.pagination ul li,
-		.pagination ul>a.page-selector,
-		.wp-clanwars-pagination a,
-		.wp-clanwars-pagination span.page-numbers,
-		.woocommerce .woocommerce-ordering select,
-		.woocommerce .woocommerce-ordering select:focus,
-		.woocommerce .woocommerce-ordering select:active,
-		.woocommerce-ordering:focus,
-		.orderby option,
-		.woocommerce nav.woocommerce-pagination ul,
-		.woocommerce nav.woocommerce-pagination ul li {
-			border-color: #eb2d1c !important;
-		}
-
-		body .vc_tta-color-black.vc_tta-style-classic .vc_tta-panel .vc_tta-panel-heading,
-		.nextmatch_wrap .vsdiv,
-		.results-main .vsdiv,
-		.splitter li[class*="selected"]>a,
-		.splitter li a:hover,
-		.ls-wp-container .ls-nav-prev,
-		.ls-wp-container .ls-nav-next,
-		a.ui-accordion-header-active,
-		.accordion-heading:hover,
-		.block_accordion_wrapper .ui-state-hover,
-		.cart-wrap,
-		#buddypress div.item-list-tabs ul li a,
-		.nextmatch_wrap .teamwrapper hr:after,
-		.nextmatch_wrap .nm-date .gametitle,
-		.widget .wcontainer .cat-item,
-		.pcomments,
-		body.home .ls-slide .comment-reply-link,
-		.newsb-text .newsb-category,
-		.pagination ul li a:hover,
-		.pagination ul>a.page-selector:hover,
-		.pagination ul>li.active>a,
-		.r-home-team hr:after,
-		.r-opponent-team hr:after,
-		.wp-clanwars-pagination span.page-numbers,
-		.wp-clanwars-pagination a:hover,
-		.ncategory {
-			background-color: #eb2d1c;
-		}
-
-		.news_horizontal_tabbed .comment-reply-link:hover,
-		.beaconCircle1,
-		.beaconCircle2,
-		.portfolio .pview .button-medium:hover,
-		.woocommerce nav.woocommerce-pagination ul li a:focus,
-		.woocommerce nav.woocommerce-pagination ul li a:hover,
-		.woocommerce nav.woocommerce-pagination ul li span.current {
-			background-color: #eb2d1c !important;
-		}
-
-		.clanwarlist-page>li.odd,
-		.bbp-body>ul.odd {
-			background: #cecece url(https://skywarriorthemes.com/gameaddict/wp-content/themes/gameaddict/img/matches-shape.png) top right no-repeat;
-		}
-
-		.clanwarlist-page>li {
-			background: url(https://skywarriorthemes.com/gameaddict/wp-content/themes/gameaddict/img/matches-shape.png ) top right no-repeat;
-		}
-
-		.owl-buttons .owl-next:hover:before,
-		.owl-buttons .owl-prev:hover:before {
-			text-shadow: 0 0 10px #eb2d1c;
-		}
-
-		.clanwarlist-page .upcoming,
-		.clanwar-list .scores-wrapper .draw {
-			background: #fffc24 url(https://skywarriorthemes.com/gameaddict/wp-content/themes/gameaddict/img/matches-shape.png) -3% 43% no-repeat;
-		}
-
-		.clanwarlist-page .scores-wrapper .win {
-			background: #a5d808 url(https://skywarriorthemes.com/gameaddict/wp-content/themes/gameaddict/img/matches-shape.png ) -3% 43% no-repeat;
-		}
-
-		.clanwarlist-page .scores-wrapper .loose {
-			background: #ff3000 url(https://skywarriorthemes.com/gameaddict/wp-content/themes/gameaddict/img/matches-shape.png) -3% 43% no-repeat;
-		}
-
-		.portfolio .row .span8 .plove a:hover,
-		.span3 .plove a:hover,
-		.icons-block i:hover,
-		.similar-projects ul li h3,
-		.member h3,
-		.main-colour,
-		.dropdown-menu li>a:focus,
-		.dropdown-submenu:hover>a,
-		.pagination ul>li>a:hover,
-		.pagination ul>li>a:focus,
-		.comment-body .comment-author,
-		.navigation a:hover,
-		.cart-wrap a,
-		.member h3 a:hover {
-			color: #eb2d1c;
-		}
-
-		.woocommerce nav.woocommerce-pagination ul li a:focus,
-		.block h3:first-child,
-		.tagcloud a:hover,
-		.progress-striped .bar,
-		.bgpattern:hover>.icon,
-		.progress-striped .bar,
-		.member:hover>.bline,
-		.blog-date span.date,
-		.pbg,
-		.pbg:hover,
-		.pimage:hover>.pbg,
-		ul.social-media li a:hover,
-		.navigation a,
-		.pagination ul>.active>span,
-		.list_carousel a.prev:hover,
-		.list_carousel a.next:hover,
-		.pricetable .pricetable-col.featured .pt-price,
-		.block_toggle .open,
-		.pricetable .pricetable-featured .pt-price,
-		#bbpress-forums li.bbp-header,
-		#bbpress-forums fieldset.bbp-form legend,
-		.bbp-topic-title h3,
-		.modal-header,
-		.modal-body .reg-btn,
-		#LoginWithAjax_SubmitButton .reg-btn,
-		.title-wrapper,
-		.footer_widget h3,
-		buddypress div.item-list-tabs ul li.selected a,
-		#buddypress div.item-list-tabs ul li.current a,
-		#buddypress div.item-list-tabs ul li a:hover,
-		.results-main-bg,
-		.nextmatch_widget,
-		.ticker-wrapper.has-js,
-		.ticker-swipe {
-			background-color: #eb2d1c;
-		}
-
-		.navbar-inverse .brand,
-		.navbar-inverse .nav>li>a,
-		.navbar-inverse .nav>li>a>span {
-			color: #ffffff;
-		}
-
-		body .vc_images_carousel .vc_carousel-control:hover,
-		body a,
-		body a:hover,
-		body a:active,
-		body a:focus,
-		body a:visited {
-			color: #453f4a;
-		}
-
-		.dropdown .caret {
-			border-top: 4px solid #ffffff !important;
-		}
-
-		.bgpattern,
-		.post-review,
-		.widget_shopping_cart,
-		.woocommerce .cart-notification,
-		.cart-notification {
-			background-color: #eb2d1c;
-		}
-
-		.navbar-inverse,
-		.modal-header,
-		h3.widget-title,
-		.widget h3,
-		.member h3.widget-title,
-		.widget .clanwar-list .scores,
-		.wpb_heading,
-		.widget .clanwar-list .upcoming,
-		.widget .clanwar-list .playing,
-		.widget .clanwar-list .tabs li:hover a,
-		.widget .clanwar-list .tabs li.selected a,
-		.blog-date span.date,
-		.blog-date-noimg span.date,
-		.clanwar-list .draw,
-		.title-wrapper,
-		.widget .clanwar-list>li:first-child,
-		.wcontainer .block_tabs .tab-inner,
-		.isotopeMenu:before,
-		.cat-news .block_tabs .tab-inner,
-		.clanwarlist-page>li:first-child {
-			background-image: -webkit-linear-gradient(bottom, #d92212, #c43e2f);
-			background-image: -moz-linear-gradient(bottom, #d92212, #c43e2f);
-			background-image: -o-linear-gradient(bottom, #d92212, #c43e2f);
-			background-image: linear-gradient(to top, #d92212, #c43e2f);
-		}
-
-		.widget ul.clanwar-list li.clanwar-item:before {
-			background: -webkit-linear-gradient(left, #d92212, transparent);
-			background: -moz-linear-gradient(right, #d92212, transparent);
-			background: -o-linear-gradient(right, #d92212, transparent);
-			background: linear-gradient(to right, #d92212, transparent);
-		}
-
-		.isotopeItemOverlay:before,
-		.owl-item .car_image:after {
-			background: -webkit-linear-gradient(bottom, #d92212, transparent) !important;
-			background: -moz-linear-gradient(bottom, #d92212, transparent) !important;
-			background: -o-linear-gradient(bottom, #d92212, transparent) !important;
-			background: linear-gradient(to top, #d92212, transparent) !important;
-		}
-
-
-		.button-medium,
-		.button-small,
-		.button-big,
-		button[type="submit"],
-		input[type="submit"],
-		body .btninvert:hover {
-			background: #453f4a url(https://skywarriorthemes.com/gameaddict/wp-content/themes/gameaddict/img/menu-extra.png) top right repeat-x !important;
-		}
-
-		body .btninvert,
-		.nav-tabs>li>a:hover,
-		.nav-tabs>li>a:focus,
-		.block_tabs .nav-tabs li a:hover,
-		.button-medium:hover,
-		.button-small:hover,
-		.news_horizontal_tabbed .block_tabs .nav-tabs li.ui-tabs-active a,
-		.button-big:hover,
-		.blog-date span.date:hover,
-		input[type="submit"]:hover,
-		button[type="submit"]:hover,
-		.pricetable .pricetable-col.featured .pt-top,
-		.pricetable .pricetable-featured .pt-top {
-			background: #f04131 url(https://skywarriorthemes.com/gameaddict/wp-content/themes/gameaddict/img/menu-extra.png) top right repeat-x !important;
-		}
-
-
-		.topbar-login {
-			background-color: #f04131;
-		}
-
-		.topbar-login:hover {
-			background-color: #453f4a;
-		}
-
-		.woocommerce a.button,
-		.woocommerce button.button,
-		.woocommerce input.button,
-		.woocommerce #respond input#submit,
-		.woocommerce #content input.button,
-		.woocommerce-page a.button,
-		.woocommerce-page button.button,
-		.woocommerce-page input.button,
-		.woocommerce-page #respond input#submit,
-		.woocommerce-page #content input.button,
-		.woocommerce div.product .woocommerce-tabs ul.tabs li a,
-		.woocommerce #content div.product .woocommerce-tabs ul.tabs li a,
-		.woocommerce-page div.product .woocommerce-tabs ul.tabs li a,
-		.woocommerce-page #content div.product .woocommerce-tabs ul.tabs li a {
-			background: #453f4a !important;
-		}
-
-
-		.woocommerce a.button:hover,
-		.woocommerce button.button:hover,
-		.woocommerce input.button:hover,
-		.woocommerce #respond input#submit:hover,
-		.woocommerce #content input.button:hover,
-		.woocommerce-page a.button:hover,
-		.woocommerce-page button.button:hover,
-		.woocommerce-page input.button:hover,
-		.woocommerce-page #respond input#submit:hover,
-		.woocommerce-page #content input.button:hover,
-		.woocommerce div.product .woocommerce-tabs ul.tabs li.active a,
-		.woocommerce #content div.product .woocommerce-tabs ul.tabs li.active a,
-		.woocommerce-page div.product .woocommerce-tabs ul.tabs li.active a,
-		.woocommerce-page #content div.product .woocommerce-tabs ul.tabs li.active a,
-		.woocommerce table.cart td.actions .button.checkout-button {
-			background: #f04131 !important;
-		}
-
-		.woocommerce-page .product-wrap a.button {
-			background-color: #453f4a !important;
-		}
-
-		.woocommerce-page .product-wrap a.button:hover {
-			background-color: #f04131 !important;
-		}
-
-		.woocommerce span.onsale,
-		.woocommerce-page span.onsale,
-		.woocommerce-message,
-		.woocommerce-error,
-		.woocommerce-info,
-		.woocommerce .widget_price_filter .ui-slider .ui-slider-range,
-		.woocommerce-page .widget_price_filter .ui-slider .ui-slider-range {
-			background: #eb2d1c !important;
-		}
-
-		.woocommerce .product-wrap .add_to_cart_button.added,
-		.woocommerce .product-wrap .add_to_cart_button.added:hover {
-			border: 2px solid #f04131 !important;
-			background-color: #f04131 !important;
-		}
-
-		body .nextmatch_wrap .vsdiv:before,
-		body .results-main .vsdiv:before,
-		body .nextmatch_wrap .vsdiv:after,
-		body .results-main .vsdiv:after,
-		textarea:focus,
-		input[type="text"]:focus,
-		input[type="password"]:focus,
-		input[type="datetime"]:focus,
-		input[type="datetime-local"]:focus,
-		input[type="date"]:focus,
-		input[type="month"]:focus,
-		input[type="time"]:focus,
-		input[type="week"]:focus,
-		input[type="number"]:focus,
-		input[type="email"]:focus,
-		input[type="url"]:focus,
-		input[type="search"]:focus,
-		input[type="tel"]:focus,
-		input[type="color"]:focus,
-		.uneditable-input:focus,
-		.gallery-item a img:hover {
-			border-color: #eb2d1c;
-
-		}
-
-
-		.blog-content-title span.comments {
-			background: #453f4a !important;
-		}
-
-		.block h3:first-child,
-		#bbpress-forums li.bbp-header,
-		#bbpress-forums fieldset.bbp-form legend,
-		.bbp-topic-title h3,
-		.bbp-topics-front ul.super-sticky i.icon-comment,
-		.bbp-topics ul.super-sticky i.icon-comment,
-		.bbp-topics ul.sticky i.icon-comment,
-		.bbp-forum-content ul.sticky i.icon-comment,
-		.modal-header h3,
-		h3.widget-title,
-		.footer_widget h3,
-		.widget h3,
-		.header-colour,
-		.member h3 a {
-			color: #ffffff;
-		}
-
-
-
-		body.single .content-wrapper,
-		body.page-template .blog {
-			margin-top: -6px;
-			background: -webkit-radial-gradient(top, #5e1d1d, #25171f, #14151f);
-			background: radial-gradient(at top, #5e1d1d, #25171f, #14151f);
-		}
-
-		/* Backgrounds */
-		body .normal-page,
-		body .portfolio,
-		body .blog {
-			background: -webkit-radial-gradient(top, #5e1d1d, #25171f, #14151f);
-			background: radial-gradient(at top, #5e1d1d, #25171f, #14151f);
-		}
-
-		header,
-		body {
-
-			background-attachment: fixed !important;
-			background: url(https://skywarriorthemes.com/gameaddict/wp-content/themes/gameaddict/img/header.jpg) no-repeat center top !important;
-		}
-
-		footer .copyright p {
-			color: #494b65 !important;
-		}
-
-		footer .copyright {
-
-			background: url() no-repeat center top !important;
-		}
-
-		@media (max-width: 979px) {
-
-			.splitter li a,
-			.nav-tabs a {
-				background-color: #eb2d1c;
-			}
-		}
-	</style>
-
-	<script type='text/javascript'
-		src='https://skywarriorthemes.com/gameaddict/wp-includes/js/jquery/jquery.min.js?ver=3.5.1' id='jquery-core-js'>
-	</script>
-	<script type='text/javascript'
-		src='https://skywarriorthemes.com/gameaddict/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.3.2'
-		id='jquery-migrate-js'></script>
-	<script type='text/javascript'
-		src='https://skywarriorthemes.com/gameaddict/wp-content/themes/gameaddict/addons/clan-wars/js/jquery.cookie.pack.js?ver=1.5.5'
-		id='jquery-cookie-js'></script>
-	<script type='text/javascript'
-		src='https://skywarriorthemes.com/gameaddict/wp-content/themes/gameaddict/addons/clan-wars/js/tabs.js?ver=1.5.5'
-		id='wp-cw-tabs-js'></script>
-	<script type='text/javascript'
-		src='https://skywarriorthemes.com/gameaddict/wp-content/themes/gameaddict/addons/clan-wars/js/tipsy/jquery.tipsy.js?ver=0.1.7'
-		id='jquery-tipsy-js'></script>
-	<script type='text/javascript'
-		src='https://skywarriorthemes.com/gameaddict/wp-content/themes/gameaddict/addons/clan-wars/js/public.js?ver=1.5.5'
-		id='wp-cw-public-js'></script>
-	<script type='text/javascript' id='layerslider-utils-js-extra'>
-		/* <![CDATA[ */
 		var LS_Meta = {
 			"v": "6.11.6",
 			"fixGSAP": "1"
 		};
-		/* ]]> */
-	</script>
-	<script type='text/javascript'
-		src='https://skywarriorthemes.com/gameaddict/wp-content/plugins/LayerSlider/assets/static/layerslider/js/layerslider.utils.js?ver=6.11.6'
-		id='layerslider-utils-js'></script>
-	<script type='text/javascript'
-		src='https://skywarriorthemes.com/gameaddict/wp-content/plugins/LayerSlider/assets/static/layerslider/js/layerslider.kreaturamedia.jquery.js?ver=6.11.6'
-		id='layerslider-js'></script>
-	<script type='text/javascript'
-		src='https://skywarriorthemes.com/gameaddict/wp-content/plugins/LayerSlider/assets/static/layerslider/js/layerslider.transitions.js?ver=6.11.6'
-		id='layerslider-transitions-js'></script>
-	<script type='text/javascript'
-		src='https://skywarriorthemes.com/gameaddict/wp-content/plugins/woocommerce/assets/js/jquery-blockui/jquery.blockUI.min.js?ver=2.70'
-		id='jquery-blockui-js'></script>
-	<script type='text/javascript' id='wc-add-to-cart-js-extra'>
-		/* <![CDATA[ */
+
 		var wc_add_to_cart_params = {
 			"ajax_url": "\/gameaddict\/wp-admin\/admin-ajax.php",
 			"wc_ajax_url": "\/gameaddict\/?wc-ajax=%%endpoint%%",
@@ -753,74 +66,71 @@
 			"is_cart": "",
 			"cart_redirect_after_add": "no"
 		};
-		/* ]]> */
-	</script>
-	<script type='text/javascript'
-		src='https://skywarriorthemes.com/gameaddict/wp-content/plugins/woocommerce/assets/js/frontend/add-to-cart.min.js?ver=5.1.1'
-		id='wc-add-to-cart-js'></script>
-	<script type='text/javascript'
-		src='https://skywarriorthemes.com/gameaddict/wp-content/plugins/js_composer/assets/js/vendors/woocommerce-add-to-cart.js?ver=6.6.0'
-		id='vc_woocommerce-add-to-cart-js-js'></script>
-	<script type='text/javascript'
-		src='https://skywarriorthemes.com/gameaddict/wp-content/plugins/sk_isotope_gallery/com/riaextended/js/tween/CSSPlugin.min.js?ver=5.7.5'
-		id='sk_css_plugin-js'></script>
-	<script type='text/javascript'
-		src='https://skywarriorthemes.com/gameaddict/wp-content/plugins/sk_isotope_gallery/com/riaextended/js/tween/easing/EasePack.min.js?ver=5.7.5'
-		id='sk_tween_ease-js'></script>
-	<script type='text/javascript' id='rx_isotope_gallery-js-extra'>
-		/* <![CDATA[ */
+
 		var GALLERY_DTA_FRONT = {
 			"IMAGES_URL": "https:\/\/skywarriorthemes.com\/gameaddict\/wp-content\/plugins\/sk_isotope_gallery\/images",
 			"LOOK_AND_FEEL": "7b7b7b"
 		};
-		/* ]]> */
+
+		var woocommerce_params = {
+			"ajax_url": "\/gameaddict\/wp-admin\/admin-ajax.php",
+			"wc_ajax_url": "\/gameaddict\/?wc-ajax=%%endpoint%%"
+		};
+
+		var wc_cart_fragments_params = {
+			"ajax_url": "\/gameaddict\/wp-admin\/admin-ajax.php",
+			"wc_ajax_url": "\/gameaddict\/?wc-ajax=%%endpoint%%",
+			"cart_hash_key": "wc_cart_hash_7aa8f5d7156cd2e7778926bac4a0a290",
+			"fragment_name": "wc_fragments_7aa8f5d7156cd2e7778926bac4a0a290",
+			"request_timeout": "5000"
+		};
+
+		var heartLove = {
+			"ajaxurl": "https:\/\/skywarriorthemes.com\/gameaddict\/wp-admin\/admin-ajax.php"
+		};
+
+		var settingsGlobal = {
+			"tajtl": "Clan Members"
+		};
+
+		var ajax_login_object = {
+			"ajaxurl": "https:\/\/skywarriorthemes.com\/gameaddict\/wp-admin\/admin-ajax.php",
+			"redirecturl": "https:\/\/skywarriorthemes.com\/gameaddict",
+			"loadingmessage": "Signing in, please wait...",
+			"error": "ERROR",
+			"privacy": "You need to accept Privacy Policy!"
+		};
+
 	</script>
-	<script type='text/javascript'
-		src='https://skywarriorthemes.com/gameaddict/wp-content/plugins/sk_isotope_gallery/js/rx_isotope_gallery.js?ver=5.7.5'
-		id='rx_isotope_gallery-js'></script>
-	<script type='text/javascript'
-		src='https://skywarriorthemes.com/gameaddict/wp-content/plugins/sk_isotope_gallery/js/external/jquery.isotope.min.js?ver=5.7.5'
-		id='rx_isotope-js'></script>
-	<meta name="generator"
-		content="Powered by LayerSlider 6.11.6 - Multi-Purpose, Responsive, Parallax, Mobile-Friendly Slider Plugin for WordPress." />
-	<!-- LayerSlider updates and docs at: https://layerslider.kreaturamedia.com -->
-	<link rel="https://api.w.org/" href="https://skywarriorthemes.com/gameaddict/wp-json/" />
-	<link rel="alternate" type="application/json"
-		href="https://skywarriorthemes.com/gameaddict/wp-json/wp/v2/pages/43" />
-	<link rel="EditURI" type="application/rsd+xml" title="RSD"
-		href="https://skywarriorthemes.com/gameaddict/xmlrpc.php?rsd" />
-	<link rel="wlwmanifest" type="application/wlwmanifest+xml"
-		href="https://skywarriorthemes.com/gameaddict/wp-includes/wlwmanifest.xml" />
-	<meta name="generator" content="WordPress 5.7.5" />
-	<meta name="generator" content="WooCommerce 5.1.1" />
-	<link rel="canonical" href="https://skywarriorthemes.com/gameaddict/clan-members/" />
-	<link rel='shortlink' href='https://skywarriorthemes.com/gameaddict/?p=43' />
-	<link rel="alternate" type="application/json+oembed"
-		href="https://skywarriorthemes.com/gameaddict/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fskywarriorthemes.com%2Fgameaddict%2Fclan-members%2F" />
-	<link rel="alternate" type="text/xml+oembed"
-		href="https://skywarriorthemes.com/gameaddict/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fskywarriorthemes.com%2Fgameaddict%2Fclan-members%2F&#038;format=xml" />
-	<link rel="stylesheet"
-		href="https://skywarriorthemes.com/gameaddict/wp-content/plugins/gameaddict_post_types/widgets/latest_twitter/latest_twitter_widget.css" />
+	
+	<meta name='robots' content='max-image-preview:large' />
+	<link rel='dns-prefetch' href='//fonts.googleapis.com' />
+	<link rel='dns-prefetch' href='//s.w.org' />
+	<link rel="alternate" type="application/rss+xml" title="Game addict &raquo; Clan Members Comments Feed"
+		href="https://skywarriorthemes.com/gameaddict/clan-members/feed/" />
+	
+	<link rel='stylesheet' href='/src/static/css/site_catalog_min.css' type='text/css' />
+
+	<script type='text/javascript' src='src/static/vendor/jquery/js/jquery-3.5.1.min.js'></script>
+	<script type='text/javascript' src='src/static/vendor/jquery-migrate.min.js'></script>
+	<script type='text/javascript' src='src/static/vendor/jquery.cookie.pack.js'></script>
+	<script type='text/javascript' src='src/static/vendor/clan-wars.tabs.js'></script>
+	<script type='text/javascript' src='src/static/vendor/clan-wars.jquery.tipsy.js'></script>
+	<script type='text/javascript' src='src/static/vendor/clan-wars.public.js'></script>
+	<script type='text/javascript' src='src/static/vendor/layerslider.utils.js'></script>
+	<script type='text/javascript' src='src/static/vendor/kreaturamidia.jquery.js'></script>
+	<script type='text/javascript' src='src/static/vendor/layerslider_transitions.js'></script>
+	<script type='text/javascript' src='src/static/vendor/jquery.blockUI.min.js'></script>
+	<script type='text/javascript' src='src/static/vendor/riaextended_css_plugin.min.js'></script>
+	<script type='text/javascript' src='src/static/vendor/easepack.min.js'></script>
+	<script type='text/javascript' src='src/static/vendor/rx_isotope_gallery.js'></script>
+	<script type='text/javascript' src='src/static/vendor/jquery.isotope.min.js'></script>
+
 	<noscript>
 		<style>
 			.woocommerce-product-gallery {
 				opacity: 1 !important;
 			}
-		</style>
-	</noscript>
-	<meta name="generator" content="Powered by WPBakery Page Builder - drag and drop page builder for WordPress." />
-	<link rel="icon"
-		href="https://skywarriorthemes.com/gameaddict/wp-content/uploads/2017/08/cropped-logo-big-vector-32x32.jpg"
-		sizes="32x32" />
-	<link rel="icon"
-		href="https://skywarriorthemes.com/gameaddict/wp-content/uploads/2017/08/cropped-logo-big-vector-192x192.jpg"
-		sizes="192x192" />
-	<link rel="apple-touch-icon"
-		href="https://skywarriorthemes.com/gameaddict/wp-content/uploads/2017/08/cropped-logo-big-vector-180x180.jpg" />
-	<meta name="msapplication-TileImage"
-		content="https://skywarriorthemes.com/gameaddict/wp-content/uploads/2017/08/cropped-logo-big-vector-270x270.jpg" />
-	<noscript>
-		<style>
 			.wpb_animate_when_almost_visible {
 				opacity: 1;
 			}
@@ -830,8 +140,7 @@
 
 <script type="module" src="src/static/Catalog.js"></script>
 
-<body
-	class="page-template-default page page-id-43 theme-gameaddict woocommerce-no-js wpb-js-composer js-comp-ver-6.6.0 vc_responsive">
+<body class="page-template-default page page-id-43 theme-gameaddict woocommerce-no-js wpb-js-composer js-comp-ver-6.6.0 vc_responsive">
 	<div id="main_wrapper">
 		<header>
 			<div class="topbar">
@@ -905,137 +214,16 @@
 			document.body.className = c;
 		})();
 	</script>
-	<link rel='stylesheet' id='vc_animate-css-css'
-		href='https://skywarriorthemes.com/gameaddict/wp-content/plugins/js_composer/assets/lib/bower/animate-css/animate.min.css?ver=6.6.0'
-		type='text/css' media='all' />
-	<link rel='stylesheet' id='wp-cw-sitecss-css'
-		href='https://skywarriorthemes.com/gameaddict/wp-content/themes/gameaddict/addons/clan-wars/css/site.css?ver=1.5.5'
-		type='text/css' media='all' />
-	<link rel='stylesheet' id='wp-cw-widgetcss-css'
-		href='https://skywarriorthemes.com/gameaddict/wp-content/themes/gameaddict/addons/clan-wars/css/widget.css?ver=1.5.5'
-		type='text/css' media='all' />
-	<script type='text/javascript'
-		src='https://skywarriorthemes.com/gameaddict/wp-content/plugins/woocommerce/assets/js/js-cookie/js.cookie.min.js?ver=2.1.4'
-		id='js-cookie-js'></script>
-	<script type='text/javascript' id='woocommerce-js-extra'>
-		/* <![CDATA[ */
-		var woocommerce_params = {
-			"ajax_url": "\/gameaddict\/wp-admin\/admin-ajax.php",
-			"wc_ajax_url": "\/gameaddict\/?wc-ajax=%%endpoint%%"
-		};
-		/* ]]> */
-	</script>
-	<script type='text/javascript'
-		src='https://skywarriorthemes.com/gameaddict/wp-content/plugins/woocommerce/assets/js/frontend/woocommerce.min.js?ver=5.1.1'
-		id='woocommerce-js'></script>
-	<script type='text/javascript' id='wc-cart-fragments-js-extra'>
-		/* <![CDATA[ */
-		var wc_cart_fragments_params = {
-			"ajax_url": "\/gameaddict\/wp-admin\/admin-ajax.php",
-			"wc_ajax_url": "\/gameaddict\/?wc-ajax=%%endpoint%%",
-			"cart_hash_key": "wc_cart_hash_7aa8f5d7156cd2e7778926bac4a0a290",
-			"fragment_name": "wc_fragments_7aa8f5d7156cd2e7778926bac4a0a290",
-			"request_timeout": "5000"
-		};
-		/* ]]> */
-	</script>
-	<script type='text/javascript'
-		src='https://skywarriorthemes.com/gameaddict/wp-content/plugins/woocommerce/assets/js/frontend/cart-fragments.min.js?ver=5.1.1'
-		id='wc-cart-fragments-js'></script>
-	<script type='text/javascript' id='heart-love-js-extra'>
-		/* <![CDATA[ */
-		var heartLove = {
-			"ajaxurl": "https:\/\/skywarriorthemes.com\/gameaddict\/wp-admin\/admin-ajax.php"
-		};
-		/* ]]> */
-	</script>
-	<script type='text/javascript'
-		src='https://skywarriorthemes.com/gameaddict/wp-content/themes/gameaddict/addons/heart/love/js/heart-love.js?ver=1.0'
-		id='heart-love-js'></script>
-	<script type='text/javascript'
-		src='https://skywarriorthemes.com/gameaddict/wp-content/plugins/gameaddict_post_types/wp-owl-carousel/owl-carousel/owl.carousel.min.js?ver=5.7.5'
-		id='owl-carousel-js'></script>
-	<script type='text/javascript'
-		src='https://skywarriorthemes.com/gameaddict/wp-content/plugins/gameaddict_post_types/wp-owl-carousel/js/wp-owl-carousel.js?ver=5.7.5'
-		id='wp-owl-carousel-js'></script>
-	<script type='text/javascript'
-		src='https://skywarriorthemes.com/gameaddict/wp-content/themes/gameaddict/js/bootstrap.min.js?ver=5.7.5'
-		id='bootstrap1-js'></script>
-	<script type='text/javascript'
-		src='https://skywarriorthemes.com/gameaddict/wp-content/themes/gameaddict/js/bootstrap-tooltip.js?ver=5.7.5'
-		id='bootstrap2-js'></script>
-	<script type='text/javascript'
-		src='https://skywarriorthemes.com/gameaddict/wp-content/plugins/js_composer/assets/lib/bower/isotope/dist/isotope.pkgd.min.js?ver=6.6.0'
-		id='isotope-js'></script>
-	<script type='text/javascript'
-		src='https://skywarriorthemes.com/gameaddict/wp-content/themes/gameaddict/js/easing.js?ver=5.7.5'
-		id='easing-js'></script>
-	<script type='text/javascript'
-		src='https://skywarriorthemes.com/gameaddict/wp-content/themes/gameaddict/js/jquery.ui.totop.js?ver=5.7.5'
-		id='totop-js'></script>
-	<script type='text/javascript'
-		src='https://skywarriorthemes.com/gameaddict/wp-content/themes/gameaddict/js/jquery-ui-1.10.3.custom.min.js?ver=5.7.5'
-		id='custom_js2-js'></script>
-	<script type='text/javascript'
-		src='https://skywarriorthemes.com/gameaddict/wp-content/themes/gameaddict/js/parallax.js?ver=5.7.5'
-		id='custom_js4-js'></script>
-	<script type='text/javascript'
-		src='https://skywarriorthemes.com/gameaddict/wp-content/themes/gameaddict/js/jquery.color-RGBa-patch.js?ver=5.7.5'
-		id='custom_js5-js'></script>
-	<script type='text/javascript'
-		src='https://skywarriorthemes.com/gameaddict/wp-content/themes/gameaddict/js/jquery.clickoutside.js?ver=5.7.5'
-		id='custom_js6-js'></script>
-	<script type='text/javascript' id='custom_js7-js-extra'>
-		/* <![CDATA[ */
-		var settingsGlobal = {
-			"tajtl": "Clan Members"
-		};
-		/* ]]> */
-	</script>
-	<script type='text/javascript'
-		src='https://skywarriorthemes.com/gameaddict/wp-content/themes/gameaddict/js/global.js?ver=5.7.5'
-		id='custom_js7-js'></script>
-	<script type='text/javascript'
-		src='https://skywarriorthemes.com/gameaddict/wp-content/themes/gameaddict/js/imagescale.js?ver=5.7.5'
-		id='imagescale-js'></script>
-	<script type='text/javascript'
-		src='https://skywarriorthemes.com/gameaddict/wp-content/themes/gameaddict/js/transit.js?ver=5.7.5'
-		id='transit-js'></script>
-	<script type='text/javascript' id='ga_js2-js-extra'>
-		/* <![CDATA[ */
-		var ajax_login_object = {
-			"ajaxurl": "https:\/\/skywarriorthemes.com\/gameaddict\/wp-admin\/admin-ajax.php",
-			"redirecturl": "https:\/\/skywarriorthemes.com\/gameaddict",
-			"loadingmessage": "Signing in, please wait...",
-			"error": "ERROR",
-			"privacy": "You need to accept Privacy Policy!"
-		};
-		/* ]]> */
-	</script>
-	<script type='text/javascript'
-		src='https://skywarriorthemes.com/gameaddict/wp-content/themes/gameaddict/js/login-with-ajax.js?ver=5.7.5'
-		id='ga_js2-js'></script>
-	<script type='text/javascript'
-		src='https://skywarriorthemes.com/gameaddict/wp-content/plugins/super-socializer/js/front/social_login/general.js?ver=7.13.14'
-		id='the_champ_ss_general_scripts-js'></script>
-	<script type='text/javascript'
-		src='https://skywarriorthemes.com/gameaddict/wp-content/plugins/super-socializer/js/front/facebook/sdk.js?ver=7.13.14'
-		id='the_champ_fb_sdk-js'></script>
-	<script type='text/javascript'
-		src='https://skywarriorthemes.com/gameaddict/wp-content/plugins/super-socializer/js/front/facebook/commenting.js?ver=7.13.14'
-		id='the_champ_fb_commenting-js'></script>
-	<script type='text/javascript'
-		src='https://skywarriorthemes.com/gameaddict/wp-content/plugins/super-socializer/js/front/sharing/sharing.js?ver=7.13.14'
-		id='the_champ_share_counts-js'></script>
-	<script type='text/javascript'
-		src='https://skywarriorthemes.com/gameaddict/wp-includes/js/wp-embed.min.js?ver=5.7.5' id='wp-embed-js'>
-	</script>
-	<script type='text/javascript'
-		src='https://skywarriorthemes.com/gameaddict/wp-content/plugins/js_composer/assets/js/dist/js_composer_front.min.js?ver=6.6.0'
-		id='wpb_composer_front_js-js'></script>
-	<script type='text/javascript'
-		src='https://skywarriorthemes.com/gameaddict/wp-content/plugins/js_composer/assets/lib/vc_waypoints/vc-waypoints.min.js?ver=6.6.0'
-		id='vc_waypoints-js'></script>
+
+	<script type='text/javascript' src='src/static/vendor/owl_carousel_min.js'></script>
+	<script type='text/javascript' src='src/static/vendor/wp_owl_carousel.js'></script>
+	<script type='text/javascript' src='src/static/vendor/global_theme.js'></script>
+	<script type='text/javascript' src='src/static/vendor/imagescale.js'></script>
+	<script type='text/javascript' src='src/static/vendor/transit.js'></script>
+	<script type='text/javascript' src='src/static/vendor/wp-embed.min.js'></script>
+	<script type='text/javascript' src='src/static/vendor/js_composer_front.min.js'></script>
+	<script type='text/javascript' src='src/static/vendor/vc-waypoints.min.js'></script>
+	
 </body>
 
 </html>
