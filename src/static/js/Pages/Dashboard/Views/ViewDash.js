@@ -2,8 +2,7 @@
 import Menu from "@app/Components/Menu";
 import Lancamentos from "@app/Components/Lancamentos";
 import Noticias from "@app/Components/Noticias";
-
-//https://skywarriorthemes.com/gameaddict
+import Footer from "@app/Components/Footer";
 
 export default class {
   static getHtml() {
@@ -11,6 +10,9 @@ export default class {
     document.getElementById('myAppLancamentos').innerHTML = Lancamentos.getHtml('!RPG') 
     document.getElementById('myAppLancamentosRPG').innerHTML = Lancamentos.getHtml('RPG') 
     document.getElementById('myAppNoticias').innerHTML = Noticias.getHtml() 
+    document.getElementById('myAppFooter').innerHTML = Footer.getHtml() 
     return '';
   }
 }
+
+//https://skywarriorthemes.com/gameaddict

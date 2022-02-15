@@ -7,7 +7,7 @@ export default class {
         items: [ 
           { 
             label: 'Catálogo',
-            link: 'https://skywarriorthemes.com/gameaddict/clan-members/',
+            link: '/catalog',
             subs: [
               {
                 label: 'Novidades',
