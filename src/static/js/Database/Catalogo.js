@@ -16,7 +16,7 @@ export default class {
             text: 'Beastmen - Cyclops',
             subtext: 'Seguindo a linha de coleção de guerra,<br>o gigante <strong>cyclops</strong> é uma unidade<br>pronta para destruir tudo',
             date:'14-02-2022',
-            tag: '',
+            tag: 'medieval novidade',
             catalogText: '',
           },
           { 
@@ -28,7 +28,7 @@ export default class {
             text: 'Minotaur Druid',
             subtext: 'Mais um ser mitológico para seu jogo<br>de tabuleiro ou estatueta de coleção.<br>Não deixe de ver este item fantástico!<br>',
             date:'14-02-2022',
-            tag: '',
+            tag: 'medieval novidade',
             catalogText: '',
           },
           { 
@@ -40,7 +40,7 @@ export default class {
             text: 'Elementals - Earth Master',
             subtext: 'Nesta coleção, o <strong>mestre da terra</strong> figura<br>entre os mais fortes. Não perca esta <br>peça para sua coleção!<br>',
             date:'14-02-2022',
-            tag: '',
+            tag: 'medieval',
             catalogText: '',
           },
           { 
@@ -52,7 +52,7 @@ export default class {
             text: 'Gnoll Brute Mace',
             subtext: 'Conheça o temido <strong>gnoll brute</strong><br> usando uma maça de duas mãos<br><br>',
             date:'14-02-2022',
-            tag: '',
+            tag: 'medieval',
             catalogText: '',
           },
           { 
@@ -64,7 +64,7 @@ export default class {
             text: 'Gnoll Brute Axe',
             subtext: 'Peça incrível para sua coleção - conheça o <br>gnoll brute usando machado<br>de uma mão<br>',
             date:'14-02-2022',
-            tag: '',
+            tag: 'medieval',
             catalogText: '',
           },
           { 
@@ -76,7 +76,7 @@ export default class {
             text: 'Tabaxi - The Shaman',
             subtext: 'Shaman Tabaxi - mais uma peça de arte <br>para brilhar sua coleção<br><br>',
             date:'14-02-2022',
-            tag: '',
+            tag: 'medieval',
             catalogText: '',
           },
           { 

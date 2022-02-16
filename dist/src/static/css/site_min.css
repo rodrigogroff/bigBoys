@@ -139,7 +139,7 @@
     .button-medium{font-size:14px;padding:15px 30px 16px 30px!important;}
     .button-small,input[type="submit"]{font-size:13px;padding:7px 25px 8px 25px!important;}
     header{background:url(http://localhost/src/static/img/header.jpg) top center no-repeat;background-attachment:scroll!important;background-size:cover!important;}
-    .topbar{position:relative;z-index:3;min-height:60px;background:rgba(0,0,0,0.6);margin-top:-1px;}
+    .topbar{position:relative;z-index:3;min-height:60px;margin-top:-1px;}
     .topbar-login.btn{width:94px;border:none!important;vertical-align:initial;padding:0;border-radius:0;}
     .topbar-login a{color:#fffefe!important;padding:17px 17px 13px 15px;border-bottom:5px solid rgba(0,0,0,.3);margin-top:-1px;border-top:none;display:block;background:url(http://localhost/src/static/img/widgetback.png) 50% -15% no-repeat;font-weight:normal;}
     .topbar-login i{margin-right:5px;font-size:16px;}
