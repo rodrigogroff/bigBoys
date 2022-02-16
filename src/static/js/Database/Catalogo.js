@@ -50,7 +50,7 @@ export default class {
             image: 'src/static/minis/itens/archvillan_games/howlinghorde_gnoll_brutes_mace/promo.jpg',
             imageBig: 'src/static/minis/itens/archvillan_games/howlinghorde_gnoll_brutes_mace/promoBig.jpg',
             text: 'Gnoll Brute Mace',
-            subtext: 'Conheça o temido<br><strong>gnoll brute</strong><br> usando uma maça de duas mãos<br><br>',
+            subtext: 'Conheça o temido <strong>gnoll brute</strong><br> usando uma maça de duas mãos<br><br>',
             date:'14-02-2022',
             tag: '',
             catalogText: '',

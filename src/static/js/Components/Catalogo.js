@@ -9,7 +9,8 @@ export default class {
         {
             var m = objects.items[a];
 
-            html += `   <div class="wpb_animate_when_almost_visible wpb_fadeInDown fadeInDown wpb_column vc_column_container vc_col-sm-4">
+            //html += `   <div class="wpb_animate_when_almost_visible wpb_fadeInDown fadeInDown wpb_column vc_column_container vc_col-sm-4">
+            html += `   <div class="wpb_fadeInDown fadeInDown wpb_column vc_column_container vc_col-sm-4">
                                       <div class="vc_column-inner">
                                           <div class="wpb_wrapper">
                                               <div class="wpb_text_column wpb_content_element ">
