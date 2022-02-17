@@ -4,7 +4,11 @@ export default class {
   static getHtml() {
     
     return `<div class="container">
-				<br><br><br>		
+				<div align='center'>
+					<br><br><br>
+					<h4>The content of this site is possible by our patreons:</h4>
+					<br><br><br>
+				</div>
 				<table>
 					<tr>
 						<td style="background-color: white;width:260px;height: 300px;" align="center">

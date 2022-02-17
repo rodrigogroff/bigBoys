@@ -1156,3 +1156,12 @@ img.wp-smiley,
 				background-color: #eb2d1c;
 			}
 		}
+
+
+		.woocommerce-product-gallery {
+			opacity: 1 !important;
+		}
+		.wpb_animate_when_almost_visible {
+			opacity: 1;
+		}
+		
