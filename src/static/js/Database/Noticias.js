@@ -7,7 +7,6 @@ export default class {
         items: [ 
           { 
             id: 5843,
-            patreon: 'Archvillan Games',
             link: 'https://skywarriorthemes.com/gameaddict/curabitur-lorem-mauris-dictum-et-tempus/',
             image: 'https://skywarriorthemes.com/gameaddict/wp-content/uploads/2013/08/3-300x356.jpg',
             text: 'Curabitur lorem mauris dictum et tempus',

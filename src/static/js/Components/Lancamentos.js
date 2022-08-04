@@ -17,6 +17,8 @@ export default class {
     {
       liItem++;
       var m = db.items[a];
+      if (m.active == false)
+        continue;
       fullHtml +=  `<div style='margin-left:8px'>
                       <a class="car_image ${liItem}" href="${m.link}">
                         <img alt="image" src="${m.image}" />
