@@ -2,8 +2,7 @@
 import Menu from "@app/Components/Menu";
 import Footer from "@app/Components/Footer";
 import Catalogo from "@app/Components/Catalogo";
-
-import CatalogoDb from "@app/Database/Catalogo";
+import CatalogoDb from "@app/Database/CatalogoMinis";
 
 export default class {
   static getHtml() {

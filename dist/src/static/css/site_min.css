@@ -190,7 +190,7 @@
     body{height:auto;}
     }
     #toTop{z-index:22222!important;}
-    h3.widget-title{position:relative;margin-top:0px;margin-left:0;line-height:40px;margin-bottom:0px;padding:12px 30px 9px 13px;font-size:20px;font-weight:bold;background:url(http://localhost/src/static/img/widgetback.png) top right no-repeat;border:1px solid rgba(0,0,0,.8);border-bottom:5px solid rgba(0,0,0,.3);float:none;text-align:left;border-radius:0;text-transform:uppercase;}
+    h3.widget-title{position:relative;margin-top:0px;margin-left:0;top:180px;line-height:40px;margin-bottom:0px;padding:12px 30px 9px 13px;font-size:20px;font-weight:bold;background:url(http://localhost/src/static/img/widgetback.png) top right no-repeat;border:1px solid rgba(0,0,0,.8);border-bottom:5px solid rgba(0,0,0,.3);float:none;text-align:left;border-radius:0;text-transform:uppercase;}
     .horizontal-tabbed h3.widget-title{background:url(http://localhost/src/static/img/vctitle.png) top right no-repeat;}
     h3.widget-title:before{content:url(http://localhost/src/static/img/widgetarrows.png);vertical-align:sub;margin-right:10px;line-height:0;}
     .search-login{float:right;position:relative;z-index:11;}
@@ -285,7 +285,7 @@
     @media (min-width: 768px){
     .col-lg-6,.col-lg-12{float:left;}
     .col-lg-12{width:100%;}
-    .col-lg-6{width:50%;}
+    .col-lg-6{width:80%;}
     }
     @media (min-width: 992px){
     .col-md-12{float:left;}
@@ -294,7 +294,7 @@
     @media (min-width: 1200px){
     .col-lg-6,.col-lg-12{float:left;}
     .col-lg-12{width:100%;}
-    .col-lg-6{width:50%;}
+    .col-lg-6{width:80%;}
     }
     table{background-color:transparent;}
     label{display:inline-block;max-width:100%;margin-bottom:5px;font-weight:bold;}

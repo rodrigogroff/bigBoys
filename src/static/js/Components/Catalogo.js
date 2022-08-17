@@ -5,6 +5,9 @@ export default class {
       
         var html = '';
 
+        if ( objects.items.length == 0)
+            return 'Peças em fase de aquisição / fabricação<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>'
+        
         for(let a=0; a < objects.items.length; a++ )
         {
             var m = objects.items[a];
@@ -15,7 +18,7 @@ export default class {
                                     <div class="wpb_text_column wpb_content_element ">
                                         <div class="member">
                                             <img src="${m.imageBig}" alt="cat figure">
-                                            <h3 class="widget-title"><a href="${m.link}">${m.collection} ${m.text}</a></h3>
+                                            <h3 class="widget-title" style='top:300px;left:40px'><a href="${m.link}">${m.text}</a></h3>
                                             <div class="content"><p></p></div>
                                             <div class="blacksq"></div>
                                         </div>

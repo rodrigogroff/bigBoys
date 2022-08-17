@@ -12,10 +12,9 @@ export default class {
 				<br>
 				<br>
 				<div align="center">
-					<br>
-					<br>
 					<img src="src/static/img/logo.png" alt="logo" />
 					<br>
+					<img src="src/static/img/logo_2.png" alt="logo" />
 					<br>
 					<br>					
 				</div>

@@ -6,29 +6,26 @@ export default class {
       return {
         items: [ 
           { 
-            label: 'Catálogo',
-            link: '/catalog',
+            label: 'Quadros',
+            link: '/catalog_poster',
             subs: [
               {
-                label: 'Novidades',
-                link: '/catalog',
+                label: 'Catálogo',
+                link: '/catalog_poster',
               },              
             ]
           },
-          {
-            label: 'Vendas',
-            link: 'https://skywarriorthemes.com/gameaddict/clan-members/',
+          { 
+            label: 'Miniaturas',
+            link: '/catalog',
             subs: [
               {
-                label: 'Como comprar',
-                link: '/como_comprar',
-              },
-              {
-                label: 'Mercado Livre',
-                link: 'https://skywarriorthemes.com/gameaddict/clan-members/',
+                label: 'Catálogo',
+                link: '/catalog',
               },              
-            ],
-          },
+            ]
+          },          
+          /*
           {
             label: 'Parceiros',
             link: 'https://skywarriorthemes.com/gameaddict/clan-members/',
@@ -38,7 +35,7 @@ export default class {
                 link: '/barbers',
               },              
             ],
-          },
+          },*/
         ],
       };
     }

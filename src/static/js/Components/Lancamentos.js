@@ -1,5 +1,5 @@
 
-import Catalogo from "@app/Database/Catalogo";
+import Catalogo from "@app/Database/CatalogoPosters";
 
 export default class {
 

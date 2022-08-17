@@ -1137,7 +1137,7 @@ img.wp-smiley,
 		body {
 
 			background-attachment: fixed !important;
-			background: url(https://skywarriorthemes.com/gameaddict/wp-content/themes/gameaddict/img/header.jpg) no-repeat center top !important;
+			background: url(http://localhost/src/static/img/header.jpg) no-repeat center top !important;
 		}
 
 		footer .copyright p {

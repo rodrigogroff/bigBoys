@@ -47,11 +47,11 @@ h3.widget-title,
 }
 
 .button-medium {
-	background: #129c34 url(https://skywarriorthemes.com/gameaddict/wp-content/themes/gameaddict/img/menu-extra.png) top right repeat-x !important;
+	background: #129c34 url(/src/static/img/menu-extra.png) top right repeat-x !important;
 }
 
 .button-medium:hover {
-	background: #f04131 url(https://skywarriorthemes.com/gameaddict/wp-content/themes/gameaddict/img/menu-extra.png) top right repeat-x !important;
+	background: #f04131 url(/src/static/img/menu-extra.png) top right repeat-x !important;
 }
 
 h3.widget-title {
@@ -66,7 +66,7 @@ body .portfolio {
 header,
 body {
 	background-attachment: fixed !important;
-	background: url(https://skywarriorthemes.com/gameaddict/wp-content/themes/gameaddict/img/header.jpg) no-repeat center top !important;
+	background: url(/src/static/img/header.jpg) no-repeat center top !important;
 }
 
 /*! CSS Used from: http://localhost/src/static/css/main.css ; media=all */

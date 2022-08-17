@@ -1,5 +1,6 @@
 
-import Catalogo from "@app/Database/Catalogo";
+import Catalogo from "@app/Database/CatalogoMinis";
+import CatalogoPoster from "@app/Database/CatalogoPosters";
 
 export default class {
 
@@ -7,6 +8,9 @@ export default class {
 
         var _par = Object.fromEntries(new URLSearchParams(location.search))
         var obj = Catalogo.getAll('', _par.id );
+
+        if (obj == null)
+            obj = CatalogoPoster.getAll('', _par.id );
 
         var carousel = '<ol class="carousel-indicators">';
 
@@ -64,11 +68,13 @@ export default class {
                 <p>${obj.catalogText}</p>
               </div>
               <br>              
-                <a target="_blank" href="${obj.linkBuy}" class="button-medium">Comprar no mercado livre</a>
+                
           </div>
       </div>
       <br><br>
   </div>   
               `
+
+              //<a target="_blank" href="${obj.linkBuy}" class="button-medium">Comprar no mercado livre</a>
     }
 }
