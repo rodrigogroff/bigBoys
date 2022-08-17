@@ -18,11 +18,11 @@ export default class {
           subtext: '',
           date: '18-02-2022',
           tag: 'medieval',
-          linkBuy: 'https://www.mercadolivre.com.br/figura-de-aco-marvel-capito-america-avengers-f1342-de-hasbro-titan-hero-series/p/MLB18623137',
-          catalogText: `Altura: 14,3cm<br>
-                        Peso: gramas<br>
-                        <br>
-                        `,
+          linkBuy: 'https://produto.mercadolivre.com.br/MLB-2760849192-quadro-rob-gundam-barbatos-lupus-v1a-_JM',
+          catalogText: `Altura: 42cm, Largura: 30cm<br>
+                        Quadro tamanho A3, com acabamento em acetato transparente,
+                        protegendo a figura.<br>
+                        <br>`,
           gallery: [{ image: 'src/static/posters/gundam/pack_1/fig_1/preview.jpg' },
           { image: 'src/static/posters/gundam/pack_1/fig_1/promoBig.jpg' },
           ],
@@ -39,11 +39,11 @@ export default class {
           subtext: '',
           date: '18-02-2022',
           tag: 'medieval',
-          linkBuy: 'https://www.mercadolivre.com.br/figura-de-aco-marvel-capito-america-avengers-f1342-de-hasbro-titan-hero-series/p/MLB18623137',
-          catalogText: `Altura: 14,3cm<br>
-                        Peso: gramas<br>
-                        <br>
-                        `,
+          linkBuy: 'https://produto.mercadolivre.com.br/MLB-2760878754-quadro-rob-gundam-barbatos-lupus-v1b-_JM',
+          catalogText: `Altura: 42cm, Largura: 30cm<br>
+                        Quadro tamanho A3, com acabamento em acetato transparente,
+                        protegendo a figura.<br>
+                        <br>`,
           gallery: [{ image: 'src/static/posters/gundam/pack_1/fig_2/preview.jpg' },
           { image: 'src/static/posters/gundam/pack_1/fig_2/promoBig.jpg' },
           ],
@@ -60,11 +60,11 @@ export default class {
           subtext: '',
           date: '18-02-2022',
           tag: 'medieval',
-          linkBuy: 'https://www.mercadolivre.com.br/figura-de-aco-marvel-capito-america-avengers-f1342-de-hasbro-titan-hero-series/p/MLB18623137',
-          catalogText: `Altura: 14,3cm<br>
-                        Peso: gramas<br>
-                        <br>
-                        `,
+          linkBuy: 'https://produto.mercadolivre.com.br/MLB-2760863691-quadro-rob-gundam-zaku-v1a-_JM',
+          catalogText: `Altura: 42cm, Largura: 30cm<br>
+                        Quadro tamanho A3, com acabamento em acetato transparente,
+                        protegendo a figura.<br>
+                        <br>`,
           gallery: [
             { image: 'src/static/posters/gundam/pack_1/fig_3/preview.jpg' },
             { image: 'src/static/posters/gundam/pack_1/fig_3/promoBig.jpg' },
@@ -82,11 +82,11 @@ export default class {
           subtext: '',
           date: '18-02-2022',
           tag: 'medieval',
-          linkBuy: 'https://www.mercadolivre.com.br/figura-de-aco-marvel-capito-america-avengers-f1342-de-hasbro-titan-hero-series/p/MLB18623137',
-          catalogText: `Altura: 14,3cm<br>
-                        Peso: gramas<br>
-                        <br>
-                        `,
+          linkBuy: 'https://produto.mercadolivre.com.br/MLB-2760885415-quadro-rob-gundam-sazabi-v1a-_JM',
+          catalogText: `Altura: 42cm, Largura: 30cm<br>
+                        Quadro tamanho A3, com acabamento em acetato transparente,
+                        protegendo a figura.<br>
+                        <br>`,
           gallery: [
             { image: 'src/static/posters/gundam/pack_1/fig_4/preview.jpg' },
             { image: 'src/static/posters/gundam/pack_1/fig_4/promoBig.jpg' },
@@ -104,11 +104,11 @@ export default class {
           subtext: '',
           date: '18-02-2022',
           tag: 'medieval',
-          linkBuy: 'https://www.mercadolivre.com.br/figura-de-aco-marvel-capito-america-avengers-f1342-de-hasbro-titan-hero-series/p/MLB18623137',
-          catalogText: `Altura: 14,3cm<br>
-                        Peso: gramas<br>
-                        <br>
-                        `,
+          linkBuy: 'https://produto.mercadolivre.com.br/MLB-2760904047-quadro-rob-gundam-astray-red-v1a-_JM',
+          catalogText: `Altura: 42cm, Largura: 30cm<br>
+                        Quadro tamanho A3, com acabamento em acetato transparente,
+                        protegendo a figura.<br>
+                        <br>`,
           gallery: [
             { image: 'src/static/posters/gundam/pack_1/fig_5/preview.jpg' },
             { image: 'src/static/posters/gundam/pack_1/fig_5/promoBig.jpg' },
@@ -116,7 +116,7 @@ export default class {
         }, 
         {
           id: 4763,
-          active: true,
+          active: false,
           patreon: 'big boys',
           collection: 'GND P2',
           link: '/item?id=4763',
@@ -127,10 +127,10 @@ export default class {
           date: '18-02-2022',
           tag: 'medieval',
           linkBuy: 'https://www.mercadolivre.com.br/figura-de-aco-marvel-capito-america-avengers-f1342-de-hasbro-titan-hero-series/p/MLB18623137',
-          catalogText: `Altura: 14,3cm<br>
-                        Peso: gramas<br>
-                        <br>
-                        `,
+          catalogText: `Altura: 42cm, Largura: 30cm<br>
+                        Quadro tamanho A3, com acabamento em acetato transparente,
+                        protegendo a figura.<br>
+                        <br>`,
           gallery: [
             { image: 'src/static/posters/gundam/pack_2/fig_1/preview.jpg' },
             { image: 'src/static/posters/gundam/pack_2/fig_1/promoBig.jpg' },
@@ -139,7 +139,7 @@ export default class {
 
         {
           id: 4764,
-          active: true,
+          active: false,
           patreon: 'big boys',
           collection: 'GND P2',
           link: '/item?id=4764',
@@ -150,10 +150,10 @@ export default class {
           date: '18-02-2022',
           tag: 'medieval',
           linkBuy: 'https://www.mercadolivre.com.br/figura-de-aco-marvel-capito-america-avengers-f1342-de-hasbro-titan-hero-series/p/MLB18623137',
-          catalogText: `Altura: 14,3cm<br>
-                        Peso: gramas<br>
-                        <br>
-                        `,
+          catalogText: `Altura: 42cm, Largura: 30cm<br>
+                        Quadro tamanho A3, com acabamento em acetato transparente,
+                        protegendo a figura.<br>
+                        <br>`,
           gallery: [
             { image: 'src/static/posters/gundam/pack_2/fig_2/preview.jpg' },
             { image: 'src/static/posters/gundam/pack_2/fig_2/promoBig.jpg' },
@@ -162,7 +162,7 @@ export default class {
 
         {
           id: 4765,
-          active: true,
+          active: false,
           patreon: 'big boys',
           collection: 'GND P2',
           link: '/item?id=4765',
@@ -173,10 +173,10 @@ export default class {
           date: '18-02-2022',
           tag: 'medieval',
           linkBuy: 'https://www.mercadolivre.com.br/figura-de-aco-marvel-capito-america-avengers-f1342-de-hasbro-titan-hero-series/p/MLB18623137',
-          catalogText: `Altura: 14,3cm<br>
-                        Peso: gramas<br>
-                        <br>
-                        `,
+          catalogText: `Altura: 42cm, Largura: 30cm<br>
+                        Quadro tamanho A3, com acabamento em acetato transparente,
+                        protegendo a figura.<br>
+                        <br>`,
           gallery: [
             { image: 'src/static/posters/gundam/pack_2/fig_3/preview.jpg' },
             { image: 'src/static/posters/gundam/pack_2/fig_3/promoBig.jpg' },
@@ -185,7 +185,7 @@ export default class {
 
         {
           id: 4766,
-          active: true,
+          active: false,
           patreon: 'big boys',
           collection: 'GND P2',
           link: '/item?id=4766',
@@ -196,10 +196,10 @@ export default class {
           date: '18-02-2022',
           tag: 'medieval',
           linkBuy: 'https://www.mercadolivre.com.br/figura-de-aco-marvel-capito-america-avengers-f1342-de-hasbro-titan-hero-series/p/MLB18623137',
-          catalogText: `Altura: 14,3cm<br>
-                        Peso: gramas<br>
-                        <br>
-                        `,
+          catalogText: `Altura: 42cm, Largura: 30cm<br>
+                        Quadro tamanho A3, com acabamento em acetato transparente,
+                        protegendo a figura.<br>
+                        <br>`,
           gallery: [
             { image: 'src/static/posters/gundam/pack_2/fig_4/preview.jpg' },
             { image: 'src/static/posters/gundam/pack_2/fig_4/promoBig.jpg' },
@@ -208,7 +208,7 @@ export default class {
 
         {
           id: 4767,
-          active: true,
+          active: false,
           patreon: 'big boys',
           collection: 'GND P2',
           link: '/item?id=4767',
@@ -219,10 +219,10 @@ export default class {
           date: '18-02-2022',
           tag: 'medieval',
           linkBuy: 'https://www.mercadolivre.com.br/figura-de-aco-marvel-capito-america-avengers-f1342-de-hasbro-titan-hero-series/p/MLB18623137',
-          catalogText: `Altura: 14,3cm<br>
-                        Peso: gramas<br>
-                        <br>
-                        `,
+          catalogText: `Altura: 42cm, Largura: 30cm<br>
+                        Quadro tamanho A3, com acabamento em acetato transparente,
+                        protegendo a figura.<br>
+                        <br>`,
           gallery: [
             { image: 'src/static/posters/gundam/pack_2/fig_5/preview.jpg' },
             { image: 'src/static/posters/gundam/pack_2/fig_5/promoBig.jpg' },

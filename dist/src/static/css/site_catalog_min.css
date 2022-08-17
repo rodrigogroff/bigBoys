@@ -38,14 +38,14 @@ footer .copyright a,footer ul li a:hover,.dropdown-menu > li > a:hover,.footer_w
 body a,body a:hover,body a:active,body a:focus,body a:visited{color:#453f4a;}
 .dropdown .caret{border-top:4px solid #ffffff!important;}
 .navbar-inverse,.modal-header,h3.widget-title,.member h3.widget-title,.title-wrapper{background-image:-webkit-linear-gradient(bottom, #d92212, #c43e2f);background-image:-moz-linear-gradient(bottom, #d92212, #c43e2f);background-image:-o-linear-gradient(bottom, #d92212, #c43e2f);background-image:linear-gradient(to top, #d92212, #c43e2f);}
-.button-small,input[type="submit"]{background:#453f4a  url(https://skywarriorthemes.com/gameaddict/wp-content/themes/gameaddict/img/menu-extra.png) top right repeat-x!important;}
-.button-small:hover,input[type="submit"]:hover{background:#f04131 url(https://skywarriorthemes.com/gameaddict/wp-content/themes/gameaddict/img/menu-extra.png) top right repeat-x!important;}
+.button-small,input[type="submit"]{background:#453f4a  url(/src/static/img/menu-extra.png) top right repeat-x!important;}
+.button-small:hover,input[type="submit"]:hover{background:#f04131 url(/src/static/img/menu-extra.png) top right repeat-x!important;}
 .topbar-login{background-color:#f04131;}
 .topbar-login:hover{background-color:#453f4a;}
 input[type="text"]:focus,input[type="password"]:focus,input[type="search"]:focus{border-color:#eb2d1c;}
 .modal-header h3,h3.widget-title,.footer_widget h3,.member h3 a{color:#ffffff;}
 body .normal-page{background:-webkit-radial-gradient(top, #5e1d1d, #25171f, #14151f);background:radial-gradient(at top, #5e1d1d, #25171f, #14151f);}
-header,body{background-attachment:fixed!important;background:url(https://skywarriorthemes.com/gameaddict/wp-content/themes/gameaddict/img/header.jpg) no-repeat center top!important;}
+header,body{background-attachment:fixed!important;background:url(/src/static/img/header.jpg) no-repeat center top!important;}
 footer .copyright p{color:#494b65!important;}
 footer .copyright{background:url(https://skywarriorthemes.com/gameaddict/clan-members/) no-repeat center top!important;}
 /*! CSS Used from: https://skywarriorthemes.com/gameaddict/wp-content/themes/gameaddict/css/main.css?ver=20180902 ; media=all */
@@ -64,8 +64,8 @@ a:hover,footer .copyright .social a{color:#666;text-decoration:none;transition:a
 .modal-content{width:40%;margin:0 auto;}
 #myModalL .modal-content,#myModalR .modal-content{width:337px;}
 .modal-header{padding:0!important;width:100%;margin:0 auto;border-top-left-radius:5px;border-top-right-radius:5px;}
-.modal-header h3{margin:0;padding:15px;background:url(https://skywarriorthemes.com/gameaddict/wp-content/themes/gameaddict/img/widgetback.png) top right no-repeat;font-size:18px;}
-#myModalR .modal-header h3{margin:0;padding:15px;background:url(https://skywarriorthemes.com/gameaddict/wp-content/themes/gameaddict/img/reviewslash.png) top right no-repeat;background-color:#000;}
+.modal-header h3{margin:0;padding:15px;background:url(/src/static/img/widgetback.png) top right no-repeat;font-size:18px;}
+#myModalR .modal-header h3{margin:0;padding:15px;background:url(/src/static/img/reviewslash.png) top right no-repeat;background-color:#000;}
 .modal-body{background-color:#fff;width:100%;margin:0 auto;border-bottom-left-radius:5px;border-bottom-right-radius:5px;}
 .modal-body .username_input input,.modal-body .password_input input,.modal-body .forgot-pass-email input,#LoginWithAjax_Register p label input{width:100%;margin-bottom:10px;outline:none!important;box-shadow:none!important;border:1px solid #ddd;padding:15px;color:#333;}
 #LoginWithAjax_Register p label input{margin-bottom:0px;}
@@ -94,10 +94,10 @@ body .logo.container{padding:15px 0px 15px 0px;padding-left:0px;padding-right:0p
 button{transition:all 0.35s ease-in-out;-moz-transition:all 0.35s ease-in-out;-webkit-transition:all 0.35s ease-in-out;-o-transition:all 0.35s ease-in-out;border:1px solid transparent!important;}
 .button-small:hover,input[type="submit"]:hover{color:#fff;}
 .button-small,input[type="submit"]{font-size:13px;padding:7px 25px 8px 25px!important;}
-header{background:url(https://skywarriorthemes.com/gameaddict/wp-content/themes/gameaddict/img/header.jpg) top center no-repeat;background-attachment:scroll!important;background-size:cover!important;}
+header{background:url(/src/static/img/header.jpg) top center no-repeat;background-attachment:scroll!important;background-size:cover!important;}
 .topbar{position:relative;z-index:3;min-height:60px;margin-top:-1px;}
 .topbar-login.btn{width:94px;border:none!important;vertical-align:initial;padding:0;border-radius:0;}
-.topbar-login a{color:#fffefe!important;padding:17px 17px 13px 15px;border-bottom:5px solid rgba(0,0,0,.3);margin-top:-1px;border-top:none;display:block;background:url(https://skywarriorthemes.com/gameaddict/wp-content/themes/gameaddict/img/widgetback.png) 50% -15% no-repeat;font-weight:normal;}
+.topbar-login a{color:#fffefe!important;padding:17px 17px 13px 15px;border-bottom:5px solid rgba(0,0,0,.3);margin-top:-1px;border-top:none;display:block;background:url(/src/static/img/widgetback.png) 50% -15% no-repeat;font-weight:normal;}
 .topbar-login i{margin-right:5px;font-size:16px;}
 .social{text-align:left;margin:20px 0;}
 .login{text-align:right;margin:0;padding:0;}
@@ -108,13 +108,13 @@ header{background:url(https://skywarriorthemes.com/gameaddict/wp-content/themes/
 .navbar .nav li:hover{background:transparent;}
 .navbar .nav li.current_page_item a,.navbar .nav li.current-menu-parent a{opacity:1;}
 .navbar-inverse .nav > li > a{padding:23px 20px 22px 20px;display:block;margin-top:0px;opacity:1;color:white;background:transparent;position:relative;text-transform:capitalize;font-size:14px;font-weight:bold;}
-.navbar-inner{height:70px;-webkit-transition:linear .3s;-moz-transition:linear .3s;-ms-transition:linear .3s;-o-transition:linear .3s;transition:linear .3s;background:url(https://skywarriorthemes.com/gameaddict/wp-content/themes/gameaddict/img/menu-extra.png) top right repeat-x;-webkit-border-radius:4px;-moz-border-radius:4px;border-radius:4px;-webkit-box-shadow:0 2px 8px rgba(0,0,0,.75), inset 0 -5px rgba(0,0,0,.26);-moz-box-shadow:0 2px 8px rgba(0,0,0,.75), inset 0 -5px rgba(0,0,0,.26);box-shadow:0 2px 8px rgba(0,0,0,.75), inset 0 -5px rgba(0,0,0,.26);}
+.navbar-inner{height:70px;-webkit-transition:linear .3s;-moz-transition:linear .3s;-ms-transition:linear .3s;-o-transition:linear .3s;transition:linear .3s;background:url(/src/static//img/menu-extra.png) top right repeat-x;-webkit-border-radius:4px;-moz-border-radius:4px;border-radius:4px;-webkit-box-shadow:0 2px 8px rgba(0,0,0,.75), inset 0 -5px rgba(0,0,0,.26);-moz-box-shadow:0 2px 8px rgba(0,0,0,.75), inset 0 -5px rgba(0,0,0,.26);box-shadow:0 2px 8px rgba(0,0,0,.75), inset 0 -5px rgba(0,0,0,.26);}
 .dropdown .caret{border:0px!important;display:none;width:auto;height:auto;line-height:normal;vertical-align:baseline;background-image:none;background-position:0% 0%;background-repeat:repeat;margin-top:0;font-family:Font Awesome\ 5 Free;font-weight:700;font-style:normal;text-decoration:inherit;-webkit-font-smoothing:antialiased;font-size:11px;margin-left:5px;}
 .dropdown .caret:before{content:"\f067";}
 .title_wrapper{clear:both;z-index:0!important;position:relative;}
 .title_wrapper .breadcrumbs{text-align:left;color:#eeeeee;margin-top:10px;margin-right:14px;margin-bottom:20px;font-size:13px;font-weight:normal;}
 footer{width:100%;position:relative;z-index:1;background:#080e14;}
-footer .copyright{width:100%;background:url('https://skywarriorthemes.com/gameaddict/wp-content/themes/gameaddict/img/copyback.png') left top no-repeat;}
+footer .copyright{width:100%;background:url('/src/static/img/copyback.png') left top no-repeat;}
 footer .copyright p{margin:23px 0;font-size:13px;color:#494b65;float:left;font-family:Arial;}
 footer .copyright a{font-weight:normal;}
 footer .copyright .social{float:right;}
@@ -155,7 +155,7 @@ footer ul li a{font-weight:bold;color:#fff!important;font-size:18px;text-decorat
 .member h3.widget-title{position:absolute;top:30px;left:-10px;z-index:11;font-size:16px;width:auto;padding:5px 20px 5px 10px;}
 .member h3.widget-title a{position:relative;z-index:2;}
 .member h3.widget-title:before{top:3px;position:relative;}
-.member h3.widget-title:after{content:'';width:100%;height:100%;position:absolute;top:0px;left:0px;z-index:1;background:url(https://skywarriorthemes.com/gameaddict/wp-content/themes/gameaddict/img/widgetback.png) top left no-repeat;}
+.member h3.widget-title:after{content:'';width:100%;height:100%;position:absolute;top:0px;left:0px;z-index:1;background:url(/src/static//img/widgetback.png) top left no-repeat;}
 .member .content{padding:10%;position:absolute;top:75px;text-align:left;left:50px;width:100%;opacity:0;color:#fff;z-index:11;}
 .member:hover > .content{opacity:1;left:0px;}
 .member:hover > h3{padding-left:20px;}
@@ -165,9 +165,9 @@ footer ul li a{font-weight:bold;color:#fff!important;font-size:18px;text-decorat
 html,body{height:auto;}
 }
 #toTop{z-index:22222!important;}
-h3.widget-title{position:relative;margin-top:0px;margin-left:0;line-height:40px;margin-bottom:0px;padding:12px 30px 9px 13px;font-size:20px;font-weight:bold;background:url(https://skywarriorthemes.com/gameaddict/wp-content/themes/gameaddict/img/widgetback.png) top right no-repeat;border:1px solid rgba(0,0,0,.8);border-bottom:5px solid rgba(0,0,0,.3);float:none;text-align:left;border-radius:0;text-transform:uppercase;}
-h3.widget-title:before{content:url(https://skywarriorthemes.com/gameaddict/wp-content/themes/gameaddict/img/widgetarrows.png);vertical-align:sub;margin-right:10px;line-height:0;}
-.footer_widget h3:before{content:url(https://skywarriorthemes.com/gameaddict/wp-content/themes/gameaddict/img/footerarrow.png);}
+h3.widget-title{position:relative;margin-top:0px;margin-left:0;line-height:40px;margin-bottom:0px;padding:12px 30px 9px 13px;font-size:20px;font-weight:bold;background:url(/src/static//img/widgetback.png) top right no-repeat;border:1px solid rgba(0,0,0,.8);border-bottom:5px solid rgba(0,0,0,.3);float:none;text-align:left;border-radius:0;text-transform:uppercase;}
+h3.widget-title:before{content:url(/src/static/img/widgetarrows.png);vertical-align:sub;margin-right:10px;line-height:0;}
+.footer_widget h3:before{content:url(/src/static/img/footerarrow.png);}
 .wprojects img{display:block;position:relative;float:left;background:#fff;border:0px;width:100%;transition:all 0.35s ease-in-out;-moz-transition:all 0.35s ease-in-out;-webkit-transition:all 0.35s ease-in-out;-o-transition:all 0.35s ease-in-out;}
 .footer_widget .wprojects img{width:33.3%;}
 .wprojects img:hover{opacity:0.75;}
@@ -472,7 +472,7 @@ a.bbp-forum-title{font-size:16px;font-weight:bold;}
 }
 /*! CSS Used from: https://skywarriorthemes.com/gameaddict/wp-content/themes/gameaddict/css/ui.totop.css?ver=20180901 ; media=all */
 @media all{
-#toTop{display:none;text-decoration:none;position:fixed;bottom:20px;right:40px;overflow:hidden;z-index:10000;height:35px;width:35px;border:none;text-indent:100%;transition:all 0.35s linear;-moz-transition:all 0.35s linear;-webkit-transition:all 0.35s linear;-o-transition:all 0.35s linear;opacity:0.5;-moz-opacity:0.5;filter:alpha(opacity=0.5);color:#191919;background:url(https://skywarriorthemes.com/gameaddict/wp-content/themes/gameaddict/img/backup.png) no-repeat top left #191919;}
+#toTop{display:none;text-decoration:none;position:fixed;bottom:20px;right:40px;overflow:hidden;z-index:10000;height:35px;width:35px;border:none;text-indent:100%;transition:all 0.35s linear;-moz-transition:all 0.35s linear;-webkit-transition:all 0.35s linear;-o-transition:all 0.35s linear;opacity:0.5;-moz-opacity:0.5;filter:alpha(opacity=0.5);color:#191919;background:url(/src/static/img/backup.png) no-repeat top left #191919;}
 #toTop:hover{opacity:0.75;-moz-opacity:0.75;filter:alpha(opacity=0.75);}
 #toTopHover{opacity:0.5;-moz-opacity:0.5;filter:alpha(opacity=0.5);}
 #toTop:active,#toTop:focus{outline:none;}
@@ -827,11 +827,11 @@ img.wp-smiley,
 
 		.clanwarlist-page>li.odd,
 		.bbp-body>ul.odd {
-			background: #cecece url(https://skywarriorthemes.com/gameaddict/wp-content/themes/gameaddict/img/matches-shape.png) top right no-repeat;
+			background: #cecece url(/src/static/img/matches-shape.png) top right no-repeat;
 		}
 
 		.clanwarlist-page>li {
-			background: url(https://skywarriorthemes.com/gameaddict/wp-content/themes/gameaddict/img/matches-shape.png ) top right no-repeat;
+			background: url(/src/static/img/matches-shape.png ) top right no-repeat;
 		}
 
 		.owl-buttons .owl-next:hover:before,
@@ -841,15 +841,15 @@ img.wp-smiley,
 
 		.clanwarlist-page .upcoming,
 		.clanwar-list .scores-wrapper .draw {
-			background: #fffc24 url(https://skywarriorthemes.com/gameaddict/wp-content/themes/gameaddict/img/matches-shape.png) -3% 43% no-repeat;
+			background: #fffc24 url(/src/static/img/matches-shape.png) -3% 43% no-repeat;
 		}
 
 		.clanwarlist-page .scores-wrapper .win {
-			background: #a5d808 url(https://skywarriorthemes.com/gameaddict/wp-content/themes/gameaddict/img/matches-shape.png ) -3% 43% no-repeat;
+			background: #a5d808 url(/src/static/img/matches-shape.png ) -3% 43% no-repeat;
 		}
 
 		.clanwarlist-page .scores-wrapper .loose {
-			background: #ff3000 url(https://skywarriorthemes.com/gameaddict/wp-content/themes/gameaddict/img/matches-shape.png) -3% 43% no-repeat;
+			background: #ff3000 url(/src/static/img/matches-shape.png) -3% 43% no-repeat;
 		}
 
 		.portfolio .row .span8 .plove a:hover,
@@ -981,7 +981,7 @@ img.wp-smiley,
 		button[type="submit"],
 		input[type="submit"],
 		body .btninvert:hover {
-			background: #453f4a url(https://skywarriorthemes.com/gameaddict/wp-content/themes/gameaddict/img/menu-extra.png) top right repeat-x !important;
+			background: #453f4a url(/src/static/img/menu-extra.png) top right repeat-x !important;
 		}
 
 		body .btninvert,
@@ -997,7 +997,7 @@ img.wp-smiley,
 		button[type="submit"]:hover,
 		.pricetable .pricetable-col.featured .pt-top,
 		.pricetable .pricetable-featured .pt-top {
-			background: #f04131 url(https://skywarriorthemes.com/gameaddict/wp-content/themes/gameaddict/img/menu-extra.png) top right repeat-x !important;
+			background: #f04131 url(/src/static/img/menu-extra.png) top right repeat-x !important;
 		}
 
 

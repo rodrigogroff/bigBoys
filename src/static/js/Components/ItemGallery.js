@@ -66,6 +66,8 @@ export default class {
               <div class="wcontainer psummary" style='height:450px'>
                 <h4 style='color:black'><strong>Ficha técnica</strong></h4>
                 <p>${obj.catalogText}</p>
+                <br><br>
+                <a target="_blank" href="${obj.linkBuy}" class="button-medium">Comprar no mercado livre</a>
               </div>
               <br>              
                 
@@ -74,7 +76,5 @@ export default class {
       <br><br>
   </div>   
               `
-
-              //<a target="_blank" href="${obj.linkBuy}" class="button-medium">Comprar no mercado livre</a>
     }
 }
