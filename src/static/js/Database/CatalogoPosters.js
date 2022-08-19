@@ -23,8 +23,8 @@ export default class {
                         Quadro tamanho A3, com acabamento em acetato transparente,
                         protegendo a figura.<br>
                         <br>`,
-          gallery: [{ image: 'src/static/posters/gundam/pack_1/fig_1/preview.jpg' },
-          { image: 'src/static/posters/gundam/pack_1/fig_1/promoBig.jpg' },
+          gallery: [{ image: 'src/static/posters/gundam/pack_1/fig_1/preview2.jpg' },
+                    { image: 'src/static/posters/gundam/pack_1/fig_1/promoBig.jpg' },
           ],
         },        
         {
@@ -44,7 +44,7 @@ export default class {
                         Quadro tamanho A3, com acabamento em acetato transparente,
                         protegendo a figura.<br>
                         <br>`,
-          gallery: [{ image: 'src/static/posters/gundam/pack_1/fig_2/preview.jpg' },
+          gallery: [{ image: 'src/static/posters/gundam/pack_1/fig_2/preview2.jpg' },
           { image: 'src/static/posters/gundam/pack_1/fig_2/promoBig.jpg' },
           ],
         },        
@@ -66,7 +66,7 @@ export default class {
                         protegendo a figura.<br>
                         <br>`,
           gallery: [
-            { image: 'src/static/posters/gundam/pack_1/fig_3/preview.jpg' },
+            { image: 'src/static/posters/gundam/pack_1/fig_3/preview2.jpg' },
             { image: 'src/static/posters/gundam/pack_1/fig_3/promoBig.jpg' },
           ],
         }, 
@@ -88,7 +88,7 @@ export default class {
                         protegendo a figura.<br>
                         <br>`,
           gallery: [
-            { image: 'src/static/posters/gundam/pack_1/fig_4/preview.jpg' },
+            { image: 'src/static/posters/gundam/pack_1/fig_4/preview2.jpg' },
             { image: 'src/static/posters/gundam/pack_1/fig_4/promoBig.jpg' },
           ],
         }, 
@@ -110,7 +110,7 @@ export default class {
                         protegendo a figura.<br>
                         <br>`,
           gallery: [
-            { image: 'src/static/posters/gundam/pack_1/fig_5/preview.jpg' },
+            { image: 'src/static/posters/gundam/pack_1/fig_5/preview2.jpg' },
             { image: 'src/static/posters/gundam/pack_1/fig_5/promoBig.jpg' },
           ],
         }, 
@@ -132,7 +132,7 @@ export default class {
                         protegendo a figura.<br>
                         <br>`,
           gallery: [
-            { image: 'src/static/posters/gundam/pack_2/fig_1/preview.jpg' },
+            { image: 'src/static/posters/gundam/pack_2/fig_1/preview2.jpg' },
             { image: 'src/static/posters/gundam/pack_2/fig_1/promoBig.jpg' },
           ],
         }, 
@@ -155,7 +155,7 @@ export default class {
                         protegendo a figura.<br>
                         <br>`,
           gallery: [
-            { image: 'src/static/posters/gundam/pack_2/fig_2/preview.jpg' },
+            { image: 'src/static/posters/gundam/pack_2/fig_2/preview2.jpg' },
             { image: 'src/static/posters/gundam/pack_2/fig_2/promoBig.jpg' },
           ],
         }, 
@@ -178,7 +178,7 @@ export default class {
                         protegendo a figura.<br>
                         <br>`,
           gallery: [
-            { image: 'src/static/posters/gundam/pack_2/fig_3/preview.jpg' },
+            { image: 'src/static/posters/gundam/pack_2/fig_3/preview2.jpg' },
             { image: 'src/static/posters/gundam/pack_2/fig_3/promoBig.jpg' },
           ],
         }, 
@@ -201,7 +201,7 @@ export default class {
                         protegendo a figura.<br>
                         <br>`,
           gallery: [
-            { image: 'src/static/posters/gundam/pack_2/fig_4/preview.jpg' },
+            { image: 'src/static/posters/gundam/pack_2/fig_4/preview2.jpg' },
             { image: 'src/static/posters/gundam/pack_2/fig_4/promoBig.jpg' },
           ],
         }, 
@@ -224,7 +224,7 @@ export default class {
                         protegendo a figura.<br>
                         <br>`,
           gallery: [
-            { image: 'src/static/posters/gundam/pack_2/fig_5/preview.jpg' },
+            { image: 'src/static/posters/gundam/pack_2/fig_5/preview2.jpg' },
             { image: 'src/static/posters/gundam/pack_2/fig_5/promoBig.jpg' },
           ],
         }, 

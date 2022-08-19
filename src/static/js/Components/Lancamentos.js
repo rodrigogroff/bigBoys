@@ -21,7 +21,7 @@ export default class {
         continue;
       fullHtml +=  `<div style='margin-left:8px'>
                       <a class="car_image ${liItem}" href="${m.link}">
-                        <img alt="image" src="${m.image}" />
+                        <img alt="image" src="${m.image}" width='292px' height='280px' />
                       </a>
                       <style> .car_image.${liItem}:after { background-color: rgba(0, 0, 0, 0.3) } </style>
                       <a href="" class="ncategory" style="background-color: red !important"> ${m.patreon} </a>
