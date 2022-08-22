@@ -39,8 +39,8 @@ export default class {
         return `<div class="container-fluid portfolio">
       <div class="container">
           <div class="col-md-8 col-lg-8">
-              <div class="title-wrapper">                  
-                  <h3 class="plove wcontainer widget-title">${obj.text}<a href="#"></h3>                  
+              <div class="title-wrapper">
+                <h3 style='padding-top:10px;padding-left:12px;padding-bottom:12px'>${obj.text}</h3>                
               </div>
               <div id="myCarousel">
                   <div id="bootstrap-carousel" class="carousel slide ">${carousel}</div>
@@ -57,7 +57,7 @@ export default class {
               </div>              
           </div>
           <div class="col-md-4 col-lg-4">
-              <div class="wcontainer pinfo">
+              <div class="wcontainer pinfo" style='margin-top:20px'>
                 <span style='text-size:small'>Modelo criado por:</span><br>
                 <h4 style='color:black'>${obj.patreon}</h4>
                 <span style='text-size:small'>Data em nosso catálogo:</span><br>
