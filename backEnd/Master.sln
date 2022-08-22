@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32630.192
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Master", "Master.csproj", "{F8A5D730-B45F-4811-B2AD-7090ABA7FB64}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Develop|Any CPU = Develop|Any CPU
+		Homolog|Any CPU = Homolog|Any CPU
+		MassLoad|Any CPU = MassLoad|Any CPU
+		QA|Any CPU = QA|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F8A5D730-B45F-4811-B2AD-7090ABA7FB64}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F8A5D730-B45F-4811-B2AD-7090ABA7FB64}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F8A5D730-B45F-4811-B2AD-7090ABA7FB64}.Develop|Any CPU.ActiveCfg = Develop|Any CPU
+		{F8A5D730-B45F-4811-B2AD-7090ABA7FB64}.Develop|Any CPU.Build.0 = Develop|Any CPU
+		{F8A5D730-B45F-4811-B2AD-7090ABA7FB64}.Homolog|Any CPU.ActiveCfg = Homolog|Any CPU
+		{F8A5D730-B45F-4811-B2AD-7090ABA7FB64}.Homolog|Any CPU.Build.0 = Homolog|Any CPU
+		{F8A5D730-B45F-4811-B2AD-7090ABA7FB64}.MassLoad|Any CPU.ActiveCfg = MassLoad|Any CPU
+		{F8A5D730-B45F-4811-B2AD-7090ABA7FB64}.MassLoad|Any CPU.Build.0 = MassLoad|Any CPU
+		{F8A5D730-B45F-4811-B2AD-7090ABA7FB64}.QA|Any CPU.ActiveCfg = QA|Any CPU
+		{F8A5D730-B45F-4811-B2AD-7090ABA7FB64}.QA|Any CPU.Build.0 = QA|Any CPU
+		{F8A5D730-B45F-4811-B2AD-7090ABA7FB64}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F8A5D730-B45F-4811-B2AD-7090ABA7FB64}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9871C8B6-929B-4472-B64A-2B5C7929B8FD}
+	EndGlobalSection
+EndGlobal
