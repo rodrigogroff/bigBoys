@@ -1,32 +1,52 @@
 ﻿using Master.Entity.Database;
-using Master.Entity.Domain;
 using Master.Repository;
+using System;
 
 namespace Master.Service.Domain.Auth
 {
-    public class SrvAuthMagicSmsList : SrvBaseService
+    public class SrvAuthRegister : SrvBaseService
     {
         public IUserRepo userRepo = new UserRepo();
-        public IUserRegisterCodeRepo userRegisterCodeRepo = new UserRegisterCodeRepo();
 
-        public bool List(string conn, string mobile, out DtoAuthSmsListRet ret)
+        public bool Register(string conn, string name, string email, string mobile, int expMinutes)
         {
-            ret = new DtoAuthSmsListRet();
+            if (string.IsNullOrEmpty(conn))
+                return ReportError("Connection information failed");
 
-            User user;
+            if (string.IsNullOrEmpty(name))
+                return ReportError("Name information failed");
 
-            if (!userRepo.GetUserByMobile(conn, mobile, out user))
-                return false;
+            if (string.IsNullOrEmpty(email))
+                return ReportError("Email information failed");
 
-            UserRegisterCode retCode;
+            if (string.IsNullOrEmpty(mobile))
+                return ReportError("Mobile information failed");
 
-            if (!userRegisterCodeRepo.GetByFkUser(conn, user.id, out retCode ))
-                return false;
+            if (mobile.Length < 11)
+                return ReportError("Mobile information failed");
 
-            if (retCode == null)
-                return false;
+            if (!IsNumber(mobile))
+                return ReportError("Mobile information failed");
 
-            ret.codes.Add(retCode.stCode);
+            User usr_test;
+
+            if (!userRepo.GetUserByMobile(conn, mobile, out usr_test))
+                return ReportError("Mobile already used");
+
+            var mdl_user = new User
+            {
+                bActive = true,
+                dtJoin = DateTime.Now,
+                dtLastLogin = null,
+                stEmail = email,
+                stName = name,
+                stMobile = mobile,                
+            };
+
+            mdl_user.id = userRepo.Insert(conn, mdl_user);
+
+            if (mdl_user.id == 0)
+                return ReportError("Error 0xE1");
 
             return true;
         }

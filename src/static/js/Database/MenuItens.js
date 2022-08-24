@@ -6,23 +6,31 @@ export default class {
       return {
         items: [ 
           { 
-            label: 'Quadros',
-            link: '/catalog_poster',
+            label: 'Catálogo',
+            link: '',
             subs: [
               {
-                label: 'Catálogo',
+                label: 'Quadros',
                 link: '/catalog_poster',
-              },              
+              },
+              {
+                label: 'Miniaturas',
+                link: '/catalog',
+              },
             ]
           },
           { 
-            label: 'Miniaturas',
-            link: '/catalog',
+            label: 'Empresa',
+            link: '',
             subs: [
               {
-                label: 'Catálogo',
-                link: '/catalog',
-              },              
+                label: 'Produção',
+                link: '/production',
+              },
+              {
+                label: 'Dúvidas',
+                link: '/faq',
+              },
             ]
           },          
           /*

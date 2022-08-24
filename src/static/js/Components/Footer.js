@@ -28,5 +28,12 @@ export default class {
 }
 
 
+/*
+	<link rel="stylesheet" href="https://cdn.positus.global/production/resources/robbu/whatsapp-button/whatsapp-button.css">
+					<a id="robbu-whatsapp-button" target="_blank" href="https://api.whatsapp.com/send?phone=5551995152432&text=Big%20Boys%20Store">
+					<div class="rwb-tooltip">Comprar pelo whatsapp</div>
+					<img src="https://cdn.positus.global/production/resources/robbu/whatsapp-button/whatsapp-icon.svg">
+					</a>
+					*/
 
 

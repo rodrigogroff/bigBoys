@@ -49,18 +49,18 @@ export default class {
                   </script>
               </div>
           </div>
-          <div class="col-md-4 col-lg-4">
+          <div class="col-md-4 col-lg-4">              
               <div class="wcontainer pinfo" style='margin-top:20px'>
                 <span style='text-size:small'>Criado por:</span><br>
                 <h4 style='color:black'>${obj.patreon}</h4>
-                <span style='text-size:small'>Data em nosso catálogo:</span><br>
-                <h4 style='color:black'>${obj.date}</h4>                
+                <span style='text-size:small'>Preço</span><br>
+                <h4 style='color:green'>
+                    <a style='text-size:large;color:green' href='https://api.whatsapp.com/send?phone=5551995152432&text=Big%20Boys%20Store - Venda PIX Item ${obj.id}'>${obj.price}</a><br>
+                </h4>
+                <br>                
+                <span style='text-size:small'>Sobre o item</span><br>
+                <h4 style='color:black'>${obj.catalogText}</h4>
               </div>
-              <div class="wcontainer psummary" style='height:450px'>
-                <h4 style='color:black'><strong>Ficha técnica</strong></h4>
-                <p>${obj.catalogText}</p>
-              </div>
-              <br>
           </div>
       </div>
       <br><br>

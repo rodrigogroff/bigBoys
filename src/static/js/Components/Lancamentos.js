@@ -19,33 +19,21 @@ export default class {
       var m = db.items[a];
       if (m.active == false)
         continue;
-
       if (m.collection == filter)
       {
         fullHtml +=  `<div style='margin-left:8px'>
-                      <a class="car_image ${liItem}" href="${m.link}"><img alt="image" src="${m.image}" style='height:400px' /></a>
+                      <a class="car_image ${liItem}" href="${m.link}"><img alt="image" src="${m.imageBig}" /></a>
                       <style> .car_image.${liItem}:after { background-color: rgba(0, 0, 0, 0.3) } </style>                      
                     </div>`;
       }
       else if (filter == null || filter == undefined)
       {        
         fullHtml +=  `<div style='margin-left:8px'>
-                      <a class="car_image ${liItem}" href="${m.link}"><img alt="image" src="${m.image}" style='height:400px' /></a>
+                      <a class="car_image ${liItem}" href="${m.link}"><img alt="image" src="${m.imageBig}" /></a>
                       <style> .car_image.${liItem}:after { background-color: rgba(0, 0, 0, 0.3) } </style>                      
                     </div>`;
       }
 	}
-
-  /*
-  <a href="" class="ncategory" style="background-color: red !important"> ${m.patreon} </a>
-                        <div class="car_title">
-                          <a class="car_inner_title" href="${m.link}">${m.text}</a>
-                          <p class="carousel-text">${m.subtext}</p>
-                          <p class="post-meta"><span>${m.date}</span></p>
-                        </div>
-                      </a>
-                      */
-
     fullHtml +=  `</div></div>`
     
     return fullHtml;

@@ -9,7 +9,6 @@ namespace Master.Entity.Database
         public string stName { get; set; }
         public string stEmail { get; set; }
         public string stMobile { get; set; }
-        public string stPassword { get; set; }
         
         public bool? bActive { get; set; }
         
