@@ -20,11 +20,7 @@ namespace Api.Master.Controllers
 
             var srv = new SrvAuthRegister();
 
-            if (!srv.Register(network.pgConnection,
-                                obj.name,
-                                obj.email,
-                                obj.mobile,                                
-                                network.codeExpirationMinutes))
+            if (!srv.Register(network.pgConnection, obj.name, obj.email, obj.mobile))
             {
                 return BadRequest(srv.Error);
             }
@@ -45,10 +41,7 @@ namespace Api.Master.Controllers
 
             DtoUser usr;
 
-            if (!srv.Login(network.pgConnection,
-                            obj.email,
-                            obj.mobile,
-                            out usr))
+            if (!srv.Login(network.pgConnection, obj.email, obj.mobile, out usr))
             {
                 return BadRequest(srv.Error);
             }

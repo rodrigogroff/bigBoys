@@ -14,5 +14,8 @@ namespace Master.Entity.Database
         public DateTime? dtMail { get; set; }
         public long? nuSaleStage { get; set; }
         public bool? bActive { get; set; }
+        public long? nuDay { get; set; }
+        public long? nuMonth { get; set; }
+        public long? nuYear { get; set; }
     }
 }

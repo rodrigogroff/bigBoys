@@ -1,5 +1,5 @@
 
-import Controller from "./CtrlCatalogPoster";
+import Controller from "./CtrlProduction";
 
 class AppRouter {
   constructor(url) {

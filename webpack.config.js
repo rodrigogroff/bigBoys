@@ -17,6 +17,7 @@ module.exports = {
     '/src/static/CatalogPoster': './src/static/js/pages/CatalogPoster/router.js',    
     '/src/static/Item': './src/static/js/pages/Item/router.js',    
     '/src/static/FAQ': './src/static/js/pages/FAQ/router.js',    
+    '/src/static/Production': './src/static/js/pages/Production/router.js',    
   },
   output: {
     globalObject: "this",

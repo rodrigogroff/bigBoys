@@ -1,5 +1,5 @@
 
-import ViewCatalogPoster from "./Views/ViewCatalogPoster";
+import ViewProduction from "./Views/ViewProduction";
 
 export default class {
   constructor(params) {
@@ -7,6 +7,6 @@ export default class {
   }
 
   getHtml() {
-    return ViewCatalogPoster.getHtml();
+    return ViewProduction.getHtml();
   }
 }

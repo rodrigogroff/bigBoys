@@ -8,7 +8,7 @@ namespace Master.Service.Domain.Auth
     {
         public IUserRepo userRepo = new UserRepo();
 
-        public bool Register(string conn, string name, string email, string mobile, int expMinutes)
+        public bool Register(string conn, string name, string email, string mobile)
         {
             if (string.IsNullOrEmpty(conn))
                 return ReportError("Connection information failed");

@@ -19,3 +19,6 @@ ALTER TABLE public."UserSale" ADD COLUMN if not exists "dtProduction" timestamp 
 ALTER TABLE public."UserSale" ADD COLUMN if not exists "dtMail" timestamp without time zone;
 ALTER TABLE public."UserSale" ADD COLUMN if not exists "nuSaleStage" int;
 ALTER TABLE public."UserSale" ADD COLUMN if not exists "bActive" boolean;
+ALTER TABLE public."UserSale" ADD COLUMN if not exists "nuDay" int;
+ALTER TABLE public."UserSale" ADD COLUMN if not exists "nuMonth" int;
+ALTER TABLE public."UserSale" ADD COLUMN if not exists "nuYear" int;
