@@ -7,11 +7,9 @@ import CatalogoDb from "@app/Database/CatalogoMinis";
 export default class {
   static getHtml() {
     document.getElementById('myAppMenu').innerHTML = Menu.getHtml() 
-    document.getElementById('myAppFooter').innerHTML = Footer.getHtml() 
-    
+    document.getElementById('myAppFooter').innerHTML = Footer.getHtml()     
     var items = CatalogoDb.getAll();
     document.getElementById('myAppCatalog').innerHTML = Catalogo.getHtml(items)     
-
     return '';
   }
 }

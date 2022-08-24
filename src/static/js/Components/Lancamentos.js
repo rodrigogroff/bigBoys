@@ -5,7 +5,7 @@ export default class {
 
   static getHtml(filter) {
     
-    var db = Catalogo.getAll(filter);
+    var db = Catalogo.getAll();
 
     var fullHtml = `<div class="wpb_wrapper">
                     <div id="owl-carousel-lancs" class="owl-carousel" 
@@ -19,20 +19,27 @@ export default class {
       var m = db.items[a];
       if (m.active == false)
         continue;
-      fullHtml +=  `<div style='margin-left:8px'>
-                      <a class="car_image ${liItem}" href="${m.link}">
-                        <img alt="image" src="${m.image}" width='292px' height='280px' />
-                      </a>
-                      <style> .car_image.${liItem}:after { background-color: rgba(0, 0, 0, 0.3) } </style>
-                      <a href="" class="ncategory" style="background-color: red !important"> ${m.patreon} </a>
+      if (m.collection == filter)
+        fullHtml +=  `<div style='margin-left:8px'>
+                      <a class="car_image ${liItem}" href="${m.link}"><img alt="image" src="${m.image}" style='height:420px' /></a>
+                      <style> .car_image.${liItem}:after { background-color: rgba(0, 0, 0, 0.3) } </style>                      
+                    </div>`;
+      else
+        fullHtml +=  `<div style='margin-left:8px'>
+                      <a class="car_image ${liItem}" href="${m.link}"><img alt="image" src="${m.image}" style='height:420px' /></a>
+                      <style> .car_image.${liItem}:after { background-color: rgba(0, 0, 0, 0.3) } </style>                      
+                    </div>`;
+	}
+
+  /*
+  <a href="" class="ncategory" style="background-color: red !important"> ${m.patreon} </a>
                         <div class="car_title">
                           <a class="car_inner_title" href="${m.link}">${m.text}</a>
                           <p class="carousel-text">${m.subtext}</p>
                           <p class="post-meta"><span>${m.date}</span></p>
                         </div>
                       </a>
-                    </div>`;
-	}
+                      */
 
     fullHtml +=  `</div></div>`
     

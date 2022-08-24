@@ -1,9 +1,6 @@
-//https://www.google.com/search?q=random+de+numero&client=firefox-b-d&sxsrf=APq-WBvNfWSQP7AxCZv00kqZFR_zDwtOoQ%3A1644892689036&ei=ERILYv7xAYfM5OUPpJiymAQ&ved=0ahUKEwi-vrHj1oD2AhUHJrkGHSSMDEMQ4dUDCA0&uact=5&oq=random+de+numero&gs_lcp=Cgdnd3Mtd2l6EAMyBQgAEIAEMgYIABAWEB4yBggAEBYQHjIGCAAQFhAeMggIABAWEAoQHjIICAAQFhAKEB4yCAgAEBYQChAeMgYIABAWEB4yBggAEBYQHjIGCAAQFhAeOgcIABBHELADOgcIABCwAxBDOgQIIxAnOgQIABBDOgsIABCABBCxAxCDAToOCC4QgAQQsQMQxwEQowI6EQguEIAEELEDEIMBEMcBEKMCOgsILhCABBCxAxCDAToRCC4QgAQQsQMQgwEQxwEQ0QM6CAgAEIAEELEDOg4ILhCABBCxAxDHARDRAzoICC4QgAQQsQM6CAgAELEDEIMBOgUIABDLAToICC4QgAQQ1AJKBAhBGABKBAhGGABQzgxYzx1gmihoAXABeAGAAfEBiAHDFJIBBjAuMTMuM5gBAKABAcgBCsABAQ&sclient=gws-wiz
 
 export default class {
-
   static getAll(filter, id) {
-
     var catalog = {
       items: [
         {
@@ -14,16 +11,14 @@ export default class {
           link: '/item?id=4758',
           image: 'src/static/posters/gundam/pack_1/fig_1/promo.jpg',
           imageBig: 'src/static/posters/gundam/pack_1/fig_1/promoBig.jpg',
-          text: 'Barbatos Lupus A',
-          subtext: '',
+          text: '', subtext: '',
           date: '18-02-2022',
-          tag: 'medieval',
-          linkBuy: 'https://produto.mercadolivre.com.br/MLB-2760849192-quadro-rob-gundam-barbatos-lupus-v1a-_JM',
+          tag: 'gundam',
           catalogText: `Altura: 42cm, Largura: 30cm<br>
                         Quadro tamanho A3, com acabamento em acetato transparente,
                         protegendo a figura.<br>
                         <br>`,
-          gallery: [{ image: 'src/static/posters/gundam/pack_1/fig_1/preview2.jpg' },
+          gallery: [{ image: 'src/static/posters/gundam/pack_1/fig_1/preview.jpg' },
                     { image: 'src/static/posters/gundam/pack_1/fig_1/promoBig.jpg' },
           ],
         },        
@@ -35,16 +30,14 @@ export default class {
           link: '/item?id=4759',
           image: 'src/static/posters/gundam/pack_1/fig_2/promo.jpg',
           imageBig: 'src/static/posters/gundam/pack_1/fig_2/promoBig.jpg',
-          text: 'Barbatos Lupus B',
-          subtext: '',
+          text: '', subtext: '',
           date: '18-02-2022',
-          tag: 'medieval',
-          linkBuy: 'https://produto.mercadolivre.com.br/MLB-2760878754-quadro-rob-gundam-barbatos-lupus-v1b-_JM',
+          tag: 'gundam',
           catalogText: `Altura: 42cm, Largura: 30cm<br>
                         Quadro tamanho A3, com acabamento em acetato transparente,
                         protegendo a figura.<br>
                         <br>`,
-          gallery: [{ image: 'src/static/posters/gundam/pack_1/fig_2/preview2.jpg' },
+          gallery: [{ image: 'src/static/posters/gundam/pack_1/fig_2/preview.jpg' },
           { image: 'src/static/posters/gundam/pack_1/fig_2/promoBig.jpg' },
           ],
         },        
@@ -56,17 +49,15 @@ export default class {
           link: '/item?id=4760',
           image: 'src/static/posters/gundam/pack_1/fig_3/promo.jpg',
           imageBig: 'src/static/posters/gundam/pack_1/fig_3/promoBig.jpg',
-          text: 'MS 06 Zaku Custom',
-          subtext: '',
+          text: '', subtext: '',
           date: '18-02-2022',
-          tag: 'medieval',
-          linkBuy: 'https://produto.mercadolivre.com.br/MLB-2760863691-quadro-rob-gundam-zaku-v1a-_JM',
+          tag: 'gundam',
           catalogText: `Altura: 42cm, Largura: 30cm<br>
                         Quadro tamanho A3, com acabamento em acetato transparente,
                         protegendo a figura.<br>
                         <br>`,
           gallery: [
-            { image: 'src/static/posters/gundam/pack_1/fig_3/preview2.jpg' },
+            { image: 'src/static/posters/gundam/pack_1/fig_3/preview.jpg' },
             { image: 'src/static/posters/gundam/pack_1/fig_3/promoBig.jpg' },
           ],
         }, 
@@ -78,17 +69,15 @@ export default class {
           link: '/item?id=4761',
           image: 'src/static/posters/gundam/pack_1/fig_4/promo.jpg',
           imageBig: 'src/static/posters/gundam/pack_1/fig_4/promoBig.jpg',
-          text: 'Sazabi Custom',
-          subtext: '',
+          text: '', subtext: '',
           date: '18-02-2022',
-          tag: 'medieval',
-          linkBuy: 'https://produto.mercadolivre.com.br/MLB-2760885415-quadro-rob-gundam-sazabi-v1a-_JM',
+          tag: 'gundam',          
           catalogText: `Altura: 42cm, Largura: 30cm<br>
                         Quadro tamanho A3, com acabamento em acetato transparente,
                         protegendo a figura.<br>
                         <br>`,
           gallery: [
-            { image: 'src/static/posters/gundam/pack_1/fig_4/preview2.jpg' },
+            { image: 'src/static/posters/gundam/pack_1/fig_4/preview.jpg' },
             { image: 'src/static/posters/gundam/pack_1/fig_4/promoBig.jpg' },
           ],
         }, 
@@ -100,131 +89,116 @@ export default class {
           link: '/item?id=4762',
           image: 'src/static/posters/gundam/pack_1/fig_5/promo.jpg',
           imageBig: 'src/static/posters/gundam/pack_1/fig_5/promoBig.jpg',
-          text: 'Astray Red Custom',
-          subtext: '',
+          text: '', subtext: '',
           date: '18-02-2022',
-          tag: 'medieval',
-          linkBuy: 'https://produto.mercadolivre.com.br/MLB-2760904047-quadro-rob-gundam-astray-red-v1a-_JM',
+          tag: 'gundam',
           catalogText: `Altura: 42cm, Largura: 30cm<br>
                         Quadro tamanho A3, com acabamento em acetato transparente,
                         protegendo a figura.<br>
                         <br>`,
           gallery: [
-            { image: 'src/static/posters/gundam/pack_1/fig_5/preview2.jpg' },
+            { image: 'src/static/posters/gundam/pack_1/fig_5/preview.jpg' },
             { image: 'src/static/posters/gundam/pack_1/fig_5/promoBig.jpg' },
           ],
         }, 
         {
           id: 4763,
-          active: false,
+          active: true,
           patreon: 'big boys',
           collection: 'GND P2',
           link: '/item?id=4763',
           image: 'src/static/posters/gundam/pack_2/fig_1/promo.jpg',
           imageBig: 'src/static/posters/gundam/pack_2/fig_1/promoBig.jpg',
-          text: 'Astray Blue Custom',
-          subtext: '',
+          text: '', subtext: '',
           date: '18-02-2022',
-          tag: 'medieval',
-          linkBuy: 'https://www.mercadolivre.com.br/figura-de-aco-marvel-capito-america-avengers-f1342-de-hasbro-titan-hero-series/p/MLB18623137',
+          tag: 'gundam',
           catalogText: `Altura: 42cm, Largura: 30cm<br>
                         Quadro tamanho A3, com acabamento em acetato transparente,
                         protegendo a figura.<br>
                         <br>`,
           gallery: [
-            { image: 'src/static/posters/gundam/pack_2/fig_1/preview2.jpg' },
+            { image: 'src/static/posters/gundam/pack_2/fig_1/preview.jpg' },
             { image: 'src/static/posters/gundam/pack_2/fig_1/promoBig.jpg' },
           ],
-        }, 
-
+        },
         {
           id: 4764,
-          active: false,
+          active: true,
           patreon: 'big boys',
           collection: 'GND P2',
           link: '/item?id=4764',
           image: 'src/static/posters/gundam/pack_2/fig_2/promo.jpg',
           imageBig: 'src/static/posters/gundam/pack_2/fig_2/promoBig.jpg',
-          text: 'BioMech Gundam',
-          subtext: '',
+          text: '', subtext: '',
           date: '18-02-2022',
-          tag: 'medieval',
-          linkBuy: 'https://www.mercadolivre.com.br/figura-de-aco-marvel-capito-america-avengers-f1342-de-hasbro-titan-hero-series/p/MLB18623137',
+          tag: 'gundam',
           catalogText: `Altura: 42cm, Largura: 30cm<br>
                         Quadro tamanho A3, com acabamento em acetato transparente,
                         protegendo a figura.<br>
                         <br>`,
           gallery: [
-            { image: 'src/static/posters/gundam/pack_2/fig_2/preview2.jpg' },
+            { image: 'src/static/posters/gundam/pack_2/fig_2/preview.jpg' },
             { image: 'src/static/posters/gundam/pack_2/fig_2/promoBig.jpg' },
           ],
         }, 
-
         {
           id: 4765,
-          active: false,
+          active: true,
           patreon: 'big boys',
           collection: 'GND P2',
           link: '/item?id=4765',
           image: 'src/static/posters/gundam/pack_2/fig_3/promo.jpg',
           imageBig: 'src/static/posters/gundam/pack_2/fig_3/promoBig.jpg',
-          text: 'Hangar Repair',
-          subtext: '',
+          text: '', subtext: '',
           date: '18-02-2022',
-          tag: 'medieval',
-          linkBuy: 'https://www.mercadolivre.com.br/figura-de-aco-marvel-capito-america-avengers-f1342-de-hasbro-titan-hero-series/p/MLB18623137',
+          tag: 'gundam',
           catalogText: `Altura: 42cm, Largura: 30cm<br>
                         Quadro tamanho A3, com acabamento em acetato transparente,
                         protegendo a figura.<br>
                         <br>`,
           gallery: [
-            { image: 'src/static/posters/gundam/pack_2/fig_3/preview2.jpg' },
+            { image: 'src/static/posters/gundam/pack_2/fig_3/preview.jpg' },
             { image: 'src/static/posters/gundam/pack_2/fig_3/promoBig.jpg' },
           ],
         }, 
-
         {
           id: 4766,
-          active: false,
+          active: true,
           patreon: 'big boys',
           collection: 'GND P2',
           link: '/item?id=4766',
           image: 'src/static/posters/gundam/pack_2/fig_4/promo.jpg',
           imageBig: 'src/static/posters/gundam/pack_2/fig_4/promoBig.jpg',
-          text: 'Nu Gundam',
-          subtext: '',
+          text: '', subtext: '',
           date: '18-02-2022',
-          tag: 'medieval',
-          linkBuy: 'https://www.mercadolivre.com.br/figura-de-aco-marvel-capito-america-avengers-f1342-de-hasbro-titan-hero-series/p/MLB18623137',
+          tag: 'gundam',
           catalogText: `Altura: 42cm, Largura: 30cm<br>
                         Quadro tamanho A3, com acabamento em acetato transparente,
                         protegendo a figura.<br>
                         <br>`,
           gallery: [
-            { image: 'src/static/posters/gundam/pack_2/fig_4/preview2.jpg' },
+            { image: 'src/static/posters/gundam/pack_2/fig_4/preview.jpg' },
             { image: 'src/static/posters/gundam/pack_2/fig_4/promoBig.jpg' },
           ],
         }, 
 
         {
           id: 4767,
-          active: false,
+          active: true,
           patreon: 'big boys',
           collection: 'GND P2',
           link: '/item?id=4767',
           image: 'src/static/posters/gundam/pack_2/fig_5/promo.jpg',
           imageBig: 'src/static/posters/gundam/pack_2/fig_5/promoBig.jpg',
-          text: 'Fantasy Gundam',
-          subtext: '',
+          text: '', subtext: '',
           date: '18-02-2022',
-          tag: 'medieval',
-          linkBuy: 'https://www.mercadolivre.com.br/figura-de-aco-marvel-capito-america-avengers-f1342-de-hasbro-titan-hero-series/p/MLB18623137',
+          tag: 'gundam',          
           catalogText: `Altura: 42cm, Largura: 30cm<br>
                         Quadro tamanho A3, com acabamento em acetato transparente,
                         protegendo a figura.<br>
                         <br>`,
           gallery: [
-            { image: 'src/static/posters/gundam/pack_2/fig_5/preview2.jpg' },
+            { image: 'src/static/posters/gundam/pack_2/fig_5/preview.jpg' },
             { image: 'src/static/posters/gundam/pack_2/fig_5/promoBig.jpg' },
           ],
         }, 
@@ -233,7 +207,6 @@ export default class {
 
     if (filter == null || filter == undefined || id == null || id == undefined)
       return catalog;
-
     if (id != null && id != undefined)
     {
       for (let a = 0; a < catalog.items.length; a++)
@@ -242,11 +215,8 @@ export default class {
     }
     else
     {
-      var filtered = {
-        items: []
-      };
+      var filtered = { items: [] };
       var tag_filter = filter[0] == '!' ? filter.substring(1) : '';
-
       for (let a = 0; a < catalog.items.length; a++) {
         if (filter[0] == '!') {
           if (catalog.items[a].tag != tag_filter)
@@ -255,7 +225,6 @@ export default class {
         if (catalog.items[a].tag == filter)
           filtered.items.push(catalog.items[a])
       }
-
       return filtered;
     }
   }

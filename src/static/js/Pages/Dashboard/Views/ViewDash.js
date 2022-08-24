@@ -7,7 +7,8 @@ import Footer from "@app/Components/Footer";
 export default class {
   static getHtml() {
     document.getElementById('myAppMenu').innerHTML = Menu.getHtml() 
-    document.getElementById('myAppLancamentos').innerHTML = Lancamentos.getHtml()     
+    document.getElementById('myAppLancamentos1').innerHTML = Lancamentos.getHtml('GND P1')
+    document.getElementById('myAppLancamentos2').innerHTML = Lancamentos.getHtml('GND P2')
     document.getElementById('myAppFooter').innerHTML = Footer.getHtml() 
     return '';
   }

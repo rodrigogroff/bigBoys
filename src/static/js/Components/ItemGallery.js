@@ -14,8 +14,7 @@ export default class {
 
         var carousel = '<ol class="carousel-indicators">';
 
-        for (var a = 0; a < obj.gallery.length; a++) {
-            
+        for (var a = 0; a < obj.gallery.length; a++) {            
             if (a == 0)
                 carousel += `<li data-target="#bootstrap-carousel" data-slide-to="${a}" class="active"></li>`
             else
@@ -38,27 +37,21 @@ export default class {
 
         return `<div class="container-fluid portfolio">
       <div class="container">
-          <div class="col-md-8 col-lg-8">
-              <div class="title-wrapper">
-                <h3 style='padding-top:10px;padding-left:12px;padding-bottom:12px'>${obj.text}</h3>                
-              </div>
-              <div id="myCarousel">
+          <div class="col-md-8 col-lg-8">              
+              <div id="myCarousel" style='padding-top:20px'>
                   <div id="bootstrap-carousel" class="carousel slide ">${carousel}</div>
                   <script type="text/javascript">
                       // <![CDATA[
                       jQuery(document).ready(function () {
-                          jQuery('#bootstrap-carousel').carousel({
-                              interval: 5000,
-                              pause: "hover"
-                          });
+                          jQuery('#bootstrap-carousel').carousel({ interval: 5000, pause: "hover" });
                       });
                       // ]]>
                   </script>
-              </div>              
+              </div>
           </div>
           <div class="col-md-4 col-lg-4">
               <div class="wcontainer pinfo" style='margin-top:20px'>
-                <span style='text-size:small'>Modelo criado por:</span><br>
+                <span style='text-size:small'>Criado por:</span><br>
                 <h4 style='color:black'>${obj.patreon}</h4>
                 <span style='text-size:small'>Data em nosso catálogo:</span><br>
                 <h4 style='color:black'>${obj.date}</h4>                
@@ -66,15 +59,11 @@ export default class {
               <div class="wcontainer psummary" style='height:450px'>
                 <h4 style='color:black'><strong>Ficha técnica</strong></h4>
                 <p>${obj.catalogText}</p>
-                <br><br>
-                <a target="_blank" href="${obj.linkBuy}" class="button-medium">Comprar no mercado livre</a>
               </div>
-              <br>              
-                
+              <br>
           </div>
       </div>
       <br><br>
-  </div>   
-              `
+  </div>`
     }
 }
