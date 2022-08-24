@@ -19,16 +19,21 @@ export default class {
       var m = db.items[a];
       if (m.active == false)
         continue;
+
       if (m.collection == filter)
+      {
         fullHtml +=  `<div style='margin-left:8px'>
-                      <a class="car_image ${liItem}" href="${m.link}"><img alt="image" src="${m.image}" style='height:420px' /></a>
+                      <a class="car_image ${liItem}" href="${m.link}"><img alt="image" src="${m.image}" style='height:400px' /></a>
                       <style> .car_image.${liItem}:after { background-color: rgba(0, 0, 0, 0.3) } </style>                      
                     </div>`;
-      else
+      }
+      else if (filter == null || filter == undefined)
+      {        
         fullHtml +=  `<div style='margin-left:8px'>
-                      <a class="car_image ${liItem}" href="${m.link}"><img alt="image" src="${m.image}" style='height:420px' /></a>
+                      <a class="car_image ${liItem}" href="${m.link}"><img alt="image" src="${m.image}" style='height:400px' /></a>
                       <style> .car_image.${liItem}:after { background-color: rgba(0, 0, 0, 0.3) } </style>                      
                     </div>`;
+      }
 	}
 
   /*

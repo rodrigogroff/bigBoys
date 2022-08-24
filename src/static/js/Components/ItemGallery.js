@@ -37,7 +37,7 @@ export default class {
 
         return `<div class="container-fluid portfolio">
       <div class="container">
-          <div class="col-md-8 col-lg-8">              
+          <div class="col-md-12 col-lg-12">              
               <div id="myCarousel" style='padding-top:20px'>
                   <div id="bootstrap-carousel" class="carousel slide ">${carousel}</div>
                   <script type="text/javascript">
