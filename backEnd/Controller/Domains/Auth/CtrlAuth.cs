@@ -13,6 +13,25 @@ namespace Api.Master.Controllers
 
         [AllowAnonymous]
         [HttpPost]
+        [Route("api/v1/auth/check_mobile")]
+        public ActionResult check_mobile([FromBody] DtoAuthCheckMobile obj)
+        {
+            #region - code - 
+
+            var srv = new SrvAuthCheckMobile();
+
+            DtoAuthUser usr;
+
+            if (!srv.Find(network.pgConnection, obj.mobile, out usr))
+                return NotFound();
+
+            return Ok(usr);
+
+            #endregion
+        }
+
+        [AllowAnonymous]
+        [HttpPost]
         [Route("api/v1/auth/register")]
         public ActionResult auth_register([FromBody] DtoAuthRegister obj)
         {
@@ -20,7 +39,35 @@ namespace Api.Master.Controllers
 
             var srv = new SrvAuthRegister();
 
-            if (!srv.Register(network.pgConnection, obj.name, obj.email, obj.mobile))
+            if (!srv.Register(  network.pgConnection, 
+                                obj.name, 
+                                obj.email, 
+                                obj.mobile, 
+                                obj.gmap ))
+            {
+                return BadRequest(srv.Error);
+            }
+
+            return Ok();
+
+            #endregion
+        }
+
+        [AllowAnonymous]
+        [HttpPost]
+        [Route("api/v1/auth/verify")]
+        public ActionResult auth_verify([FromBody] DtoAuthLogin obj)
+        {
+            #region - code - 
+
+            var srv = new SrvAuthLogin();
+
+            DtoUser usr;
+
+            if (!srv.Login(network.pgConnection,
+                             obj.email,
+                             obj.mobile,
+                             out usr))
             {
                 return BadRequest(srv.Error);
             }
@@ -41,7 +88,10 @@ namespace Api.Master.Controllers
 
             DtoUser usr;
 
-            if (!srv.Login(network.pgConnection, obj.email, obj.mobile, out usr))
+            if (!srv.Login ( network.pgConnection, 
+                             obj.email, 
+                             obj.mobile, 
+                             out usr ))
             {
                 return BadRequest(srv.Error);
             }

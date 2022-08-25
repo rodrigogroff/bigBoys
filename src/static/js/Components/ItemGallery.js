@@ -37,8 +37,9 @@ export default class {
 
         return `<div class="container-fluid portfolio">
       <div class="container">
-          <div class="col-md-12 col-lg-12">              
-              <div id="myCarousel" style='padding-top:20px'>
+          <div class="col-md-12 col-lg-12">         
+                <p style='color:grey;'> > <a style='color:grey;' href="/">BigBoys</a> / <a style='color:white;' href="/catalog">Catalog</a> / Item </p>
+                <div id="myCarousel" style='padding-top:20px'>
                   <div id="bootstrap-carousel" class="carousel slide ">${carousel}</div>
                   <script type="text/javascript">
                       // <![CDATA[
@@ -55,11 +56,14 @@ export default class {
                 <h4 style='color:black'>${obj.patreon}</h4>
                 <span style='text-size:small'>Preço</span><br>
                 <h4 style='color:green'>
-                    <a style='text-size:large;color:green' href='https://api.whatsapp.com/send?phone=5551995152432&text=Big%20Boys%20Store - Venda PIX Item ${obj.id}'>${obj.price}</a><br>
+                    <a style='text-size:large;color:green' href='https://api.whatsapp.com/send?phone=5551995152432&text=Big%20Boys%20Store - Venda PIX Item ${obj.id} - ${obj.price}'>${obj.price}</a><br>
                 </h4>
-                <br>                
+                <br>
                 <span style='text-size:small'>Sobre o item</span><br>
                 <h4 style='color:black'>${obj.catalogText}</h4>
+                <br>
+                <br>
+                <a style='color:red' href='/faq'>Clique aqui para dúvidas</a><br>
               </div>
           </div>
       </div>

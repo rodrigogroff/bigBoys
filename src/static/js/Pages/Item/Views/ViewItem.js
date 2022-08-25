@@ -7,7 +7,7 @@ export default class {
   static getHtml() {
     document.getElementById('myAppMenu').innerHTML = Menu.getHtml() 
     document.getElementById('myAppFooter').innerHTML = Footer.getHtml() 
-    document.getElementById('myAppItemGallery').innerHTML = ItemGallery.getHtml() 
+    document.getElementById('myAppItemGallery').innerHTML = ItemGallery.getHtml()     
     return '';
   }
 }

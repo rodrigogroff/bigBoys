@@ -7,6 +7,7 @@ ALTER TABLE public."User" ADD COLUMN if not exists "bActive" boolean;
 ALTER TABLE public."User" ADD COLUMN if not exists "stName" character varying(250);
 ALTER TABLE public."User" ADD COLUMN if not exists "dtJoin" timestamp without time zone;
 ALTER TABLE public."User" ADD COLUMN if not exists "dtLastLogin" timestamp without time zone;
+ALTER TABLE public."User" ADD COLUMN if not exists "stGMap" character varying(999);
 
 CREATE TABLE IF NOT EXISTS public."UserSale" ( id bigserial NOT NULL, PRIMARY KEY (id)) WITH (OIDS = FALSE);
 ALTER TABLE public."UserSale" OWNER to postgres;

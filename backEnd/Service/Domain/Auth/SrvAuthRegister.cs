@@ -8,7 +8,7 @@ namespace Master.Service.Domain.Auth
     {
         public IUserRepo userRepo = new UserRepo();
 
-        public bool Register(string conn, string name, string email, string mobile)
+        public bool Register(string conn, string name, string email, string mobile, string gmap)
         {
             if (string.IsNullOrEmpty(conn))
                 return ReportError("Connection information failed");
@@ -21,6 +21,9 @@ namespace Master.Service.Domain.Auth
 
             if (string.IsNullOrEmpty(mobile))
                 return ReportError("Mobile information failed");
+
+            if (string.IsNullOrEmpty(gmap))
+                return ReportError("GMap information failed");
 
             if (mobile.Length < 11)
                 return ReportError("Mobile information failed");
@@ -40,7 +43,8 @@ namespace Master.Service.Domain.Auth
                 dtLastLogin = null,
                 stEmail = email,
                 stName = name,
-                stMobile = mobile,                
+                stMobile = mobile,      
+                stGMap = gmap,
             };
 
             mdl_user.id = userRepo.Insert(conn, mdl_user);

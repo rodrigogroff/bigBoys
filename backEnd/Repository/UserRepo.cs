@@ -99,6 +99,7 @@ namespace Master.Repository
             cmd.Parameters.AddWithValue("stEmail", ((object)mdl.stEmail) ?? DBNull.Value);
             cmd.Parameters.AddWithValue("stMobile", ((object)mdl.stMobile) ?? DBNull.Value);
             cmd.Parameters.AddWithValue("stName", ((object)mdl.stName) ?? DBNull.Value);
+            cmd.Parameters.AddWithValue("stGMap", ((object)mdl.stGMap) ?? DBNull.Value);
             cmd.Parameters.AddWithValue("bActive", ((object)mdl.bActive) ?? DBNull.Value);
             cmd.Parameters.AddWithValue("dtJoin", ((object)mdl.dtJoin) ?? DBNull.Value);
             cmd.Parameters.AddWithValue("dtLastLogin", ((object)mdl.dtLastLogin) ?? DBNull.Value);
@@ -120,6 +121,7 @@ namespace Master.Repository
                         "\"stEmail\"=@stEmail," +
                         "\"stMobile\"=@stMobile," +
                         "\"stName\"=@stName," +
+                        "\"stGMap\"=@stGMap," +
                         "\"bActive\"=@bActive," +
                         "\"dtJoin\"=@dtJoin," +
                         "\"dtLastLogin\"=@dtLastLogin " +
@@ -150,8 +152,8 @@ namespace Master.Repository
                 {
                     db.Open();
 
-                    using (var cmd = new NpgsqlCommand("INSERT INTO \"User\" ( \"stEmail\",\"stMobile\",\"stName\",\"bActive\",\"dtJoin\",\"dtLastLogin\" ) " +
-                                                                   "VALUES (@stEmail,@stMobile,@stName,@bActive,@dtJoin,@dtLastLogin)" +
+                    using (var cmd = new NpgsqlCommand("INSERT INTO \"User\" ( \"stEmail\",\"stMobile\",\"stName\",\"stGMap\",\"bActive\",\"dtJoin\",\"dtLastLogin\" ) " +
+                                                                   "VALUES (@stEmail,@stMobile,@stName,@stGMap,@bActive,@dtJoin,@dtLastLogin)" +
                                                                    ";select currval('public.\"User_id_seq\"');", db))
                     {
                         setUserParams(cmd, mdl);
