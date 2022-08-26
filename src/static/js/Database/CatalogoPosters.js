@@ -287,7 +287,7 @@ export default class {
           date: '18-02-2022',
           tag: 'gundam',     
           price: 'R$ 150,00',     
-          catalogText: `Altura: 42cm, Largura: 30cm<br>
+          catalogText: `Largura: 42cm, Altura: 30cm<br>
                         Quadro tamanho A3, com acabamento em acetato transparente,
                         protegendo a figura.<br>
                         <br>`,
@@ -308,7 +308,7 @@ export default class {
           date: '18-02-2022',
           tag: 'gundam',     
           price: 'R$ 150,00',     
-          catalogText: `Altura: 42cm, Largura: 30cm<br>
+          catalogText: `Largura: 42cm, Altura: 30cm<br>
                         Quadro tamanho A3, com acabamento em acetato transparente,
                         protegendo a figura.<br>
                         <br>`,
@@ -329,7 +329,7 @@ export default class {
           date: '18-02-2022',
           tag: 'gundam',     
           price: 'R$ 150,00',     
-          catalogText: `Altura: 42cm, Largura: 30cm<br>
+          catalogText: `Largura: 42cm, Altura: 30cm<br>
                         Quadro tamanho A3, com acabamento em acetato transparente,
                         protegendo a figura.<br>
                         <br>`,
@@ -351,7 +351,7 @@ export default class {
           date: '18-02-2022',
           tag: 'gundam',     
           price: 'R$ 150,00',     
-          catalogText: `Altura: 42cm, Largura: 30cm<br>
+          catalogText: `Largura: 42cm, Altura: 30cm<br>
                         Quadro tamanho A3, com acabamento em acetato transparente,
                         protegendo a figura.<br>
                         <br>`,
@@ -372,7 +372,7 @@ export default class {
           date: '18-02-2022',
           tag: 'gundam',     
           price: 'R$ 150,00',     
-          catalogText: `Altura: 42cm, Largura: 30cm<br>
+          catalogText: `Largura: 42cm, Altura: 30cm<br>
                         Quadro tamanho A3, com acabamento em acetato transparente,
                         protegendo a figura.<br>
                         <br>`,
@@ -393,7 +393,7 @@ export default class {
           date: '18-02-2022',
           tag: 'gundam',     
           price: 'R$ 150,00',     
-          catalogText: `Altura: 42cm, Largura: 30cm<br>
+          catalogText: `Largura: 42cm, Altura: 30cm<br>
                         Quadro tamanho A3, com acabamento em acetato transparente,
                         protegendo a figura.<br>
                         <br>`,
@@ -414,7 +414,7 @@ export default class {
           date: '18-02-2022',
           tag: 'gundam',     
           price: 'R$ 150,00',     
-          catalogText: `Altura: 42cm, Largura: 30cm<br>
+          catalogText: `Largura: 42cm, Altura: 30cm<br>
                         Quadro tamanho A3, com acabamento em acetato transparente,
                         protegendo a figura.<br>
                         <br>`,
@@ -435,7 +435,7 @@ export default class {
           date: '18-02-2022',
           tag: 'gundam',     
           price: 'R$ 150,00',     
-          catalogText: `Altura: 42cm, Largura: 30cm<br>
+          catalogText: `Largura: 42cm, Altura: 30cm<br>
                         Quadro tamanho A3, com acabamento em acetato transparente,
                         protegendo a figura.<br>
                         <br>`,
@@ -456,7 +456,7 @@ export default class {
           date: '18-02-2022',
           tag: 'gundam',     
           price: 'R$ 150,00',     
-          catalogText: `Altura: 42cm, Largura: 30cm<br>
+          catalogText: `Largura: 42cm, Altura: 30cm<br>
                         Quadro tamanho A3, com acabamento em acetato transparente,
                         protegendo a figura.<br>
                         <br>`,
@@ -477,7 +477,7 @@ export default class {
           date: '18-02-2022',
           tag: 'gundam',     
           price: 'R$ 150,00',     
-          catalogText: `Altura: 42cm, Largura: 30cm<br>
+          catalogText: `Largura: 42cm, Altura: 30cm<br>
                         Quadro tamanho A3, com acabamento em acetato transparente,
                         protegendo a figura.<br>
                         <br>`,
@@ -498,7 +498,7 @@ export default class {
           date: '18-02-2022',
           tag: 'gundam',     
           price: 'R$ 150,00',     
-          catalogText: `Altura: 42cm, Largura: 30cm<br>
+          catalogText: `Largura: 42cm, Altura: 30cm<br>
                         Quadro tamanho A3, com acabamento em acetato transparente,
                         protegendo a figura.<br>
                         <br>`,
