@@ -18,19 +18,19 @@ export default class {
             var b = 8 - a;
             var c = gallery[a]
             if (a == 0)
-                carousel += `<div class="active item " data-slide-no="${a}"><img alt="${b}" src="${c.image}" /></div>`
+                carousel += `<div class="active item " data-slide-no="${a}"><img alt="${b}" src="${c.image}" style="width:${c.width};height:${c.height}"/></div>`
             else
-                carousel += `<div class="item " data-slide-no="${a}"><img alt="${b}" src="${c.image}" /></div>`
+                carousel += `<div class="item " data-slide-no="${a}"><img alt="${b}" src="${c.image}" style="width:${c.width};height:${c.height}" /></div>`
         }
 
         carousel += `</div><a class="carousel-control left" href="#bootstrap-carousel" data-slide="prev"></a><a
         class="carousel-control right" href="#bootstrap-carousel" data-slide="next"></a>`
 
-        return `<div class="container-fluid portfolio">
+        return `<div class="container-fluid ">
       <div class="container">
           <div class="col-md-12 col-lg-12">         
-                <div id="myCarousel" style='padding-top:20px'>
-                  <div id="bootstrap-carousel" class="carousel slide ">${carousel}</div>
+                <div id="myCarousel" style="width:1080px">
+                  <div id="bootstrap-carousel" class="carousel slide " style="height:720px">${carousel}</div>
                   <script type="text/javascript">
                       // <![CDATA[
                       jQuery(document).ready(function () {
