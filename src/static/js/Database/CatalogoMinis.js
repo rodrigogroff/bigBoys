@@ -7,6 +7,27 @@ export default class {
     var catalog = {
       items: [
         
+        {
+          id: 8712,
+          active: true,
+          patreon: 'big boys',
+          collection: 'ORCS_POWER',
+          link: '/item?id=8712',
+          catalogIndex:'/catalog',
+          price: 'R$ 220,00',
+          image: 'src/static/minis/orcs_power/8712/promo.jpg',
+          imageBig: 'src/static/minis/orcs_power/8712/promoBig.jpg',
+          text: '', subtext: '',
+          date: '18-02-2022',
+          tag: 'orcs',
+          catalogText: `Altura: 15cm<br>
+                        Miniatura em resina, pintada em detalhes metálicos a mão.<br>
+                        <br>`,
+          gallery: [{ image: 'src/static/minis/orcs_power/8712/preview.jpg' },
+                    { image: 'src/static/minis/orcs_power/8712/promoBig.jpg' },
+          ],
+        },
+
       ],
     };
 

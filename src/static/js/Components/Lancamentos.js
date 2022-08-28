@@ -1,23 +1,21 @@
 
 import Catalogo from "@app/Database/CatalogoPosters";
+import Shuffle from "@app/Components/Shuffle";
 
 export default class {
 
   static getHtml(filter) {
     
     var db = Catalogo.getAll();
-
     var max = 4;
-
-    if (filter == "*SHOW")
-      max =1;
-
     var fullHtml = `<div class="wpb_wrapper">
                     <div id="owl-carousel-lancs" class="owl-carousel" 
 					          data-owloptions='{"items":${max},"itemsDesktop":${max},"itemsDesktopSmall":3,"itemsTablet":2,"itemsMobile":1,"slideSpeed":200,"paginationSpeed":800,"rewindSpeed":1000,"rewindNav":true,"singleItem":false,"autoPlay":0,"stopOnHover":false,"navigation":false,"navigationTextNext":"Next","navigationTextPrev":"Prev","pagination":true,"paginationNumbers":false,"itemsScaleUp":false,"scrollPerPage":false,"responsive":true,"responsiveRefreshRate":200,"lazyLoad":false,"lazyFollow":false,"autoHeight":false,"dragBeforeAnimFinish":true,"mouseDrag":true,"touchDrag":true,"addClassActive":false}'>
                     `
-
 	  var liItem = 1;
+
+    db.items = Shuffle.sort(db.items);
+
     for(let a = 0; a < db.items.length; ++a)
     {
       liItem++;
@@ -38,13 +36,7 @@ export default class {
                       <style> .car_image.${liItem}:after { background-color: rgba(0, 0, 0, 0.3) } </style>                      
                     </div>`;
       }
-	}
-
-    if (filter == "*SHOW")
-    {      
-      fullHtml +=  `<div style='max-height:200px'><a><img alt="image" src="src/static/img/dash_1.png" style='min-width:800px'/></a></div>`; //width:380px;height:320px
-      
-    }
+  	}
 
     fullHtml +=  `</div></div>`
     

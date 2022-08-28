@@ -1,4 +1,6 @@
 
+import Shuffle from "@app/Components/Shuffle";
+
 export default class {
 
     static getHtml(objects, collection) {
@@ -9,6 +11,8 @@ export default class {
             return 'Peças em fase de aquisição / fabricação<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>'
         else
             html  += "<div align='center' style='width:120%'><div class='flex-container'>";
+
+        objects.items = Shuffle.sort(objects.items)
 
         for(let a=0; a < objects.items.length; a++ )
         {
