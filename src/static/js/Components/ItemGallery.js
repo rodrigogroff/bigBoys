@@ -54,13 +54,17 @@ export default class {
               <div class="wcontainer pinfo" style='margin-top:20px'>
                 <span style='text-size:small'>Criado por:</span><br>
                 <h4 style='color:black'>${obj.patreon}</h4>
-                <span style='text-size:small'>Preço</span><br>
+                <br>
+                <span style='text-size:small'>Opções de compra</span><br>
                 <h4 style='color:green'>
-                    <a style='text-size:large;color:green' href='https://api.whatsapp.com/send?phone=5551995152432&text=Big%20Boys%20Store - Venda PIX Item ${obj.id} - ${obj.price}'>${obj.price}</a><br>
+                    <a style='text-size:large;color:green' href='https://api.whatsapp.com/send?phone=5551995152432&text=Big%20Boys%20Store - Venda PIX Item ${obj.id} - A3 150,00'>A3 - R$ 150,00</a><br>
+                    Altura: 42cm, Largura: 29,7cm
                 </h4>
                 <br>
-                <span style='text-size:small'>Sobre o item</span><br>
-                <h4 style='color:black'>${obj.catalogText}</h4>
+                <h4 style='color:green'>
+                    <a style='text-size:large;color:green' href='https://api.whatsapp.com/send?phone=5551995152432&text=Big%20Boys%20Store - Venda PIX Item ${obj.id} - A2 250,00'>A2 - R$ 250,00</a><br>
+                    Altura: 59,4cm, Largura: 42cm
+                </h4>
                 <br>
                 <br>
                 <a style='color:red' href='/faq'>Clique aqui para dúvidas</a><br>

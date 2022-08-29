@@ -10,7 +10,7 @@ export default class {
         if (objects.items.length == 0)
             return 'Peças em fase de aquisição / fabricação<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>'
         else
-            html  += "<div align='center' style='width:120%'><div class='flex-container'>";
+            html  += "<div align='center'><div class='flex-container'>";
 
         objects.items = Shuffle.sort(objects.items)
 
