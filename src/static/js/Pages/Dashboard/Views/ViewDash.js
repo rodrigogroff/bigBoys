@@ -35,6 +35,8 @@ export default class {
 
     document.getElementById('myAppLancamentosM1').innerHTML = Lancamentos.getHtml('ORCS_POWER') 
     document.getElementById('myAppLancamentosM2').innerHTML = Lancamentos.getHtml('HORDE_DREADMARSH')
+    document.getElementById('myAppLancamentosM3').innerHTML = Lancamentos.getHtml('TOME_OF_DEMONS')
+    document.getElementById('myAppLancamentosM4').innerHTML = Lancamentos.getHtml('AFFLICTION')
 
     document.getElementById('myAppFooter').innerHTML = Footer.getHtml() 
  
