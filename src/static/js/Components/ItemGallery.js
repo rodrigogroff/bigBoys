@@ -38,7 +38,7 @@ export default class {
         return `<div class="container-fluid portfolio">
       <div class="container">
           <div class="col-md-12 col-lg-12">         
-                <p style='color:grey;'> > <a style='color:grey;' href="/">BigBoys</a> / <a style='color:white;' href="${obj.catalogIndex}">Catálogo</a> / Item </p>
+                <br>
                 <div id="myCarousel" style='padding-top:20px'>
                   <div id="bootstrap-carousel" class="carousel slide ">${carousel}</div>
                   <script type="text/javascript">

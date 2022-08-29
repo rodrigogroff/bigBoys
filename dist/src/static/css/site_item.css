@@ -10,7 +10,7 @@ body a,body a:hover,body a:active,body a:focus,body a:visited{color:#453f4a;}
 .button-medium:hover{background:#f04131 url(http://localhost/src/static/img/menu-extra.png) top right repeat-x!important;}
 h3.widget-title{color:#ffffff;}
 body .portfolio{background:-webkit-radial-gradient(top, #5e1d1d, #25171f, #14151f);background:radial-gradient(at top, #5e1d1d, #25171f, #14151f);}
-header,body{background-attachment:fixed!important;background:url(http://localhost/src/static/img/header.jpg) no-repeat center top!important;}
+
 @media all{
 .clear{clear:both;}
 html body{font-family:'Titillium Web', sans-serif;color:#ccc;}
@@ -31,7 +31,7 @@ body .portfolio{background-color:#f1f1f1;}
 button{transition:all 0.35s ease-in-out;-moz-transition:all 0.35s ease-in-out;-webkit-transition:all 0.35s ease-in-out;-o-transition:all 0.35s ease-in-out;border:1px solid transparent!important;}
 .button-medium:hover{color:#fff;}
 .button-medium{font-size:14px;padding:15px 30px 16px 30px!important;}
-header{background:url(http://localhost/src/static/img/header.jpg) top center no-repeat;background-attachment:scroll!important;background-size:cover!important;}
+
 .topbar{position:relative;z-index:3;min-height:60px;margin-top:-1px;}
 .navbar-toggle{border-color:#000!important;color:#fff;margin:12px 15px;}
 .navbar-inner{height:70px;-webkit-transition:linear .3s;-moz-transition:linear .3s;-ms-transition:linear .3s;-o-transition:linear .3s;transition:linear .3s;background:url(http://localhost/src/static/img/menu-extra.png) top right repeat-x;-webkit-border-radius:4px;-moz-border-radius:4px;border-radius:4px;-webkit-box-shadow:0 2px 8px rgba(0, 0, 0, .75), inset 0 -5px rgba(0, 0, 0, .26);-moz-box-shadow:0 2px 8px rgba(0, 0, 0, .75), inset 0 -5px rgba(0, 0, 0, .26);box-shadow:0 2px 8px rgba(0, 0, 0, .75), inset 0 -5px rgba(0, 0, 0, .26);}
@@ -226,7 +226,7 @@ body a,body a:hover,body a:active,body a:focus,body a:visited{color:#453f4a;}
 .dropdown .caret{border-top:4px solid #ffffff!important;}
 .navbar-inverse,h3.widget-title{background-image:-webkit-linear-gradient(bottom, #d92212, #c43e2f);background-image:-moz-linear-gradient(bottom, #d92212, #c43e2f);background-image:-o-linear-gradient(bottom, #d92212, #c43e2f);background-image:linear-gradient(to top, #d92212, #c43e2f);}
 h3.widget-title{color:#ffffff;}
-header,body{background-attachment:fixed!important;background:url(http://localhost/src/static/img/header.jpg) no-repeat center top!important;}
+
 @media all{
 .clear{clear:both;}
 html body{font-family:'Titillium Web', sans-serif;color:#ccc;}
@@ -240,7 +240,7 @@ a:hover{color:#666;text-decoration:none;transition:all 0.35s ease-in-out;-moz-tr
 .no-padding{padding:0!important;}
 span{font-size:14px;}
 button{transition:all 0.35s ease-in-out;-moz-transition:all 0.35s ease-in-out;-webkit-transition:all 0.35s ease-in-out;-o-transition:all 0.35s ease-in-out;border:1px solid transparent!important;}
-header{background:url(http://localhost/src/static/img/header.jpg) top center no-repeat;background-attachment:scroll!important;background-size:cover!important;}
+
 .topbar{position:relative;z-index:3;min-height:60px;margin-top:-1px;}
 .navbar-toggle{border-color:#000!important;color:#fff;margin:12px 15px;}
 #main_menu2 li:hover > .dropdown-menu{display:block;left:auto;}
@@ -400,7 +400,7 @@ body a,body a:hover,body a:active,body a:focus,body a:visited{color:#453f4a;}
 .dropdown .caret{border-top:4px solid #ffffff!important;}
 .navbar-inverse,h3.widget-title{background-image:-webkit-linear-gradient(bottom, #d92212, #c43e2f);background-image:-moz-linear-gradient(bottom, #d92212, #c43e2f);background-image:-o-linear-gradient(bottom, #d92212, #c43e2f);background-image:linear-gradient(to top, #d92212, #c43e2f);}
 h3.widget-title{color:#ffffff;}
-header,body{background-attachment:fixed!important;background:url(http://localhost/src/static/img/header.jpg) no-repeat center top!important;}
+
 ::-webkit-scrollbar{width:0;background:transparent;}
 ::-webkit-scrollbar-thumb{background:#FF0000;}
 /*! CSS Used from: Embedded */
