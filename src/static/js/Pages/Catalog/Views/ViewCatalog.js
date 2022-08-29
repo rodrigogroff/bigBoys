@@ -8,8 +8,12 @@ export default class {
   static getHtml() {
     document.getElementById('myAppMenu').innerHTML = Menu.getHtml() 
     document.getElementById('myAppFooter').innerHTML = Footer.getHtml()     
+
     var items = CatalogoDb.getAll();
-    document.getElementById('myAppCatalog').innerHTML = Catalogo.getHtml(items)     
+      
+    document.getElementById('myAppCatalog1').innerHTML = Catalogo.getHtml(items, 'ORCS_POWER')     
+    document.getElementById('myAppCatalog2').innerHTML = Catalogo.getHtml(items, 'HORDE_DREADMARSH')     
+    
     return '';
   }
 }

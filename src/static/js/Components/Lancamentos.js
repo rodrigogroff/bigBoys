@@ -1,5 +1,6 @@
 
 import Catalogo from "@app/Database/CatalogoPosters";
+import CatalogoMinis from "@app/Database/CatalogoMinis";
 import Shuffle from "@app/Components/Shuffle";
 
 export default class {
@@ -7,6 +8,11 @@ export default class {
   static getHtml(filter) {
     
     var db = Catalogo.getAll();
+    var db_mini = CatalogoMinis.getAll();
+
+    for (let a=0; a < db_mini.items.length; a++ )
+      db.items.push(db_mini.items[a]);
+
     var max = 4;
     var fullHtml = `<div class="wpb_wrapper">
                     <div id="owl-carousel-lancs" class="owl-carousel" 

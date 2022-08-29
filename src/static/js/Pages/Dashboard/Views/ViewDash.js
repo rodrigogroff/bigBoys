@@ -8,6 +8,9 @@ import Shuffle from "@app/Components/Shuffle";
 
 export default class {
   static getHtml() {
+
+    WallpaperControl.getHtml() 
+
     document.getElementById('myAppMenu').innerHTML = Menu.getHtml()     
 
     var gal = [        
@@ -29,18 +32,12 @@ export default class {
     document.getElementById('myAppLancamentos3').innerHTML = Lancamentos.getHtml('GUNS')
     document.getElementById('myAppLancamentos4').innerHTML = Lancamentos.getHtml('FUTURE')    
     document.getElementById('myAppLancamentos5').innerHTML = Lancamentos.getHtml('CHARS1')        
+
+    document.getElementById('myAppLancamentosM1').innerHTML = Lancamentos.getHtml('ORCS_POWER') 
+    document.getElementById('myAppLancamentosM2').innerHTML = Lancamentos.getHtml('HORDE_DREADMARSH')
+
     document.getElementById('myAppFooter').innerHTML = Footer.getHtml() 
-
-    WallpaperControl.getHtml() 
-
-    $("[data-lazy-load-image]").each(function (index, element) {
-      var img = new Image();
-      img.src = $(element).data("lazy-load-image");
-      if (typeof $(element).data("image-classname" !== "undefined"))
-          img.className = $(element).data("image-classname");
-      $(element).append(img);
-    });
-    
+ 
     return '';
   }
 }

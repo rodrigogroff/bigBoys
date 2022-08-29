@@ -5,12 +5,7 @@ export default class {
 
     static getHtml(objects, collection) {
       
-        var html = '';
-
-        if (objects.items.length == 0)
-            return 'Peças em fase de aquisição / fabricação<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>'
-        else
-            html  += "<div align='center'><div class='flex-container'>";
+        var html = "<div align='center'><div class='flex-container'>";
 
         objects.items = Shuffle.sort(objects.items)
 
@@ -41,8 +36,4 @@ export default class {
         return html;
     }
   }
-  
-  
-  
-  
   
