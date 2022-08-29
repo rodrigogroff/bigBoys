@@ -27,9 +27,9 @@ export default class {
             var b = 8 - a;
             var c = obj.gallery[a]
             if (a == 0)
-                carousel += `<div class="active item " data-slide-no="${a}"><img alt="${b}" src="${c.image}" /></div>`
+                carousel += `<div class="active item " data-slide-no="${a}"><a href='${c.image}'><img alt="${b}" src="${c.image}" /></a></div>`
             else
-                carousel += `<div class="item " data-slide-no="${a}"><img alt="${b}" src="${c.image}" /></div>`
+                carousel += `<div class="item " data-slide-no="${a}"><a href='${c.image}'><img alt="${b}" src="${c.image}" /></a></div>`
         }
 
         carousel += `</div><a class="carousel-control left" href="#bootstrap-carousel" data-slide="prev"></a><a
@@ -37,12 +37,12 @@ export default class {
 
         var buyer = `<span style='text-size:small'>Opções de compra</span><br>
         <h4 style='color:green'>
-            <a style='text-size:large;color:green' href='https://api.whatsapp.com/send?phone=5551995152432&text=Big%20Boys%20Store - Venda PIX Item ${obj.id} - A3 150,00'>A3 - R$ 150,00</a><br>
+            <a style='text-size:large;color:green' href='https://api.whatsapp.com/send?phone=5551995152432&text=Big%20Boys%20Store - Venda PIX Item ${obj.id} - A3 138,00'>A3 - R$ 138,00</a><br>
             Altura: 42cm, Largura: 29,7cm
         </h4>
         <br>
         <h4 style='color:green'>
-            <a style='text-size:large;color:green' href='https://api.whatsapp.com/send?phone=5551995152432&text=Big%20Boys%20Store - Venda PIX Item ${obj.id} - A2 250,00'>A2 - R$ 250,00</a><br>
+            <a style='text-size:large;color:green' href='https://api.whatsapp.com/send?phone=5551995152432&text=Big%20Boys%20Store - Venda PIX Item ${obj.id} - A2 180,00'>A2 - R$ 180,00</a><br>
             Altura: 59,4cm, Largura: 42cm
         </h4>` 
 
