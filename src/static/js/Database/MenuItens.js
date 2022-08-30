@@ -18,16 +18,20 @@ export default class {
                 link: '/register',
               },
               {
-                label: 'Minhas compras',
+                label: 'Meus pedidos',
                 link: '/production',
               },
               {
                 label: 'Preferidos',
-                link: '/faq',
+                link: '/wishlist',
               },
               {
                 label: 'Dúvidas',
                 link: '/faq',
+              },
+              {
+                label: 'Sair',
+                link: '/logout',
               },
             ]
           },          

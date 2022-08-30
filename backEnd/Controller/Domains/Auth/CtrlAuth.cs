@@ -80,6 +80,7 @@ namespace Api.Master.Controllers
             return Ok(new DtoToken
             {
                 token = token,
+                userName = usr.name.Split (' ')[0]
             });
 
             #endregion

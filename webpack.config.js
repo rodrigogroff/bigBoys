@@ -18,6 +18,7 @@ module.exports = {
     '/src/static/Item': './src/static/js/pages/Item/router.js',    
     '/src/static/FAQ': './src/static/js/pages/FAQ/router.js',    
     '/src/static/Login': './src/static/js/pages/Login/router.js',    
+    '/src/static/Logout': './src/static/js/pages/Logout/router.js',    
     '/src/static/Register': './src/static/js/pages/Register/router.js',    
     '/src/static/Production': './src/static/js/pages/Production/router.js',    
   },

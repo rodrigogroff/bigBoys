@@ -57,8 +57,9 @@ export default class {
           postPublicPortal("v1/auth/login", formData)
           .then((resp) => {
             document.getElementById('loading').style.display = 'none'     
-            localStorage.setItem("token", resp.token);       
-            window.location.href = '/';
+            localStorage.setItem("token", resp.payload.token);
+            localStorage.setItem("userName", resp.payload.userName);
+            window.location.href = '/production';
           })
           .catch((resp) => {
             document.getElementById('loading').style.display = 'none'
