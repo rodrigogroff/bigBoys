@@ -17,6 +17,7 @@ app.get("/catalog_poster", (req, res) => { res.sendFile(path.resolve(__dirname, 
 app.get("/item", (req, res) => { res.sendFile(path.resolve(__dirname, "./index_item.html")); });
 app.get("/faq", (req, res) => { res.sendFile(path.resolve(__dirname, "./index_faq.html")); });
 app.get("/register", (req, res) => { res.sendFile(path.resolve(__dirname, "./index_register.html")); });
+app.get("/login", (req, res) => { res.sendFile(path.resolve(__dirname, "./index_login.html")); });
 app.get("/production", (req, res) => { res.sendFile(path.resolve(__dirname, "./index_production.html")); });
 // start!
 app.listen(80, () => console.log("Server running...80" ));

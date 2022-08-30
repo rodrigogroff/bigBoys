@@ -58,33 +58,6 @@ namespace Api.Master.Controllers
 
         [AllowAnonymous]
         [HttpPost]
-        [Route("api/v1/auth/verify")]
-        public ActionResult auth_verify([FromBody] DtoAuthLogin obj)
-        {
-            #region - code - 
-
-            var srv = new SrvAuthLogin();
-
-            DtoUser usr;
-
-            if (!srv.Login(network.pgConnection,
-                             obj.email,
-                             obj.mobile,
-                             out usr))
-            {
-                return BadRequest(srv.Error);
-            }
-
-            return Ok(new
-            {
-
-            });
-
-            #endregion
-        }
-
-        [AllowAnonymous]
-        [HttpPost]
         [Route("api/v1/auth/login")]
         public ActionResult auth_login([FromBody] DtoAuthLogin obj)
         {
