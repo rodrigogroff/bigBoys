@@ -108,18 +108,23 @@ export default class {
             gmap: txt_location.value
           };
 
+          document.getElementById('form_register_btn_confirm').style.pointerEvents = "none";          
+          document.getElementById('confirm').style.backgroundColor = 'DarkRed'          
+          document.getElementById('loading').style.display = 'block'
+
           postPublicPortal("v1/auth/register", formData)
           .then((resp) => {
-
-            console.log(resp)
-            
+            document.getElementById('loading').style.display = 'none'
             document.getElementById('mainPageNOK').style.display = 'none'
             document.getElementById('mainPageDiv').style.display = 'none'
             document.getElementById('mainPageOK').style.display = 'block'
           })
           .catch((resp) => {
+            document.getElementById('loading').style.display = 'none'
+            document.getElementById('form_register_btn_confirm').style.pointerEvents = "all";          
             document.getElementById('mainPageNOK').style.display = 'block'
-            document.getElementById('failMsg').innerHTML = '<span style="color:gray">Falha:</span> ' + resp.msg
+            document.getElementById('confirm').style.backgroundColor = 'red'
+            document.getElementById('failMsg').innerHTML = '<span style="color:gray">Falha<br></span> ' + resp.msg
           });
 
           break;

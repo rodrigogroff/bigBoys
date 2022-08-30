@@ -474,9 +474,9 @@ export function postPublicPortal(location, _obj) {
         }
       })
       .catch((errorMsg) => {
-        resolve({
+        reject({
           ok: false,
-          msg: errorMsg.toString(),
+          msg: "Ops, aconteceu um erro!",
         });
       });
   });
