@@ -4,7 +4,33 @@ export default class {
     static getAll() {
   
       return {
-        items: [ 
+        items: [           
+          { 
+            label: 'Site',
+            link: '',
+            subs: [
+              {
+                label: 'Login',
+                link: '/login',
+              },
+              {
+                label: 'Registrar-se',
+                link: '/register',
+              },
+              {
+                label: 'Minhas compras',
+                link: '/production',
+              },
+              {
+                label: 'Preferidos',
+                link: '/faq',
+              },
+              {
+                label: 'Dúvidas',
+                link: '/faq',
+              },
+            ]
+          },          
           { 
             label: 'Quadros',
             link: '/catalog_poster',
@@ -15,31 +41,6 @@ export default class {
             link: '/catalog',
             subs: []
           },
-          { 
-            label: 'Compras',
-            link: '',
-            subs: [
-              {
-                label: 'Dúvidas',
-                link: '/faq',
-              },
-              {
-                label: 'Produção',
-                link: '/production',
-              },              
-            ]
-          },          
-          /*
-          {
-            label: 'Parceiros',
-            link: 'https://skywarriorthemes.com/gameaddict/clan-members/',
-            subs: [
-              {
-                label: 'Barber shops',
-                link: '/barbers',
-              },              
-            ],
-          },*/
         ],
       };
     }

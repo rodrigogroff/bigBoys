@@ -119,9 +119,10 @@
 	<script type='text/javascript' src='src/static/vendor/easepack.min.js'></script>
 	<script type='text/javascript' src='src/static/vendor/rx_isotope_gallery.js'></script>
 	<script type='text/javascript' src='src/static/vendor/jquery.isotope.min.js'></script>	
+	<script src="https://unpkg.com/imask"></script>
 </head>
 
-<script type="module" src="src/static/Faq.js"></script>
+<script type="module" src="src/static/Register.js"></script>
 
 <style>
 	html { overflow: scroll; overflow-x: hidden; }
@@ -170,62 +171,76 @@
 										<div class="wpb_text_column wpb_content_element ">
 											<div class="wpb_wrapper">
 												<br>
-												<h1 style="text-align: center;">Perguntas Frequentes / dúvidas</h1>
+												<h1 style="text-align: center;">Registrar-se no site</h1>
 												<br>
-												<div style="max-width: 800px;">
-													<br>
-
-													<p>
-														1. Como posso comprar quadros e miniaturas no site?<br>
-														<span style="color:grey">
-															Para comprar é muito fácil: basta escolher um item do catálogo e clicar no preço.<br>
-															Uma janela no whatsapp será aberta e um operador irá perguntar seus dados para efetuar a compra.<br>
-															Se você mesmo quiser se registrar, clique <a href="/register" style="color:white">aqui</a> e preencha seus dados cadastrais.<br>
-															Para logar-se no portal, clique <a href="/login" style="color:white">aqui</a> e informe seu telefone e email.<br>
-														</span>
+												<div>
+													<div class="flex-container" id="form_register">
+														<div >														
+															<div class="form__group field">
+																<input type="input" class="form__field" name="name" id='name' required />
+																<label for="name" class="form__label">Nome</label>
+																<div id="validation_name" class="button_verif" style="display:none"> Valor inválido </div>
+															</div>														
+														</div>
+														<div>														
+															<div class="form__group field">
+																<input type="input" class="form__field" name="mobile" id='mobile' required />
+																<label for="mobile" class="form__label">Telefone</label>
+																<div id="validation_mobile" class="button_verif" style="display:none"> Valor inválido </div>
+															</div>														
+														</div>
+														<div>
+															<div class="form__group field">
+																<input type="input" class="form__field" name="email" id='email' required />
+																<label for="email" class="form__label">Email</label>
+																<div id="validation_email" class="button_verif" style="display:none"> Valor inválido </div>
+															</div>														
+														</div>
+														<div>
+															<div class="form__group field">
+																<input type="input" class="form__field" name="location" id='location' required />
+																<label for="location" class="form__label">Endereço de entrega</label>
+																<div id="validation_location" class="button_verif" style="display:none"> Valor inválido </div>
+															</div>														
+														</div>
+													</div>												
+													<div class="form__group field" id="form_register_btn_continue">
 														<br>
-														2. Que dados de cadastro serão necessários?<br>
-														<span style="color:grey">
-															Apenas seu nome, telefone e email.<br>
-															Não pediremos senhas nem enviamos emails com códigos.<br>
-														</span>
-														<br>
-														3. O pagamento é somente por PIX? Como posso parcelas minhas compras?<br>
-														<span style="color:grey">
-															Sim, pelo PIX temos o valor mais baixo possível para você, sem intermediários como VISA, Mastercard.<br>
-															Alguns bancos oferecem "dividir o pix", para compras de valores mais altos. Informe-se com seu gerente.<br>
-														</span>
-														<br>
-														4. As mercadorias estão todas em pronta entrega?<br>
-														<span style="color:grey">
-															Não, atuamos sob demanda. Após o pagamento do PIX, o pedido é construido e embalado em até dois dias uteis.<br>
-															No dia seguinte, colocaremos no correio para envio até seu endereço cadastrado ou escolhido para entrega.<br>
-														</span>
-														<br>
-														5. Como posso acompanhar meu pedido?<br>
-														<span style="color:grey">
-															Informe seu email e telefone nesta pagina <a href="/production" style="color:white">aqui</a> para acompanhar todo o processo<br>
-														</span>
-														<br>
-														6. Posso cancelar meu pedido?<br>
-														<span style="color:grey">
-															Sim, antes do pedido ir para o correio, favor entrar em contato pelo whatsApp com o operador para devolução do PIX.<br>
-															Aconselhamos fazer este procedimento ainda dentro do prazo de construção, pois depois não teremos como estornar, uma vez a peça estando em mãos do correio.<br>
-														</span>
-														<br>
-														7. Posso obter descontos pedindo mais de uma peça?<br>
-														<span style="color:grey">
-															Sim, a partir de 2 quadros, ofereçemos 10% de desconto automaticamente.<br>
-														</span>
-														<br>
-													</p>
+														<div class="flex-container">
+															<div>
+																<h3>
+																	<div id="continue" class="button"> Continuar </div>
+																</h3>
+															</div>
+														</div>
+													</div>
+													<div class="form__group field">
+														<div class="flex-container">
+															<div>
+																<div class="mapouter" id="mapOuter" style='display:none'>
+																	<h3 style="text-align: left;">Localização via Google maps</h3>
+																	<br>
+																	<div class="gmap_canvas"><iframe width="600" height="350" id="gmap_canvas" style='display:none'
+																	src="https://maps.google.com/maps?q=2880%20Broadway,%20New%20York&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://putlocker-is.org"></a><br><style>.mapouter{position:relative;text-align:right;height:500px;width:600px;}</style><a href="https://www.embedgooglemap.net">google map html code</a><style>.gmap_canvas {overflow:hidden;background:none!important;height:500px;width:600px;}</style></div></div>
+															</div>
+														</div>
+													</div>
+													<div class="form__group field" id="form_register_btn_confirm" style="display:none">
+														<div class="flex-container">
+															<div>
+																<h3>
+																	<div id="confirm" class="button"> Confirmar dados? </div>
+																</h3>
+															</div>
+														</div>
+													</div>
 												</div>
 											</div>
 										</div>
 									</div>
 								</div>
 							</div>
-						</div>						
+						</div>
 						<div class="clear"></div>
 					</div>
 				</div>
