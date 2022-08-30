@@ -1,5 +1,6 @@
 
 import ViewRegister from "./Views/ViewRegister";
+import { postPublicPortal } from "@app/Infra/Util"
 
 export default class {
   constructor(params) {
@@ -9,13 +10,15 @@ export default class {
     
 
     document.body.addEventListener("click", (e) => {  
+
+      var txt_name = document.getElementById('name');
+      var txt_mobile = document.getElementById('mobile');
+      var txt_email = document.getElementById('email');
+      var txt_location = document.getElementById('location');
+
       switch (e.target.id) {
         case "continue":
-          var txt_name = document.getElementById('name');
-          var txt_mobile = document.getElementById('mobile');
-          var txt_email = document.getElementById('email');
-          var txt_location = document.getElementById('location');
-
+          
           txt_location.addEventListener("keyup", function(event) {
             if (event.key === "Enter") {
               document.getElementById('gmap_canvas').src = 'https://maps.google.com/maps?q=' + txt_location.value + '&t=&z=13&ie=UTF8&iwloc=&output=embed';
@@ -95,6 +98,31 @@ export default class {
           }
 
         break;
+
+        case "confirm":
+
+          var formData = {
+            name: txt_name.value,
+            email: txt_email.value,
+            mobile: txt_mobile.value,
+            gmap: txt_location.value
+          };
+
+          postPublicPortal("v1/auth/register", formData)
+          .then((resp) => {
+
+            console.log(resp)
+            
+            document.getElementById('mainPageNOK').style.display = 'none'
+            document.getElementById('mainPageDiv').style.display = 'none'
+            document.getElementById('mainPageOK').style.display = 'block'
+          })
+          .catch((resp) => {
+            document.getElementById('mainPageNOK').style.display = 'block'
+            document.getElementById('failMsg').innerHTML = '<span style="color:gray">Falha:</span> ' + resp.msg
+          });
+
+          break;
       }      
     });
     

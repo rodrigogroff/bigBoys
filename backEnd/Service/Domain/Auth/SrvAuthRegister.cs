@@ -25,15 +25,12 @@ namespace Master.Service.Domain.Auth
             if (string.IsNullOrEmpty(gmap))
                 return ReportError("GMap information failed");
 
-            if (mobile.Length < 11)
-                return ReportError("Mobile information failed");
-
-            if (!IsNumber(mobile))
-                return ReportError("Mobile information failed");
-
             User usr_test;
 
             if (!userRepo.GetUserByMobile(conn, mobile, out usr_test))
+                return ReportError("Mobile already used");
+
+            if (usr_test != null)
                 return ReportError("Mobile already used");
 
             var mdl_user = new User

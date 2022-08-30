@@ -6,7 +6,7 @@ export function getLocation() {
   var indexPos = parseInt(_idx);
 
   var lstNodes = [
-    { api_host: window.location.protocol + "//" +  window.location.hostname + "//api", api_port:  18524 },
+    { api_host: "http://localhost", api_port:  18524 },
   ];
 
   //console.log (lstNodes);

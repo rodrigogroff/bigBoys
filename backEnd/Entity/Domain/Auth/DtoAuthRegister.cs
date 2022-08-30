@@ -6,7 +6,6 @@ namespace Master.Entity.Domain
         public string name { get; set; }
         public string email { get; set; }
         public string mobile { get; set; }
-        public string password { get; set; }
         public string gmap { get; set; }
     }
 }

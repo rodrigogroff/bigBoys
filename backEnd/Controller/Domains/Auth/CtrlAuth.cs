@@ -48,7 +48,10 @@ namespace Api.Master.Controllers
                 return BadRequest(srv.Error);
             }
 
-            return Ok();
+            return Ok(new
+            {
+
+            });
 
             #endregion
         }
@@ -72,7 +75,10 @@ namespace Api.Master.Controllers
                 return BadRequest(srv.Error);
             }
 
-            return Ok();
+            return Ok(new
+            {
+
+            });
 
             #endregion
         }

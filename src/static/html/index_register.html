@@ -170,68 +170,91 @@
 									<div class="wpb_wrapper">
 										<div class="wpb_text_column wpb_content_element ">
 											<div class="wpb_wrapper">
-												<br>
-												<h1 style="text-align: center;">Registrar-se no site</h1>
-												<br>
-												<div>
-													<div class="flex-container" id="form_register">
-														<div >														
-															<div class="form__group field">
-																<input type="input" class="form__field" name="name" id='name' required />
-																<label for="name" class="form__label">Nome</label>
-																<div id="validation_name" class="button_verif" style="display:none"> Valor inválido </div>
-															</div>														
-														</div>
-														<div>														
-															<div class="form__group field">
-																<input type="input" class="form__field" name="mobile" id='mobile' required />
-																<label for="mobile" class="form__label">Telefone</label>
-																<div id="validation_mobile" class="button_verif" style="display:none"> Valor inválido </div>
-															</div>														
-														</div>
-														<div>
-															<div class="form__group field">
-																<input type="input" class="form__field" name="email" id='email' required />
-																<label for="email" class="form__label">Email</label>
-																<div id="validation_email" class="button_verif" style="display:none"> Valor inválido </div>
-															</div>														
-														</div>
-														<div>
-															<div class="form__group field">
-																<input type="input" class="form__field" name="location" id='location' required />
-																<label for="location" class="form__label">Endereço de entrega</label>
-																<div id="validation_location" class="button_verif" style="display:none"> Valor inválido </div>
-															</div>														
-														</div>
-													</div>												
-													<div class="form__group field" id="form_register_btn_continue">
-														<br>
-														<div class="flex-container">
+												<div id="mainPageOK" style="display: none">
+													<br>
+													<br>
+													<h1 style="text-align: center;">Registro feito com sucesso!</h1>
+													<br>
+													<br>
+													<div align="center">
+														<p>
+															Clique <a style="color:white" href="/login">aqui</a> para efetuar seu login
+														</p>
+													</div>													
+													<br>
+													<br>
+													<br>
+													<br>
+												</div>
+												<div id="mainPageDiv">
+													<br>
+													<h1 style="text-align: center;">Registrar-se no site</h1>
+													<br>
+													<div>
+														<div class="flex-container" id="form_register">
+															<div >														
+																<div class="form__group field">
+																	<input type="input" class="form__field" name="name" id='name' required />
+																	<label for="name" class="form__label">Nome</label>
+																	<div id="validation_name" class="button_verif" style="display:none"> Valor inválido </div>
+																</div>														
+															</div>
+															<div>														
+																<div class="form__group field">
+																	<input type="input" class="form__field" name="mobile" id='mobile' required />
+																	<label for="mobile" class="form__label">Telefone</label>
+																	<div id="validation_mobile" class="button_verif" style="display:none"> Valor inválido </div>
+																</div>														
+															</div>
 															<div>
-																<h3>
-																	<div id="continue" class="button"> Continuar </div>
-																</h3>
+																<div class="form__group field">
+																	<input type="input" class="form__field" name="email" id='email' required />
+																	<label for="email" class="form__label">Email</label>
+																	<div id="validation_email" class="button_verif" style="display:none"> Valor inválido </div>
+																</div>														
+															</div>
+															<div>
+																<div class="form__group field">
+																	<input type="input" class="form__field" name="location" id='location' required />
+																	<label for="location" class="form__label">Endereço de entrega</label>
+																	<div id="validation_location" class="button_verif" style="display:none"> Valor inválido </div>
+																</div>														
+															</div>
+														</div>												
+														<div class="form__group field" id="form_register_btn_continue">
+															<br>
+															<div class="flex-container">
+																<div>
+																	<h3>
+																		<div id="continue" class="button"> Continuar </div>
+																	</h3>
+																</div>
 															</div>
 														</div>
-													</div>
-													<div class="form__group field">
-														<div class="flex-container">
-															<div>
-																<div class="mapouter" id="mapOuter" style='display:none'>
-																	<h3 style="text-align: left;">Localização via Google maps</h3>
-																	<br>
-																	<div class="gmap_canvas"><iframe width="600" height="350" id="gmap_canvas" style='display:none'
-																	src="https://maps.google.com/maps?q=2880%20Broadway,%20New%20York&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://putlocker-is.org"></a><br><style>.mapouter{position:relative;text-align:right;height:500px;width:600px;}</style><a href="https://www.embedgooglemap.net">google map html code</a><style>.gmap_canvas {overflow:hidden;background:none!important;height:500px;width:600px;}</style></div></div>
+														<div class="form__group field">
+															<div class="flex-container">
+																<div>
+																	<div class="mapouter" id="mapOuter" style='display:none'>
+																		<h3 style="text-align: left;">Localização via Google maps</h3>
+																		<br>
+																		<div class="gmap_canvas"><iframe width="600" height="350" id="gmap_canvas" style='display:none'
+																		src="https://maps.google.com/maps?q=2880%20Broadway,%20New%20York&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://putlocker-is.org"></a><br><style>.mapouter{position:relative;text-align:right;height:500px;width:600px;}</style><a href="https://www.embedgooglemap.net">google map html code</a><style>.gmap_canvas {overflow:hidden;background:none!important;height:500px;width:600px;}</style></div></div>
+																</div>
 															</div>
 														</div>
-													</div>
-													<div class="form__group field" id="form_register_btn_confirm" style="display:none">
-														<div class="flex-container">
-															<div>
-																<h3>
-																	<div id="confirm" class="button"> Confirmar dados? </div>
-																</h3>
+														<div class="form__group field" id="form_register_btn_confirm" style="display:none">
+															<div class="flex-container">
+																<div>
+																	<h3>
+																		<div id="confirm" class="button"> Confirmar dados? </div>
+																	</h3>
+																</div>
 															</div>
+														</div>
+														<div id="mainPageNOK" style="display: none">
+															<br>
+															<h1 id="failMsg" style="text-align: left;"></h1>
+															<br>
 														</div>
 													</div>
 												</div>
