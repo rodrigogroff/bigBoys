@@ -54,36 +54,15 @@ export default class {
             </h4>`
         }
 
-        return `<div class="container-fluid portfolio">
-      <div class="container">
-          <div class="col-md-6 col-lg-6">
-                <br>
-                <br>
-                <div id="myCarousel">
-                  <div id="bootstrap-carousel" class="carousel slide ">${carousel}</div>
-                  <script type="text/javascript">
-                      // <![CDATA[
-                      jQuery(document).ready(function () {
-                          jQuery('#bootstrap-carousel').carousel({ interval: 5000, pause: "hover" });
-                      });
-                      // ]]>
-                  </script>
-              </div>
-          </div>
-          <div class="col-md-6 col-lg-6">
-                      <br><br>
-              <div class="wcontainer pinfo" style='height:386px'>
-                <span style='text-size:small'>Criado por:</span><br>
-                <h4 style='color:black'>${obj.patreon}</h4>
-                <br>
-                ${buyer}                
-                <br>
-                <br>
-                <a style='color:red' href='/faq'>Clique aqui para dúvidas</a><br>
-              </div>
-          </div>
-      </div>
-      <br><br>
-  </div>`
+        document.getElementById('myAppCarousel').innerHTML = carousel;
+        document.getElementById('myAppInfo').innerHTML = `<span style='text-size:small'>Criado por:</span><br>
+                                                            <h4 style='color:black'>${obj.patreon}</h4>
+                                                            <br>
+                                                            ${buyer}                
+                                                            <br>
+                                                            <br>
+                                                            <a style='color:red' href='/faq'>Clique aqui para dúvidas</a><br>`;
+
+        return ""
     }
 }

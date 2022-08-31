@@ -97,12 +97,6 @@
 
 <script type="module" src="src/static/Item.js"></script>
 
-<style>
-	html { overflow: scroll; overflow-x: hidden; }
-	::-webkit-scrollbar { width: 0; background: transparent; }
-    ::-webkit-scrollbar-thumb { background: #FF0000; }
-</style>
-
 <body style="background-color: black">
 	<div id="main_wrapper">
 		<header>
@@ -125,8 +119,35 @@
 				</div>
 			</nav>
 		</header>
-		<div id="myApp"></div>		
-		<div id="myAppItemGallery"></div>
+		<div class="container-fluid portfolio">
+			<div class="container">
+				<br>
+				<div id="myAppUserLogin"></div>
+				<div class="col-md-6 col-lg-6">
+					  <br>
+					  <br>
+					  <div id="myCarousel">
+						<div id="bootstrap-carousel" class="carousel slide ">
+							<div id="myAppCarousel"></div>
+						</div>
+						<script type="text/javascript">
+							// <![CDATA[
+							jQuery(document).ready(function () {
+								jQuery('#bootstrap-carousel').carousel({ interval: 5000, pause: "hover" });
+							});
+							// ]]>
+						</script>
+					</div>
+				</div>
+				<div class="col-md-6 col-lg-6">
+					<br><br>
+					<div class="wcontainer pinfo" style='height:386px'>
+						<div id="myAppInfo"></div>
+					</div>
+				</div>
+			</div>
+			<br><br>
+		</div>
 		<footer class="container-fluid no-padding">
 			<div id="myAppFooter"></div>
 		</footer>
