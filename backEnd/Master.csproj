@@ -40,7 +40,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Service\Domain\Sale\" />
     <Folder Include="wwwroot\" />
   </ItemGroup>
 

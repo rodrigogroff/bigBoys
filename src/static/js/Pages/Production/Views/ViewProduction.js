@@ -7,11 +7,9 @@ export default class {
   static getHtml() {
 
     UserLogin.getHtml();
-    document.getElementById('myAppMenu').innerHTML = Menu.getHtml() 
-    document.getElementById('myAppFooter').innerHTML = Footer.getHtml() 
+    document.getElementById('myAppMenu').innerHTML = Menu.getHtml()
+    document.getElementById('myAppFooter').innerHTML = Footer.getHtml()
 
     return '';
   }
 }
-
-//https://skywarriorthemes.com/gameaddict

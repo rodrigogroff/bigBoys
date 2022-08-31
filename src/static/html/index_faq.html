@@ -1,259 +1,393 @@
 ﻿<!DOCTYPE html>
 <html lang="en-US">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Big Boys Store</title>
-	<script type="text/javascript">
-		var theChampDefaultLang = 'en_US',
-			theChampCloseIconPath =
-			'https://skywarriorthemes.com/gameaddict/wp-content/plugins/super-socializer/images/close.png',	
-			theChampSiteUrl = 'https://skywarriorthemes.com/gameaddict',
-			theChampVerified = 0,
-			theChampEmailPopup = 0,	
-			theChampFBKey = '',
-			theChampFBLang = 'en_US',
-			theChampFbLikeMycred = 0,
-			theChampSsga = 0,
-			theChampCommentNotification = 0,
-			theChampHeateorFcmRecentComments = 0,
-			theChampFbIosLogin = 0,	
-			theChampFBCommentUrl = 'https://skywarriorthemes.com/gameaddict/clan-members/',
-			theChampFBCommentColor = '',
-			theChampFBCommentNumPosts = '',
-			theChampFBCommentWidth = '100%',
-			theChampFBCommentOrderby = '',
-			theChampCommentingTabs = "wordpress,facebook,disqus",
-			theChampGpCommentsUrl = 'https://skywarriorthemes.com/gameaddict/clan-members/',
-			theChampDisqusShortname = '',
-			theChampScEnabledTabs = 'wordpress,fb',
-			theChampScLabel = 'Leave a reply',
-			theChampScTabLabels = {
-				"wordpress": "Default Comments (0)",
-				"fb": "Facebook Comments",
-				"disqus": "Disqus Comments"
-			},
-			theChampGpCommentsWidth = 0,
-			theChampCommentingId = 'respond',
-			theChampSharingAjaxUrl = 'https://skywarriorthemes.com/gameaddict/wp-admin/admin-ajax.php',
-			heateorSsFbMessengerAPI =
-			'https://www.facebook.com/dialog/send?app_id=595489497242932&display=popup&link=%encoded_post_url%&redirect_uri=%encoded_post_url%',
-			heateorSsWhatsappShareAPI = 'web',
-			heateorSsUrlCountFetched = [],
-			heateorSsSharesText = 'Shares',
-			heateorSsShareText = 'Share',
-			theChampPluginIconPath =
-			'https://skywarriorthemes.com/gameaddict/wp-content/plugins/super-socializer/images/logo.png',
-			theChampHorizontalSharingCountEnable = 0,
-			theChampVerticalSharingCountEnable = 0,
-			theChampSharingOffset = -10,
-			theChampCounterOffset = -10,
-			theChampMobileStickySharingEnabled = 1,
-			heateorSsCopyLinkMessage = "Link copied.";
-		var heateorSsHorSharingShortUrl = "https://skywarriorthemes.com/gameaddict/clan-members/";
-		var heateorSsVerticalSharingShortUrl = "https://skywarriorthemes.com/gameaddict/clan-members/";
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Big Boys Store</title>
+    <script type="text/javascript">
+      var theChampDefaultLang = "en_US",
+        theChampCloseIconPath =
+          "https://skywarriorthemes.com/gameaddict/wp-content/plugins/super-socializer/images/close.png",
+        theChampSiteUrl = "https://skywarriorthemes.com/gameaddict",
+        theChampVerified = 0,
+        theChampEmailPopup = 0,
+        theChampFBKey = "",
+        theChampFBLang = "en_US",
+        theChampFbLikeMycred = 0,
+        theChampSsga = 0,
+        theChampCommentNotification = 0,
+        theChampHeateorFcmRecentComments = 0,
+        theChampFbIosLogin = 0,
+        theChampFBCommentUrl =
+          "https://skywarriorthemes.com/gameaddict/clan-members/",
+        theChampFBCommentColor = "",
+        theChampFBCommentNumPosts = "",
+        theChampFBCommentWidth = "100%",
+        theChampFBCommentOrderby = "",
+        theChampCommentingTabs = "wordpress,facebook,disqus",
+        theChampGpCommentsUrl =
+          "https://skywarriorthemes.com/gameaddict/clan-members/",
+        theChampDisqusShortname = "",
+        theChampScEnabledTabs = "wordpress,fb",
+        theChampScLabel = "Leave a reply",
+        theChampScTabLabels = {
+          wordpress: "Default Comments (0)",
+          fb: "Facebook Comments",
+          disqus: "Disqus Comments",
+        },
+        theChampGpCommentsWidth = 0,
+        theChampCommentingId = "respond",
+        theChampSharingAjaxUrl =
+          "https://skywarriorthemes.com/gameaddict/wp-admin/admin-ajax.php",
+        heateorSsFbMessengerAPI =
+          "https://www.facebook.com/dialog/send?app_id=595489497242932&display=popup&link=%encoded_post_url%&redirect_uri=%encoded_post_url%",
+        heateorSsWhatsappShareAPI = "web",
+        heateorSsUrlCountFetched = [],
+        heateorSsSharesText = "Shares",
+        heateorSsShareText = "Share",
+        theChampPluginIconPath =
+          "https://skywarriorthemes.com/gameaddict/wp-content/plugins/super-socializer/images/logo.png",
+        theChampHorizontalSharingCountEnable = 0,
+        theChampVerticalSharingCountEnable = 0,
+        theChampSharingOffset = -10,
+        theChampCounterOffset = -10,
+        theChampMobileStickySharingEnabled = 1,
+        heateorSsCopyLinkMessage = "Link copied.";
+      var heateorSsHorSharingShortUrl =
+        "https://skywarriorthemes.com/gameaddict/clan-members/";
+      var heateorSsVerticalSharingShortUrl =
+        "https://skywarriorthemes.com/gameaddict/clan-members/";
 
-		var LS_Meta = {
-			"v": "6.11.6",
-			"fixGSAP": "1"
-		};
+      var LS_Meta = {
+        v: "6.11.6",
+        fixGSAP: "1",
+      };
 
-		var wc_add_to_cart_params = {
-			"ajax_url": "\/gameaddict\/wp-admin\/admin-ajax.php",
-			"wc_ajax_url": "\/gameaddict\/?wc-ajax=%%endpoint%%",
-			"i18n_view_cart": "View cart",
-			"cart_url": "https:\/\/skywarriorthemes.com\/gameaddict\/cart\/",
-			"is_cart": "",
-			"cart_redirect_after_add": "no"
-		};
+      var wc_add_to_cart_params = {
+        ajax_url: "\/gameaddict\/wp-admin\/admin-ajax.php",
+        wc_ajax_url: "\/gameaddict\/?wc-ajax=%%endpoint%%",
+        i18n_view_cart: "View cart",
+        cart_url: "https:\/\/skywarriorthemes.com\/gameaddict\/cart\/",
+        is_cart: "",
+        cart_redirect_after_add: "no",
+      };
 
-		var GALLERY_DTA_FRONT = {
-			"IMAGES_URL": "https:\/\/skywarriorthemes.com\/gameaddict\/wp-content\/plugins\/sk_isotope_gallery\/images",
-			"LOOK_AND_FEEL": "7b7b7b"
-		};
+      var GALLERY_DTA_FRONT = {
+        IMAGES_URL:
+          "https:\/\/skywarriorthemes.com\/gameaddict\/wp-content\/plugins\/sk_isotope_gallery\/images",
+        LOOK_AND_FEEL: "7b7b7b",
+      };
 
-		var woocommerce_params = {
-			"ajax_url": "\/gameaddict\/wp-admin\/admin-ajax.php",
-			"wc_ajax_url": "\/gameaddict\/?wc-ajax=%%endpoint%%"
-		};
+      var woocommerce_params = {
+        ajax_url: "\/gameaddict\/wp-admin\/admin-ajax.php",
+        wc_ajax_url: "\/gameaddict\/?wc-ajax=%%endpoint%%",
+      };
 
-		var wc_cart_fragments_params = {
-			"ajax_url": "\/gameaddict\/wp-admin\/admin-ajax.php",
-			"wc_ajax_url": "\/gameaddict\/?wc-ajax=%%endpoint%%",
-			"cart_hash_key": "wc_cart_hash_7aa8f5d7156cd2e7778926bac4a0a290",
-			"fragment_name": "wc_fragments_7aa8f5d7156cd2e7778926bac4a0a290",
-			"request_timeout": "5000"
-		};
+      var wc_cart_fragments_params = {
+        ajax_url: "\/gameaddict\/wp-admin\/admin-ajax.php",
+        wc_ajax_url: "\/gameaddict\/?wc-ajax=%%endpoint%%",
+        cart_hash_key: "wc_cart_hash_7aa8f5d7156cd2e7778926bac4a0a290",
+        fragment_name: "wc_fragments_7aa8f5d7156cd2e7778926bac4a0a290",
+        request_timeout: "5000",
+      };
 
-		var heartLove = {
-			"ajaxurl": "https:\/\/skywarriorthemes.com\/gameaddict\/wp-admin\/admin-ajax.php"
-		};
+      var heartLove = {
+        ajaxurl:
+          "https:\/\/skywarriorthemes.com\/gameaddict\/wp-admin\/admin-ajax.php",
+      };
 
-		var settingsGlobal = {
-			"tajtl": "Clan Members"
-		};
+      var settingsGlobal = {
+        tajtl: "Clan Members",
+      };
 
-		var ajax_login_object = {
-			"ajaxurl": "https:\/\/skywarriorthemes.com\/gameaddict\/wp-admin\/admin-ajax.php",
-			"redirecturl": "https:\/\/skywarriorthemes.com\/gameaddict",
-			"loadingmessage": "Signing in, please wait...",
-			"error": "ERROR",
-			"privacy": "You need to accept Privacy Policy!"
-		};
+      var ajax_login_object = {
+        ajaxurl:
+          "https:\/\/skywarriorthemes.com\/gameaddict\/wp-admin\/admin-ajax.php",
+        redirecturl: "https:\/\/skywarriorthemes.com\/gameaddict",
+        loadingmessage: "Signing in, please wait...",
+        error: "ERROR",
+        privacy: "You need to accept Privacy Policy!",
+      };
+    </script>
 
-	</script>
-	
-	<link rel='stylesheet' href='/src/static/css/site_catalog_min.css' type='text/css' />
+    <link
+      rel="stylesheet"
+      href="/src/static/css/site_catalog_min.css"
+      type="text/css"
+    />
 
-	<script type='text/javascript' src='src/static/vendor/jquery/js/jquery-3.5.1.min.js'></script>
-	<script type='text/javascript' src='src/static/vendor/jquery-migrate.min.js'></script>
-	<script type='text/javascript' src='src/static/vendor/jquery.cookie.pack.js'></script>
-	<script type='text/javascript' src='src/static/vendor/clan-wars.tabs.js'></script>
-	<script type='text/javascript' src='src/static/vendor/clan-wars.jquery.tipsy.js'></script>
-	<script type='text/javascript' src='src/static/vendor/clan-wars.public.js'></script>
-	<script type='text/javascript' src='src/static/vendor/layerslider.utils.js'></script>
-	<script type='text/javascript' src='src/static/vendor/kreaturamidia.jquery.js'></script>
-	<script type='text/javascript' src='src/static/vendor/layerslider_transitions.js'></script>
-	<script type='text/javascript' src='src/static/vendor/jquery.blockUI.min.js'></script>
-	<script type='text/javascript' src='src/static/vendor/riaextended_css_plugin.min.js'></script>
-	<script type='text/javascript' src='src/static/vendor/easepack.min.js'></script>
-	<script type='text/javascript' src='src/static/vendor/rx_isotope_gallery.js'></script>
-	<script type='text/javascript' src='src/static/vendor/jquery.isotope.min.js'></script>	
-</head>
+    <script
+      type="text/javascript"
+      src="src/static/vendor/jquery/js/jquery-3.5.1.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="src/static/vendor/jquery-migrate.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="src/static/vendor/jquery.cookie.pack.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="src/static/vendor/clan-wars.tabs.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="src/static/vendor/clan-wars.jquery.tipsy.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="src/static/vendor/clan-wars.public.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="src/static/vendor/layerslider.utils.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="src/static/vendor/kreaturamidia.jquery.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="src/static/vendor/layerslider_transitions.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="src/static/vendor/jquery.blockUI.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="src/static/vendor/riaextended_css_plugin.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="src/static/vendor/easepack.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="src/static/vendor/rx_isotope_gallery.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="src/static/vendor/jquery.isotope.min.js"
+    ></script>
+  </head>
 
-<script type="module" src="src/static/Faq.js"></script>
+  <script type="module" src="src/static/Faq.js"></script>
 
-<style>
-	html { overflow: scroll; overflow-x: hidden; }
-	::-webkit-scrollbar { width: 0; background: transparent; }
-    ::-webkit-scrollbar-thumb { background: #FF0000; }
-</style>
+  <style>
+    html {
+      overflow: scroll;
+      overflow-x: hidden;
+    }
+    ::-webkit-scrollbar {
+      width: 0;
+      background: transparent;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #ff0000;
+    }
+  </style>
 
-<body style="background-color: black">
-	<div id="main_wrapper">
-		<header>
-			<div class="topbar">
-				<div class="container topbar-menu">
-					<div class="col-lg-12 no-padding" style="width:100%">
-						<div align="center">
-							<p style="padding-top:12px;padding-left:4px;height:100px">
-								<a class="brand" href="/">				
-									<img src="src/static/img/logo.png" alt="logo" width="221px" height="88px" />
-								</a>
-							</p>
-						</div>
-					</div>
-				</div>
-			</div>
-			<nav class="navbar navbar-inverse container">
-				<div class="navbar-inner" id="menuid">
-					<div id="myAppMenu"></div>					
-				</div>
-			</nav>
-		</header>
+  <body style="background-color: black">
+    <div id="main_wrapper">
+      <header>
+        <div class="topbar">
+          <div class="container topbar-menu">
+            <div class="col-lg-12 no-padding" style="width: 100%">
+              <div align="center">
+                <p style="padding-top: 12px; padding-left: 4px; height: 100px">
+                  <a class="brand" href="/">
+                    <img
+                      src="src/static/img/logo.png"
+                      alt="logo"
+                      width="221px"
+                      height="88px"
+                    />
+                  </a>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <nav class="navbar navbar-inverse container">
+          <div class="navbar-inner" id="menuid">
+            <div id="myAppMenu"></div>
+          </div>
+        </nav>
+      </header>
 
-		<div id="myApp"></div>
+      <div id="myApp"></div>
 
-		<div class="page normal-page ">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-12 col-lg-12 no-padding">
-						<div style='clear: both'></div>
-						<div class='the_champ_sharing_container the_champ_horizontal_sharing'>
-							<div style="clear:both"></div>
-						</div>
-						<div style='clear: both'></div>
-						<div class="vc_row wpb_row vc_row-fluid">
-							<div class="wpb_column vc_column_container vc_col-sm-12">
-								<div class="vc_column-inner">
-									<div class="wpb_wrapper">
-										<div class="wpb_text_column wpb_content_element ">
-											<div class="wpb_wrapper">
-												<br>
-												<h1 style="text-align: center;">Perguntas Frequentes / dúvidas</h1>
-												<br>
-												<div>
-													<br>
-													<div align="center">
-														<p>
-															<strong>1. Como posso comprar quadros e miniaturas no site?</strong><br>
-															<span style="color:grey">
-																Para registrar-se, clique <a href="/register" style="color:white">aqui</a> e preencha seus dados cadastrais.<br>
-																Para logar-se no portal, clique <a href="/login" style="color:white">aqui</a> e informe seu telefone e email.<br>
-																Para comprar é muito fácil: basta escolher um item do catálogo e clicar no preço.<br>
-															</span>
-															<br>
-															<strong>2. Que dados de cadastro serão necessários?</strong><br>
-															<span style="color:grey">
-																Apenas seu nome, telefone, email e endereço de entrega.<br>
-																Não pediremos senhas nem enviamos emails com códigos.<br>
-															</span>
-															<br>
-															<strong>3. O pagamento é somente por PIX? Como posso parcelas minhas compras?</strong><br>
-															<span style="color:grey">
-																Sim, pelo PIX temos o valor mais baixo possível para você, sem intermediários como VISA, Mastercard.<br>
-																Alguns bancos oferecem "dividir o pix", para compras de valores mais altos. Informe-se com seu gerente.<br>
-															</span>
-															<br>
-															<strong>4. As mercadorias estão todas em pronta entrega?</strong><br>
-															<span style="color:grey">
-																Não, atuamos sob demanda. Após o pagamento do PIX, o pedido é construido e embalado em até dois dias uteis.<br>
-																No dia seguinte, colocaremos no correio para envio até seu endereço cadastrado ou escolhido para entrega.<br>
-															</span>
-															<br>
-															<strong>5. Como posso acompanhar meu pedido?</strong><br>
-															<span style="color:grey">
-																Informe seu email e telefone nesta pagina <a href="/production" style="color:white">aqui</a> para acompanhar todo o processo<br>
-															</span>
-															<br>
-															<strong>6. Posso cancelar meu pedido?</strong><br>
-															<span style="color:grey">
-																Sim, antes do pedido ir para o correio, favor entrar em contato pelo whatsApp com o operador para devolução do PIX.<br>
-																Aconselhamos fazer este procedimento ainda dentro do prazo de construção, pois depois não teremos como estornar, uma vez a peça estando em mãos do correio.<br>
-															</span>
-															<br>
-															<strong>7. Posso obter descontos pedindo mais de uma peça?</strong><br>
-															<span style="color:grey">
-																Sim, a partir de 2 quadros, ofereçemos 10% de desconto automaticamente.<br>
-															</span>
-															<br>
-														</p>
-													</div>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>						
-						<div class="clear"></div>
-					</div>
-				</div>
-			</div>
-			<br><br>
-		</div>
-		<footer class="container-fluid no-padding">
-			<div id="myAppFooter"></div>
-		</footer>
-	</div>
-	
-	<script type="text/javascript">
-		(function () {
-			var c = document.body.className;
-			c = c.replace(/woocommerce-no-js/, 'woocommerce-js');
-			document.body.className = c;
-		})();
-	</script>
+      <div class="page normal-page">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12 col-lg-12 no-padding">
+              <div style="clear: both"></div>
+              <div
+                class="the_champ_sharing_container the_champ_horizontal_sharing"
+              >
+                <div style="clear: both"></div>
+              </div>
+              <div style="clear: both"></div>
+              <div class="vc_row wpb_row vc_row-fluid">
+                <div class="wpb_column vc_column_container vc_col-sm-12">
+                  <div class="vc_column-inner">
+                    <div class="wpb_wrapper">
+                      <div class="wpb_text_column wpb_content_element">
+                        <div class="wpb_wrapper">
+                          <br />
+                          <h1 style="text-align: center">
+                            Perguntas Frequentes / dúvidas
+                          </h1>
+                          <br />
+                          <div>
+                            <br />
+                            <div align="center">
+                              <p>
+                                <strong
+                                  >1. Como posso comprar quadros e miniaturas no
+                                  site?</strong
+                                ><br />
+                                <span style="color: grey">
+                                  Para registrar-se, clique
+                                  <a href="/register" style="color: white"
+                                    >aqui</a
+                                  >
+                                  e preencha seus dados cadastrais.<br />
+                                  Para logar-se no portal, clique
+                                  <a href="/login" style="color: white">aqui</a>
+                                  e informe seu telefone e email.<br />
+                                  Para comprar é muito fácil: basta escolher um
+                                  item do catálogo e clicar no preço.<br />
+                                </span>
+                                <br />
+                                <strong
+                                  >2. Que dados de cadastro serão
+                                  necessários?</strong
+                                ><br />
+                                <span style="color: grey">
+                                  Apenas seu nome, telefone, email e endereço de
+                                  entrega.<br />
+                                  Não pediremos senhas nem enviamos emails com
+                                  códigos.<br />
+                                </span>
+                                <br />
+                                <strong
+                                  >3. O pagamento é somente por PIX? Como posso
+                                  parcelas minhas compras?</strong
+                                ><br />
+                                <span style="color: grey">
+                                  Sim, pelo PIX temos o valor mais baixo
+                                  possível para você, sem intermediários como
+                                  VISA, Mastercard.<br />
+                                  Alguns bancos oferecem "dividir o pix", para
+                                  compras de valores mais altos. Informe-se com
+                                  seu gerente.<br />
+                                </span>
+                                <br />
+                                <strong
+                                  >4. As mercadorias estão todas em pronta
+                                  entrega?</strong
+                                ><br />
+                                <span style="color: grey">
+                                  Não, atuamos sob demanda. Após o pagamento do
+                                  PIX, o pedido é construido e embalado em até
+                                  dois dias uteis.<br />
+                                  No dia seguinte, colocaremos no correio para
+                                  envio até seu endereço cadastrado ou escolhido
+                                  para entrega.<br />
+                                </span>
+                                <br />
+                                <strong
+                                  >5. Como posso acompanhar meu pedido?</strong
+                                ><br />
+                                <span style="color: grey">
+                                  Informe seu email e telefone nesta pagina
+                                  <a href="/production" style="color: white"
+                                    >aqui</a
+                                  >
+                                  para acompanhar todo o processo<br />
+                                </span>
+                                <br />
+                                <strong>6. Posso cancelar meu pedido?</strong
+                                ><br />
+                                <span style="color: grey">
+                                  Sim, antes do pedido ir para o correio, favor
+                                  entrar em contato pelo whatsApp com o operador
+                                  para devolução do PIX.<br />
+                                  Aconselhamos fazer este procedimento ainda
+                                  dentro do prazo de construção, pois depois não
+                                  teremos como estornar, uma vez a peça estando
+                                  em mãos do correio.<br />
+                                </span>
+                                <br />
+                                <strong
+                                  >7. Posso obter descontos pedindo mais de uma
+                                  peça?</strong
+                                ><br />
+                                <span style="color: grey">
+                                  Sim, a partir de 2 quadros, ofereçemos 10% de
+                                  desconto automaticamente.<br />
+                                </span>
+                                <br />
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="clear"></div>
+            </div>
+          </div>
+        </div>
+        <br /><br />
+      </div>
+      <footer class="container-fluid no-padding">
+        <div id="myAppFooter"></div>
+      </footer>
+    </div>
 
-	<script type='text/javascript' src='src/static/vendor/owl_carousel_min.js'></script>
-	<script type='text/javascript' src='src/static/vendor/wp_owl_carousel.js'></script>
-	<script type='text/javascript' src='src/static/vendor/global_theme.js'></script>
-	<script type='text/javascript' src='src/static/vendor/imagescale.js'></script>
-	<script type='text/javascript' src='src/static/vendor/transit.js'></script>
-	<script type='text/javascript' src='src/static/vendor/wp-embed.min.js'></script>
-	<script type='text/javascript' src='src/static/vendor/js_composer_front.min.js'></script>
-	<script type='text/javascript' src='src/static/vendor/vc-waypoints.min.js'></script>
-	
-</body>
+    <script type="text/javascript">
+      (function () {
+        var c = document.body.className;
+        c = c.replace(/woocommerce-no-js/, "woocommerce-js");
+        document.body.className = c;
+      })();
+    </script>
 
+    <script
+      type="text/javascript"
+      src="src/static/vendor/owl_carousel_min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="src/static/vendor/wp_owl_carousel.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="src/static/vendor/global_theme.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="src/static/vendor/imagescale.js"
+    ></script>
+    <script type="text/javascript" src="src/static/vendor/transit.js"></script>
+    <script
+      type="text/javascript"
+      src="src/static/vendor/wp-embed.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="src/static/vendor/js_composer_front.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="src/static/vendor/vc-waypoints.min.js"
+    ></script>
+  </body>
 </html>

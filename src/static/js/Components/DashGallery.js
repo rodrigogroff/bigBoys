@@ -5,7 +5,7 @@ export default class {
 
         var carousel = '<ol class="carousel-indicators">';
 
-        for (var a = 0; a < gallery.length; a++) {            
+        for (var a = 0; a < gallery.length; a++) {
             if (a == 0)
                 carousel += `<li data-target="#bootstrap-carousel" data-slide-to="${a}" class="active"></li>`
             else

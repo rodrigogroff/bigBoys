@@ -6,7 +6,7 @@ export function getLocation() {
   var indexPos = parseInt(_idx);
 
   var lstNodes = [
-    { api_host: "http://localhost", api_port:  18524 },
+    { api_host: "http://localhost", api_port: 18524 },
   ];
 
   //console.log (lstNodes);
@@ -256,7 +256,7 @@ export function loginOk(resp) {
 }
 
 export function isAuthenticated() {
-  var ret  = localStorage.getItem("token");
+  var ret = localStorage.getItem("token");
   if (ret == null || ret == undefined)
     return null;
   var ret = {
@@ -441,8 +441,8 @@ export function postPublicPortal(location, _obj) {
       ApiLocation.api_host + ":" + ApiLocation.api_port + "/api/" + location,
       {
         method: "POST",
-        headers: 
-        { 
+        headers:
+        {
           "Content-Type": "application/json",
           "Access-Control-Allow-Origin": "*"
         },
@@ -457,7 +457,7 @@ export function postPublicPortal(location, _obj) {
               msg: data.message,
             });
           });
-        }         
+        }
         else if (res.ok === true) {
           res.json().then((data) => {
             resolve({
@@ -468,7 +468,7 @@ export function postPublicPortal(location, _obj) {
         } else {
           res.json().then((data) => {
             resolve({
-              ok: false,              
+              ok: false,
             });
           });
         }
@@ -482,11 +482,11 @@ export function postPublicPortal(location, _obj) {
   });
 }
 
-export function buildTableSimple(tableobj) {  
+export function buildTableSimple(tableobj) {
 
   var color = 'black';
   var bgColor = 'white';
-  var styleClass = ''; 
+  var styleClass = '';
   var noResultMsg = '';
 
   if (styleClass == undefined) styleClass = '';
@@ -535,12 +535,14 @@ export function buildTableSimple(tableobj) {
   return lineData;
 }
 
-export function buildErrorMsg(msg)
-{
-  return '<span style="color:gray">Aviso do sistema</span><h3 style="margin-top:5px;color:red"> ' + msg  + '</h3>'
+export function buildErrorMsg(msg) {
+  if (msg == null || msg == undefined)
+    msg = "Ops - aconteceu um erro";
+
+  return '<span style="color:gray">Aviso do sistema</span><h3 style="margin-top:5px;color:red"> ' + msg + '</h3>'
 }
 
-export function buildTable(tableobj, color, bgColor, styleClass, noResultMsg) {  
+export function buildTable(tableobj, color, bgColor, styleClass, noResultMsg) {
   if (styleClass == undefined) styleClass = '';
   if (noResultMsg == undefined) noResultMsg = "No results found";
   var lineData = "";

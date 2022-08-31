@@ -20,4 +20,4 @@ app.get("/login", (req, res) => { res.sendFile(path.resolve(__dirname, "./index_
 app.get("/logout", (req, res) => { res.sendFile(path.resolve(__dirname, "./index_logout.html")); });
 app.get("/production", (req, res) => { res.sendFile(path.resolve(__dirname, "./index_production.html")); });
 // start!
-app.listen(80, () => console.log("Server running...80" ));
+app.listen(80, () => console.log("Server running...80"));

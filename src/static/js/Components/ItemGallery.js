@@ -7,14 +7,14 @@ export default class {
     static getHtml() {
 
         var _par = Object.fromEntries(new URLSearchParams(location.search))
-        var obj = Catalogo.getAll('', _par.id );
+        var obj = Catalogo.getAll('', _par.id);
 
         if (obj == null)
-            obj = CatalogoPoster.getAll('', _par.id );
+            obj = CatalogoPoster.getAll('', _par.id);
 
         var carousel = '<ol class="carousel-indicators">';
 
-        for (var a = 0; a < obj.gallery.length; a++) {            
+        for (var a = 0; a < obj.gallery.length; a++) {
             if (a == 0)
                 carousel += `<li data-target="#bootstrap-carousel" data-slide-to="${a}" class="active"></li>`
             else
@@ -48,10 +48,9 @@ export default class {
             <div id="add" class="button" data="${obj.id}" option="2"> Acrescentar no carrinho </div>
             <br>
         </h4>
-        <br>` 
+        <br>`
 
-        if (obj.sculptPrice != null && obj.sculptPrice != undefined)
-        {
+        if (obj.sculptPrice != null && obj.sculptPrice != undefined) {
             buyer = `<h4 style='color:green'>
             <div id="add" class="button" data="${obj.id}" option="2"> Acrescentar no carrinho </div><br>
             ${obj.sculptPrice}<br>

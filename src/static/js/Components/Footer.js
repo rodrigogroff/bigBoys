@@ -1,9 +1,9 @@
 
 export default class {
 
-  static getHtml() {
-    
-    return `<div class="container">
+	static getHtml() {
+
+		return `<div class="container">
 				<div align='center'>
 					<br><br><br>
 					<h4></h4>
@@ -29,5 +29,5 @@ export default class {
 			<br>            
             <br>    
             `
-  }
+	}
 }

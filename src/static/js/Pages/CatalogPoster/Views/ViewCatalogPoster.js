@@ -7,16 +7,11 @@ import UserLogin from "@app/Components/UserLogin";
 
 export default class {
   static getHtml() {
-
     UserLogin.getHtml();
-    document.getElementById('myAppMenu').innerHTML = Menu.getHtml() 
-    document.getElementById('myAppFooter').innerHTML = Footer.getHtml() 
-    
+    document.getElementById('myAppMenu').innerHTML = Menu.getHtml()
+    document.getElementById('myAppFooter').innerHTML = Footer.getHtml()
     var items = CatalogoDb.getAll();
-    document.getElementById('myAppCatalog').innerHTML = Catalogo.getHtml(items)     
-
+    document.getElementById('myAppCatalog').innerHTML = Catalogo.getHtml(items)
     return '';
   }
 }
-
-//https://skywarriorthemes.com/gameaddict

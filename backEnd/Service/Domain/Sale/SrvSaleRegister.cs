@@ -11,13 +11,13 @@ namespace Master.Service.Domain.Sale
         public IUserSaleRepo userSaleRepo = new UserSaleRepo();
 
         public bool Register (  string conn,
-                                string mobile,
+                                string cpf,
                                 long product_id,
                                 long price,
                                 string gmap_delivery )
         {
-            if (string.IsNullOrEmpty(mobile))
-                return ReportError("Mobile information failed");
+            if (string.IsNullOrEmpty(cpf))
+                return ReportError("CPF information failed");
 
             if (product_id <= 0)
                 return ReportError("Product information failed");
@@ -30,7 +30,7 @@ namespace Master.Service.Domain.Sale
 
             User usr;
 
-            if (!userRepo.GetUserByMobile(conn, mobile, out usr))
+            if (!userRepo.GetUserByCPF(conn, cpf, out usr))
                 return false;
 
             var dt = DateTime.Now;

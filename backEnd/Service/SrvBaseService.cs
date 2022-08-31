@@ -27,5 +27,21 @@ namespace Master.Service
         {
             return Convert.ToDateTime(dt).ToString("dd/MM/yyyy HH:mm");
         }
+
+        public string Money(long? vr)
+        {
+            return string.Format("{0:#.00}", Convert.ToDecimal(Convert.ToInt64(vr)) / 100);
+        }
+
+        public long I(string str)
+        {
+            var t_str = "";
+
+            for (int i = 0; i < str.Length; i++)
+                if (Char.IsNumber(str[i]))
+                    t_str += str[i];
+
+            return Convert.ToInt64(t_str);
+        }
     }
 }

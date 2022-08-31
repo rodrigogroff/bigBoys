@@ -10,6 +10,7 @@ namespace Master.Repository
         public bool GetUserById(string conn, long id, out User user);
         public bool GetUserByEmail(string conn, string email, out User user);
         public bool GetUserByMobile(string conn, string mobile, out User user);
+        public bool GetUserByCPF(string conn, string cpf, out User user);
         public bool Update(string conn, User mdl);
         public long Insert(string conn, User mdl);
     }
@@ -53,6 +54,31 @@ namespace Master.Repository
 
                     user = db.QueryFirstOrDefault<User> 
                         ("SELECT * FROM \"User\" where \"stMobile\"=@mobile", new { mobile });
+                }
+
+                return true;
+            }
+            catch
+            {
+                user = null;
+                return false;
+            }
+
+            #endregion
+        }
+
+        public bool GetUserByCPF(string conn, string cpf, out User user)
+        {
+            #region - code - 
+
+            try
+            {
+                using (var db = new NpgsqlConnection(conn))
+                {
+                    db.Open();
+
+                    user = db.QueryFirstOrDefault<User>
+                        ("SELECT * FROM \"User\" where \"stCPF\"=@cpf", new { cpf });
                 }
 
                 return true;

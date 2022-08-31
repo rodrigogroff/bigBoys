@@ -3,7 +3,7 @@ import ViewDash from "./Views/ViewDash";
 
 export default class {
   constructor(params) {
-    this.params = params;   
+    this.params = params;
   }
 
   getHtml() {
