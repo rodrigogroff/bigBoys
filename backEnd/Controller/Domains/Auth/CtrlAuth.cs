@@ -72,7 +72,7 @@ namespace Api.Master.Controllers
                              obj.mobile, 
                              out usr ))
             {
-                return BadRequest(srv.Error);
+                return NotFound(new { message = "" });
             }
 
             var token = ComposeTokenForSession(usr);

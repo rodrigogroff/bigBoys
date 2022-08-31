@@ -1,6 +1,6 @@
 
 import ViewLogin from "./Views/ViewLogin";
-import { postPublicPortal } from "@app/Infra/Util"
+import { postPublicPortal, buildErrorMsg } from "@app/Infra/Util"
 
 export default class {
 
@@ -56,17 +56,31 @@ export default class {
 
           postPublicPortal("v1/auth/login", formData)
           .then((resp) => {
-            document.getElementById('loading').style.display = 'none'     
-            localStorage.setItem("token", resp.payload.token);
-            localStorage.setItem("userName", resp.payload.userName);
-            window.location.href = '/production';
+
+            console.log(resp)
+
+            if (resp.ok == true)
+            {
+              document.getElementById('loading').style.display = 'none'     
+              localStorage.setItem("token", resp.payload.token);
+              localStorage.setItem("userName", resp.payload.userName);
+              window.location.href = '/production';
+            }
+            else
+            {
+              document.getElementById('loading').style.display = 'none'  
+              document.getElementById('form_btn_login').style.pointerEvents = "all";
+              document.getElementById('login').style.backgroundColor = 'red'
+              document.getElementById('mainPageNOK').style.display = 'block'
+              document.getElementById('failMsg').innerHTML = buildErrorMsg('Email ou telefone não encontrados')  
+            }
           })
           .catch((resp) => {
             document.getElementById('loading').style.display = 'none'
             document.getElementById('form_btn_login').style.pointerEvents = "all";
             document.getElementById('login').style.backgroundColor = 'red'
-            document.getElementById('mainPageNOK').style.display = 'block'            
-            document.getElementById('failMsg').innerHTML = '<span style="color:gray">Falha<br></span> ' + resp.msg
+            document.getElementById('mainPageNOK').style.display = 'block'
+            document.getElementById('failMsg').innerHTML = buildErrorMsg(resp.msg)
           });
           
           break;

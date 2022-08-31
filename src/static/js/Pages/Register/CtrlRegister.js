@@ -1,6 +1,6 @@
 
 import ViewRegister from "./Views/ViewRegister";
-import { postPublicPortal } from "@app/Infra/Util"
+import { postPublicPortal, buildErrorMsg } from "@app/Infra/Util"
 
 export default class {
   constructor(params) {
@@ -124,7 +124,7 @@ export default class {
             document.getElementById('form_register_btn_confirm').style.pointerEvents = "all";          
             document.getElementById('mainPageNOK').style.display = 'block'
             document.getElementById('confirm').style.backgroundColor = 'red'
-            document.getElementById('failMsg').innerHTML = '<span style="color:gray">Falha<br></span> ' + resp.msg
+            document.getElementById('failMsg').innerHTML = buildErrorMsg(resp.msg)
           });
 
           break;

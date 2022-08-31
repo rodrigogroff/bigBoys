@@ -457,7 +457,8 @@ export function postPublicPortal(location, _obj) {
               msg: data.message,
             });
           });
-        } else if (res.ok === true) {
+        }         
+        else if (res.ok === true) {
           res.json().then((data) => {
             resolve({
               ok: true,
@@ -467,8 +468,7 @@ export function postPublicPortal(location, _obj) {
         } else {
           res.json().then((data) => {
             resolve({
-              ok: false,
-              msg: data.message,
+              ok: false,              
             });
           });
         }
@@ -533,6 +533,11 @@ export function buildTableSimple(tableobj) {
   }
 
   return lineData;
+}
+
+export function buildErrorMsg(msg)
+{
+  return '<span style="color:gray">Aviso do sistema</span><h3 style="margin-top:5px;color:red"> ' + msg  + '</h3>'
 }
 
 export function buildTable(tableobj, color, bgColor, styleClass, noResultMsg) {  

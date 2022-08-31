@@ -4,9 +4,17 @@ import ViewLogout from "./Views/ViewLogout";
 export default class {
 
   constructor(params) {
-      localStorage.setItem("token", null);
-      localStorage.setItem("userName", null);
-      window.location.href = '/';
+      document.body.addEventListener("click", (e) => {  
+        switch (e.target.id) {
+          case "confirmar":
+            {
+              localStorage.removeItem("token");
+              localStorage.removeItem("userName");
+              window.location.href = '/';
+              break;
+            }
+        }
+      }); 
     }
   
     getHtml() {
