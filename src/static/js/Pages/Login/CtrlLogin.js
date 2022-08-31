@@ -9,12 +9,12 @@ export default class {
     document.getElementById('email').focus();
 
     var txt_email = document.getElementById('email');
-    var txt_mobile = document.getElementById('mobile');
+    var txt_cpf = document.getElementById('cpf');
 
-    txt_mobile.addEventListener("blur", function( event ) {          
-      document.getElementById('validation_mobile').style.display = 'none'
-      if (this.value != '' && this.value.length == 16) { } else {
-        document.getElementById('validation_mobile').style.display = 'block'          
+    txt_cpf.addEventListener("blur", function( event ) {          
+      document.getElementById('validation_cpf').style.display = 'none'
+      if (this.value != '' && this.value.length == 14) { } else {
+        document.getElementById('validation_cpf').style.display = 'block'          
       }
     }, true);
 
@@ -37,16 +37,16 @@ export default class {
             txt_email.focus()
           }
 
-          if (txt_mobile.value != '' && txt_mobile.value.length == 16) { } else 
+          if (txt_cpf.value != '' && txt_cpf.value.length == 14) { } else 
           {
-            document.getElementById('validation_mobile').style.display = 'block'          
+            document.getElementById('validation_cpf').style.display = 'block'          
             passed = false;
-            txt_mobile.focus()
+            txt_cpf.focus()
           }
 
           var formData = {
             email: txt_email.value,
-            mobile: txt_mobile.value,
+            cpf: txt_cpf.value,
           };
 
           document.getElementById('form_btn_login').style.pointerEvents = "none";
@@ -56,14 +56,12 @@ export default class {
 
           postPublicPortal("v1/auth/login", formData)
           .then((resp) => {
-
-            console.log(resp)
-
             if (resp.ok == true)
             {
               document.getElementById('loading').style.display = 'none'     
               localStorage.setItem("token", resp.payload.token);
               localStorage.setItem("userName", resp.payload.userName);
+              localStorage.setItem("mobile", resp.payload.mobile);
               window.location.href = '/production';
             }
             else

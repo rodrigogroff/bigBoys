@@ -18,6 +18,10 @@ export default class {
                 link: '/register',
               },
               {
+                label: 'Carrinho',
+                link: '/car',
+              },
+              {
                 label: 'Meus pedidos',
                 link: '/production',
               },

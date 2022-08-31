@@ -37,19 +37,24 @@ export default class {
 
         var buyer = `<span style='text-size:small'>Opções de compra</span><br>
         <h4 style='color:green'>
-            <a style='text-size:large;color:green' href='https://api.whatsapp.com/send?phone=5551995152432&text=Big%20Boys%20Store - Venda PIX Item ${obj.id} - A3 138,00'>A3 - R$ 138,00</a><br>
-            Altura: 42cm, Largura: 29,7cm
+            A3 - R$ 138,00<br>
+            Altura: 42cm, Largura: 30cm<br>
+            <br>
+            <div id="add" class="button" data="${obj.id}" option="1"> Acrescentar no carrinho </div>
+            <br>
+            A2 - R$ 180,00<br>
+            Altura: 60cm, Largura: 42cm<br>
+            <br>
+            <div id="add" class="button" data="${obj.id}" option="2"> Acrescentar no carrinho </div>
+            <br>
         </h4>
-        <br>
-        <h4 style='color:green'>
-            <a style='text-size:large;color:green' href='https://api.whatsapp.com/send?phone=5551995152432&text=Big%20Boys%20Store - Venda PIX Item ${obj.id} - A2 180,00'>A2 - R$ 180,00</a><br>
-            Altura: 59,4cm, Largura: 42cm
-        </h4>` 
+        <br>` 
 
         if (obj.sculptPrice != null && obj.sculptPrice != undefined)
         {
             buyer = `<h4 style='color:green'>
-            <p style='text-size:large;color:green' href='https://api.whatsapp.com/send?phone=5551995152432&text=Big%20Boys%20Store - Venda PIX Mini Item ${obj.id} - ${obj.sculptPrice}'>${obj.sculptPrice}</p><br>
+            <div id="add" class="button" data="${obj.id}" option="2"> Acrescentar no carrinho </div><br>
+            ${obj.sculptPrice}<br>
             ${obj.catalogText}<br>
             </h4>`
         }
@@ -59,9 +64,7 @@ export default class {
                                                             <h4 style='color:black'>${obj.patreon}</h4>
                                                             <br>
                                                             ${buyer}                
-                                                            <br>
-                                                            <br>
-                                                            <a style='color:red' href='/faq'>Clique aqui para dúvidas</a><br>`;
+                                                            `;
 
         return ""
     }

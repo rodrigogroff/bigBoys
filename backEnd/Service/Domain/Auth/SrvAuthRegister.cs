@@ -8,7 +8,7 @@ namespace Master.Service.Domain.Auth
     {
         public IUserRepo userRepo = new UserRepo();
 
-        public bool Register(string conn, string name, string email, string mobile, string gmap)
+        public bool Register(string conn, string name, string email, string mobile, string gmap, string cpf)
         {
             if (string.IsNullOrEmpty(conn))
                 return ReportError("Connection information failed");
@@ -24,6 +24,9 @@ namespace Master.Service.Domain.Auth
 
             if (string.IsNullOrEmpty(gmap))
                 return ReportError("GMap information failed");
+
+            if (string.IsNullOrEmpty(cpf))
+                return ReportError("CPF information failed");
 
             User usr_test;
 
@@ -42,6 +45,7 @@ namespace Master.Service.Domain.Auth
                 stName = name,
                 stMobile = mobile,      
                 stGMap = gmap,
+                stCPF = cpf
             };
 
             mdl_user.id = userRepo.Insert(conn, mdl_user);

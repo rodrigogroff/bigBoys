@@ -10,6 +10,7 @@ export default class {
     document.getElementById('myAppLoader').innerHTML = Loader.getHtml() 
 
     IMask(document.getElementById('mobile'), { mask: [ { mask: '(00) 0 0000-0000' } ]  });
+    IMask(document.getElementById('cpf'), { mask: [ { mask: '000.000.000-00' } ]  });
 
     return '';
   }

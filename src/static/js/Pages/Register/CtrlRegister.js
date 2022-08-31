@@ -13,6 +13,7 @@ export default class {
 
       var txt_name = document.getElementById('name');
       var txt_mobile = document.getElementById('mobile');
+      var txt_cpf = document.getElementById('cpf');
       var txt_email = document.getElementById('email');
       var txt_location = document.getElementById('location');
 
@@ -39,6 +40,13 @@ export default class {
             }
           }, true);
 
+          txt_cpf.addEventListener("blur", function( event ) {          
+            document.getElementById('validation_cpf').style.display = 'none'
+            if (this.value != '' && this.value.length == 14) { } else {
+              document.getElementById('validation_cpf').style.display = 'block'          
+            }
+          }, true);
+
           txt_email.addEventListener("blur", function( event ) {          
             document.getElementById('validation_email').style.display = 'none'
             if (this.value != '' && this.value.indexOf('@') > 0 && this.value.indexOf('.') > 0) { } else {
@@ -57,6 +65,7 @@ export default class {
           document.getElementById('validation_mobile').style.display = 'none'
           document.getElementById('validation_email').style.display = 'none'
           document.getElementById('validation_location').style.display = 'none'
+          document.getElementById('validation_cpf').style.display = 'none'
 
           var passed = true;
 
@@ -72,6 +81,13 @@ export default class {
             document.getElementById('validation_email').style.display = 'block'          
             passed = false;
             txt_email.focus()
+          }
+
+          if (txt_cpf.value != '' && txt_cpf.value.length == 14) { } else 
+          {
+            document.getElementById('validation_cpf').style.display = 'block'          
+            passed = false;
+            txt_cpf.focus()
           }
 
           if (txt_mobile.value != '' && txt_mobile.value.length == 16) { } else 
@@ -105,7 +121,8 @@ export default class {
             name: txt_name.value,
             email: txt_email.value,
             mobile: txt_mobile.value,
-            gmap: txt_location.value
+            gmap: txt_location.value,
+            cpf: txt_cpf.value
           };
 
           document.getElementById('form_register_btn_confirm').style.pointerEvents = "none";          

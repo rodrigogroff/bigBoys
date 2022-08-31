@@ -6,5 +6,7 @@ namespace Master.Entity.Domain
         public string token { get; set; }
 
         public string userName { get; set; }
+
+        public string mobile { get; set; }
     }
 }

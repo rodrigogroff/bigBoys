@@ -3,6 +3,7 @@ CREATE TABLE IF NOT EXISTS public."User" ( id bigserial NOT NULL, PRIMARY KEY (i
 ALTER TABLE public."User" OWNER to postgres;
 ALTER TABLE public."User" ADD COLUMN if not exists "stEmail" character varying(250);
 ALTER TABLE public."User" ADD COLUMN if not exists "stMobile" character varying(250);
+ALTER TABLE public."User" ADD COLUMN if not exists "stCPF" character varying(250);
 ALTER TABLE public."User" ADD COLUMN if not exists "bActive" boolean;
 ALTER TABLE public."User" ADD COLUMN if not exists "stName" character varying(250);
 ALTER TABLE public."User" ADD COLUMN if not exists "dtJoin" timestamp without time zone;

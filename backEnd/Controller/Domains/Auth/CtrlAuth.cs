@@ -11,24 +11,7 @@ namespace Api.Master.Controllers
     {
         public CtrlAuth(IOptions<LocalNetwork> _network) : base(_network) { }
 
-        [AllowAnonymous]
-        [HttpPost]
-        [Route("api/v1/auth/check_mobile")]
-        public ActionResult check_mobile([FromBody] DtoAuthCheckMobile obj)
-        {
-            #region - code - 
-
-            var srv = new SrvAuthCheckMobile();
-
-            DtoAuthUser usr;
-
-            if (!srv.Find(network.pgConnection, obj.mobile, out usr))
-                return NotFound();
-
-            return Ok(usr);
-
-            #endregion
-        }
+        
 
         [AllowAnonymous]
         [HttpPost]
@@ -43,7 +26,8 @@ namespace Api.Master.Controllers
                                 obj.name, 
                                 obj.email, 
                                 obj.mobile, 
-                                obj.gmap ))
+                                obj.gmap,
+                                obj.cpf ))
             {
                 return BadRequest(srv.Error);
             }
@@ -69,7 +53,7 @@ namespace Api.Master.Controllers
 
             if (!srv.Login ( network.pgConnection, 
                              obj.email, 
-                             obj.mobile, 
+                             obj.cpf, 
                              out usr ))
             {
                 return NotFound(new { message = "" });
@@ -80,7 +64,8 @@ namespace Api.Master.Controllers
             return Ok(new DtoToken
             {
                 token = token,
-                userName = usr.name.Split (' ')[0]
+                userName = usr.name.Split (' ')[0],
+                mobile = usr.mobile
             });
 
             #endregion

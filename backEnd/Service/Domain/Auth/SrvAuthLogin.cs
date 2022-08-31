@@ -8,7 +8,7 @@ namespace Master.Service.Domain.Auth
     {
         public IUserRepo userRepo = new UserRepo();
 
-        public bool Login(string conn, string email, string mobile, out DtoUser usr)
+        public bool Login(string conn, string email, string cpf, out DtoUser usr)
         {
             usr = new DtoUser();
 
@@ -18,8 +18,8 @@ namespace Master.Service.Domain.Auth
             if (string.IsNullOrEmpty(email))
                 return ReportError("Email information failed");
 
-            if (string.IsNullOrEmpty(mobile))
-                return ReportError("Mobile information failed");
+            if (string.IsNullOrEmpty(cpf))
+                return ReportError("CPF information failed");
 
             User db_user;
 
@@ -29,7 +29,7 @@ namespace Master.Service.Domain.Auth
             if (db_user.bActive == false)
                 return ReportError("Error 0xE2");
 
-            if (db_user.stMobile != mobile)
+            if (db_user.stCPF != cpf)
                 return ReportError("Error 0xE3");
 
             usr.id = db_user.id.ToString();

@@ -8,6 +8,7 @@ namespace Master.Entity.Database
         public string stName { get; set; }
         public string stEmail { get; set; }
         public string stMobile { get; set; }
+        public string stCPF { get; set; }
         public string stGMap { get; set; }
         public bool? bActive { get; set; }        
         public DateTime? dtJoin { get; set; }
