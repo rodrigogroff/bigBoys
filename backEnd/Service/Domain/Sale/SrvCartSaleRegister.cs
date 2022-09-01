@@ -18,7 +18,9 @@ namespace Master.Service.Domain.Sale
             User usr;
 
             if (!userRepo.GetUserById(conn, user_id, out usr))
-                return false;
+            {
+                return ReportError("Invalid Register Ex01");
+            }
 
             var dt = DateTime.Now;
 
@@ -34,7 +36,9 @@ namespace Master.Service.Domain.Sale
             mdl.id = userCartSaleRepo.Insert(conn, mdl);
 
             if (mdl.id == 0)
-                return false;
+            {
+                return ReportError("Invalid Register Ex02");
+            }
 
             return true;
         }

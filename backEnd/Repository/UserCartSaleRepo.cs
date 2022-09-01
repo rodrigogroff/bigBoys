@@ -10,6 +10,7 @@ namespace Master.Repository
     public interface IUserCartSaleRepo
     {
         public bool GetCartSaleById(string conn, long id, out UserCartSale user);
+        public bool DeleteCartSaleById(string conn, long id);
         public bool GetCartSalesByFkUser(string conn, long id, out List<UserCartSale> user);
         public bool Update(string conn, UserCartSale mdl);
         public long Insert(string conn, UserCartSale mdl);
@@ -36,6 +37,38 @@ namespace Master.Repository
             catch
             {
                 user = null;
+                return false;
+            }
+
+            #endregion
+        }
+
+        public bool DeleteCartSaleById(string conn, long id)
+        {
+            #region - code - 
+
+            try
+            {
+                using (var db = new NpgsqlConnection(conn))
+                {
+                    db.Open();
+
+                    using (var cmd = new NpgsqlCommand("delete from \"UserCartSale\" where id=@id", db))
+                    {
+                        var mdl = new UserCartSale
+                        {
+                            id = id
+                        };
+
+                        setUserParams(cmd, mdl);
+                        cmd.ExecuteNonQuery();
+                    }
+                }
+
+                return true;
+            }
+            catch
+            {
                 return false;
             }
 

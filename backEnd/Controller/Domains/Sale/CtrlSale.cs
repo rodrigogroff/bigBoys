@@ -4,7 +4,6 @@ using Master.Infra.Constant;
 using Master.Service.Domain.Sale;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
-using Remotion.Logging;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -75,6 +74,27 @@ namespace Api.Master.Controllers
             {
                 cart = lst_cart,
                 total =  total
+            });
+
+            #endregion
+        }
+
+        [HttpPost]
+        [Route("api/v1/sale/cart_remove")]
+        public ActionResult cart_remove([FromBody] DtoCartSaleRemove obj)
+        {
+            #region - code - 
+
+            var u = GetCurrentAuthenticatedUser();
+            var srv = new SrvCartSaleRemove();
+            
+            if (!srv.Remove(network.pgConnection, I(u.id), obj.productId, obj.cartId))
+            {
+                return BadRequest(srv.Error);
+            }
+
+            return Ok(new
+            {
             });
 
             #endregion

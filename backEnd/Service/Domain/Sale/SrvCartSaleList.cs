@@ -19,12 +19,16 @@ namespace Master.Service.Domain.Sale
             User usr;
 
             if (!userRepo.GetUserById(conn, user_id, out usr))
-                return false;
+            {
+                return ReportError("Invalid list Ex01");
+            }
 
             List<UserCartSale> lst;
 
             if (!userCartSaleRepo.GetCartSalesByFkUser(conn, user_id, out lst))
-                return false;
+            {
+                return ReportError("Invalid list Ex02");
+            }
 
             foreach (var item in lst)
             {

@@ -1,8 +1,8 @@
 ﻿namespace Master.Entity.Domain.Sale
 {
-    public class DtoCartSaleRegister
+    public class DtoCartSaleRemove
     {
         public long productId { get; set; }
-        public long productOption { get; set; }        
+        public long cartId { get; set; }
     }
 }
