@@ -1,5 +1,6 @@
 ﻿using Dapper;
 using Master.Entity.Database;
+using Master.Infra.Constant;
 using Npgsql;
 using System;
 using System.Collections.Generic;
@@ -11,6 +12,7 @@ namespace Master.Repository
     {
         public bool GetSaleById(string conn, long id, out UserSale user);
         public bool GetSalesByFkUser(string conn, long id, out List<UserSale> user);
+        public bool GetRegisteredSalesByFkUser(string conn, long id, out List<UserSale> user);
         public bool Update(string conn, UserSale mdl);
         public long Insert(string conn, UserSale mdl);
     }
@@ -67,14 +69,42 @@ namespace Master.Repository
             #endregion
         }
 
+        public bool GetRegisteredSalesByFkUser(string conn, long id, out List<UserSale> list)
+        {
+            #region - code - 
+
+            try
+            {
+                using (var db = new NpgsqlConnection(conn))
+                {
+                    db.Open();
+                    list = db.Query<UserSale>
+                        ("SELECT * FROM \"UserSale\" where \"fkUser\"=@fkUser and \"nuSaleStage\"=@nuSaleStage", 
+                        new 
+                        {
+                            fkUser = id, 
+                            nuSaleStage = SaleStage.Registered 
+                        }).
+                        ToList();
+                }
+
+                return true;
+            }
+            catch
+            {
+                list = null;
+                return false;
+            }
+
+            #endregion
+        }
+
         public void setUserParams(NpgsqlCommand cmd, UserSale mdl)
         {
             #region - code - 
 
             cmd.Parameters.AddWithValue("id", ((object)mdl.id) ?? DBNull.Value);
             cmd.Parameters.AddWithValue("fkUser", ((object)mdl.fkUser) ?? DBNull.Value);
-            cmd.Parameters.AddWithValue("nuSaleId", ((object)mdl.nuSaleId) ?? DBNull.Value);
-            cmd.Parameters.AddWithValue("vrPrice", ((object)mdl.vrPrice) ?? DBNull.Value);
             cmd.Parameters.AddWithValue("stGMap", ((object)mdl.stGMap) ?? DBNull.Value);
             cmd.Parameters.AddWithValue("dtRegister", ((object)mdl.dtRegister) ?? DBNull.Value);
             cmd.Parameters.AddWithValue("dtProduction", ((object)mdl.dtProduction) ?? DBNull.Value);
@@ -100,8 +130,6 @@ namespace Master.Repository
 
                     using (var cmd = new NpgsqlCommand("update \"UserSale\" set " +
                         "\"fkUser\"=@fkUser," +
-                        "\"nuSaleId\"=@nuSaleId," +
-                        "\"vrPrice\"=@vrPrice," +
                         "\"stGMap\"=@stGMap," +
                         "\"dtRegister\"=@dtRegister," +
                         "\"dtProduction\"=@dtProduction," +
@@ -138,8 +166,8 @@ namespace Master.Repository
                 {
                     db.Open();
 
-                    using (var cmd = new NpgsqlCommand("INSERT INTO \"UserSale\" ( \"fkUser\",\"nuSaleId\",\"vrPrice\",\"stGMap\",\"dtRegister\",\"dtProduction\",\"dtMail\",\"nuSaleStage\",\"bActive\",\"nuDay\",\"nuMonth\",\"nuYear\" ) " +
-                                                                   "VALUES (@fkUser,@nuSaleId,@vrPrice,@stGMap,@dtRegister,@dtProduction,@dtMail,@nuSaleStage,@bActive,@nuDay,@nuMonth,@nuYear)" +
+                    using (var cmd = new NpgsqlCommand("INSERT INTO \"UserSale\" ( \"fkUser\",\"stGMap\",\"dtRegister\",\"dtProduction\",\"dtMail\",\"nuSaleStage\",\"bActive\",\"nuDay\",\"nuMonth\",\"nuYear\" ) " +
+                                                                   "VALUES (@fkUser,@stGMap,@dtRegister,@dtProduction,@dtMail,@nuSaleStage,@bActive,@nuDay,@nuMonth,@nuYear)" +
                                                                    ";select currval('public.\"UserSale_id_seq\"');", db))
                     {
                         setUserParams(cmd, mdl);

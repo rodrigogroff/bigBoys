@@ -65,15 +65,18 @@ namespace Api.Master.Controllers
             var srv = new SrvCartSaleList();
 
             List<DtoCartSaleItem> lst_cart;
-            string total;
+            string total, gmap;
+            long saleStage;
 
-            if (!srv.List(network.pgConnection, I(u.id), out lst_cart, out total ))
+            if (!srv.List(network.pgConnection, I(u.id), out lst_cart, out total, out saleStage, out gmap))
                 return BadRequest(srv.Error);
 
             return Ok(new
             {
                 cart = lst_cart,
-                total =  total
+                total =  total,
+                saleStage = saleStage,
+                gmap = gmap
             });
 
             #endregion
@@ -102,17 +105,15 @@ namespace Api.Master.Controllers
 
         [HttpPost]
         [Route("api/v1/sale/register")]
-        public ActionResult sale_register([FromBody] DtoSaleRegister obj)
+        public ActionResult sale_register()
         {
             #region - code - 
 
+            var u = GetCurrentAuthenticatedUser();
+
             var srv = new SrvSaleRegister();
 
-            if (!srv.Register(network.pgConnection,
-                                obj.cpf,
-                                obj.productId,
-                                obj.price,
-                                obj.gmap))
+            if (!srv.Register(network.pgConnection, I(u.id)))
             {
                 return BadRequest(srv.Error);
             }

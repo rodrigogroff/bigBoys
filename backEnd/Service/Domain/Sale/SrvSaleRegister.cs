@@ -2,6 +2,7 @@
 using Master.Infra.Constant;
 using Master.Repository;
 using System;
+using System.Collections.Generic;
 
 namespace Master.Service.Domain.Sale
 {
@@ -9,31 +10,18 @@ namespace Master.Service.Domain.Sale
     {
         public IUserRepo userRepo = new UserRepo();
         public IUserSaleRepo userSaleRepo = new UserSaleRepo();
+        public IUserCartSaleRepo userCartSaleRepo = new UserCartSaleRepo();
 
-        public bool Register (  string conn,
-                                string cpf,
-                                long product_id,
-                                long price,
-                                string gmap_delivery )
+        public bool Register (  string conn, long user_id )
         {
-            if (string.IsNullOrEmpty(cpf))
-                return ReportError("CPF information failed");
-
-            if (product_id <= 0)
-                return ReportError("Product information failed");
-
-            if (price <= 0)
-                return ReportError("Price information failed");
-
-            if (string.IsNullOrEmpty(gmap_delivery))
-                return ReportError("Location information failed");
-
             User usr;
 
-            if (!userRepo.GetUserByCPF(conn, cpf, out usr))
-                return false;
+            if (!userRepo.GetUserById(conn, user_id, out usr))
+            {
+                return ReportError("Invalid register Ex01");
+            }
 
-            var dt = DateTime.Now;
+            DateTime dt = DateTime.Now;
 
             UserSale mdl = new UserSale
             {
@@ -41,20 +29,34 @@ namespace Master.Service.Domain.Sale
                 dtMail = null,
                 dtProduction = null,
                 dtRegister = dt,
-                fkUser = usr.id,
+                fkUser = user_id,
                 nuDay = dt.Day,
                 nuMonth = dt.Month,
-                nuYear = dt.Year,
-                nuSaleId = product_id,
+                nuYear = dt.Year,                
                 nuSaleStage = SaleStage.Registered,
-                stGMap = gmap_delivery,
-                vrPrice = price
+                stGMap = usr.stGMap,
             };
 
             mdl.id = userSaleRepo.Insert(conn, mdl);
 
             if (mdl.id == 0)
                 return false;
+
+            List<UserCartSale> lst_cart;
+
+            if (!userCartSaleRepo.GetCartSalesByFkUser(conn, user_id, null, out lst_cart))
+            {
+                return ReportError("Invalid register Ex02");
+            }
+
+            foreach (var item in lst_cart)
+            {
+                item.fkSale = mdl.id;
+                if (!userCartSaleRepo.Update(conn, item))
+                {
+                    return ReportError("Invalid register Ex03 " + mdl.id);
+                }
+            }
 
             return true;
         }

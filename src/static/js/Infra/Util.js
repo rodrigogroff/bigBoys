@@ -267,24 +267,6 @@ export function isAuthenticated() {
 }
 
 export function getTokenPortal(location, parameters) {
-  var mock = sessionStorage.getItem("mockServer");
-  if (mock)
-    return new Promise((resolve, reject) => {
-      setTimeout(function () {
-        var data = JSON.parse(mock);
-        if (data.payload == true)
-          resolve({
-            ok: true,
-            payload: data.obj,
-          });
-        else
-          reject({
-            ok: false,
-            msg: data.obj.message,
-          });
-      }, 500);
-    });
-
   var ApiLocation = getLocation();
   var ret = new Promise((resolve, reject) => {
     var _params = "";
@@ -306,12 +288,7 @@ export function getTokenPortal(location, parameters) {
       }
     )
       .then((res) => {
-        if (res.status === 401) {
-          resolve({
-            ok: false,
-            unauthorized: true,
-          });
-        } else if (res.status === 400) {
+        if (res.status === 400) {
           res.json().then((data) => {
             reject({
               ok: false,
@@ -334,35 +311,18 @@ export function getTokenPortal(location, parameters) {
           });
       })
       .catch((errorMsg) => {
-        ret = false;
+        if (errorMsg == 'TypeError: NetworkError when attempting to fetch resource.') {
+          window.location.href = '/login';
+        }
         resolve({
           ok: false,
           msg: errorMsg.message,
         });
       });
   });
-  return ret;
 }
 
 export function postTokenPortal(location, _obj) {
-  var mock = sessionStorage.getItem("mockServer");
-  if (mock)
-    return new Promise((resolve, reject) => {
-      setTimeout(function () {
-        var data = JSON.parse(mock);
-        if (data.payload == true)
-          resolve({
-            ok: true,
-            payload: data.obj,
-          });
-        else
-          reject({
-            ok: false,
-            msg: data.obj.message,
-          });
-      }, 500);
-    });
-
   var ApiLocation = getLocation();
   var obj = JSON.stringify(_obj);
   return new Promise((resolve, reject) => {
@@ -379,12 +339,7 @@ export function postTokenPortal(location, _obj) {
       }
     )
       .then((res) => {
-        if (res.status === 401) {
-          reject({
-            ok: false,
-            unauthorized: true,
-          });
-        } else if (res.status === 400) {
+        if (res.status === 400) {
           res.json().then((data) => {
             reject({
               ok: false,
@@ -407,6 +362,9 @@ export function postTokenPortal(location, _obj) {
           });
       })
       .catch((errorMsg) => {
+        if (errorMsg == 'TypeError: NetworkError when attempting to fetch resource.') {
+          window.location.href = '/login';
+        }
         resolve({
           ok: false,
           msg: errorMsg.toString(),
@@ -416,24 +374,6 @@ export function postTokenPortal(location, _obj) {
 }
 
 export function postPublicPortal(location, _obj) {
-  var mock = sessionStorage.getItem("mockServer");
-  if (mock)
-    return new Promise((resolve, reject) => {
-      setTimeout(function () {
-        var data = JSON.parse(mock);
-        if (data.payload == true)
-          resolve({
-            ok: true,
-            payload: data.obj,
-          });
-        else
-          reject({
-            ok: false,
-            msg: data.obj.message,
-          });
-      }, 500);
-    });
-
   var ApiLocation = getLocation();
   var obj = JSON.stringify(_obj);
   return new Promise((resolve, reject) => {
@@ -450,7 +390,10 @@ export function postPublicPortal(location, _obj) {
       }
     )
       .then((res) => {
-        if (res.status === 400) {
+        if (res.status === 401) {
+          window.location.href = '/login';
+        }
+        else if (res.status === 400) {
           res.json().then((data) => {
             reject({
               ok: false,

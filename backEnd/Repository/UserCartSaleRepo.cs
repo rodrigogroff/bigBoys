@@ -11,7 +11,7 @@ namespace Master.Repository
     {
         public bool GetCartSaleById(string conn, long id, out UserCartSale user);
         public bool DeleteCartSaleById(string conn, long id);
-        public bool GetCartSalesByFkUser(string conn, long id, out List<UserCartSale> user);
+        public bool GetCartSalesByFkUser(string conn, long id, long? fkSale, out List<UserCartSale> user);
         public bool Update(string conn, UserCartSale mdl);
         public long Insert(string conn, UserCartSale mdl);
     }
@@ -75,7 +75,7 @@ namespace Master.Repository
             #endregion
         }
 
-        public bool GetCartSalesByFkUser(string conn, long id, out List<UserCartSale> list)
+        public bool GetCartSalesByFkUser(string conn, long id, long? fkSale, out List<UserCartSale> list)
         {
             #region - code - 
 
@@ -85,8 +85,17 @@ namespace Master.Repository
                 {
                     db.Open();
 
-                    list = db.Query<UserCartSale>
-                        ("SELECT * FROM \"UserCartSale\" where \"fkUser\"=@fkUser", new { fkUser = id }).ToList();
+                    if (fkSale == null)
+                    {
+                        list = db.Query<UserCartSale>
+                            ("SELECT * FROM \"UserCartSale\" where \"fkUser\"=@fkUser", new { fkUser = id }).ToList();
+                    }
+                    else
+                    {
+                        list = db.Query<UserCartSale>
+                            ("SELECT * FROM \"UserCartSale\" where \"fkUser\"=@fkUser and \"fkSale\"=@fkSale", 
+                            new { fkUser = id, fkSale = fkSale }).ToList();
+                    }
                 }
 
                 return true;
@@ -106,6 +115,7 @@ namespace Master.Repository
 
             cmd.Parameters.AddWithValue("id", ((object)mdl.id) ?? DBNull.Value);
             cmd.Parameters.AddWithValue("fkUser", ((object)mdl.fkUser) ?? DBNull.Value);
+            cmd.Parameters.AddWithValue("fkSale", ((object)mdl.fkSale) ?? DBNull.Value);
             cmd.Parameters.AddWithValue("nuSaleId", ((object)mdl.nuSaleId) ?? DBNull.Value);
             cmd.Parameters.AddWithValue("nuSaleOption", ((object)mdl.nuSaleOption) ?? DBNull.Value);
             cmd.Parameters.AddWithValue("vrPrice", ((object)mdl.vrPrice) ?? DBNull.Value);
@@ -126,6 +136,7 @@ namespace Master.Repository
 
                     using (var cmd = new NpgsqlCommand("update \"UserCartSale\" set " +
                         "\"fkUser\"=@fkUser," +
+                        "\"fkSale\"=@fkSale," +
                         "\"nuSaleId\"=@nuSaleId," +
                         "\"nuSaleOption\"=@nuSaleOption," +
                         "\"dtRegister\"=@dtRegister," +
@@ -157,8 +168,8 @@ namespace Master.Repository
                 {
                     db.Open();
 
-                    using (var cmd = new NpgsqlCommand("INSERT INTO \"UserCartSale\" ( \"fkUser\",\"nuSaleId\",\"vrPrice\",\"nuSaleOption\",\"dtRegister\" ) " +
-                                                                   "VALUES (@fkUser,@nuSaleId,@vrPrice,@nuSaleOption,@dtRegister)" +
+                    using (var cmd = new NpgsqlCommand("INSERT INTO \"UserCartSale\" ( \"fkUser\",\"fkSale\",\"nuSaleId\",\"vrPrice\",\"nuSaleOption\",\"dtRegister\" ) " +
+                                                                   "VALUES (@fkUser,@fkSale,@nuSaleId,@vrPrice,@nuSaleOption,@dtRegister)" +
                                                                    ";select currval('public.\"UserCartSale_id_seq\"');", db))
                     {
                         setUserParams(cmd, mdl);

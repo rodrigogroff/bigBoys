@@ -1,19 +1,30 @@
 ﻿using Master.Entity.Database;
 using Master.Entity.Domain.Sale;
+using Master.Infra.Constant;
 using Master.Repository;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Master.Service.Domain.Sale
 {
     public class SrvCartSaleList : SrvBaseService
     {
         public IUserRepo userRepo = new UserRepo();
+        public IUserSaleRepo userSaleRepo = new UserSaleRepo();
         public IUserCartSaleRepo userCartSaleRepo = new UserCartSaleRepo();
 
-        public bool List ( string conn, long user_id, out List<DtoCartSaleItem> cart, out string total )
+        public bool List (  string conn, 
+                            long user_id, 
+                            out List<DtoCartSaleItem> cart, 
+                            out string total, 
+                            out long saleStage, 
+                            out string gmap )
         {
             cart = new List<DtoCartSaleItem>();
             total = "";
+            gmap = "";
+            saleStage = SaleStage.None;
+
             long _total = 0;
 
             User usr;
@@ -23,14 +34,42 @@ namespace Master.Service.Domain.Sale
                 return ReportError("Invalid list Ex01");
             }
 
-            List<UserCartSale> lst;
+            gmap = usr.stGMap;
 
-            if (!userCartSaleRepo.GetCartSalesByFkUser(conn, user_id, out lst))
+            List<UserSale> lst_sale;
+
+            if (!userSaleRepo.GetRegisteredSalesByFkUser(conn, user_id, out lst_sale))
             {
                 return ReportError("Invalid list Ex02");
             }
 
-            foreach (var item in lst)
+            List<UserCartSale> lst_cart;
+
+            if (lst_sale.Count == 0)
+            {
+                if (!userCartSaleRepo.GetCartSalesByFkUser(conn, user_id, null, out lst_cart))
+                {
+                    return ReportError("Invalid list Ex03");
+                }
+            }
+            else
+            {
+                var s = lst_sale.FirstOrDefault();
+
+                if (s == null)
+                {
+                    return ReportError("Invalid list Ex04");
+                }
+                
+                if (!userCartSaleRepo.GetCartSalesByFkUser(conn, user_id, s.id, out lst_cart))
+                {
+                    return ReportError("Invalid list Ex05");
+                }
+
+                saleStage = SaleStage.Registered;
+            }
+
+            foreach (var item in lst_cart)
             {
                 cart.Add(new DtoCartSaleItem
                 {

@@ -10,5 +10,6 @@ namespace Master.Entity.Database
         public long? vrPrice { get; set; }
         public long? nuSaleOption { get; set; }
         public DateTime? dtRegister { get; set; }
+        public long? fkSale { get; set; }
     }
 }
