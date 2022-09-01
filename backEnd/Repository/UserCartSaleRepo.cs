@@ -53,7 +53,7 @@ namespace Master.Repository
                     db.Open();
 
                     list = db.Query<UserCartSale>
-                        ("SELECT * FROM \"UserCartSale\" where \"fkUser\"=@fkUser order by dtRegister", new { id }).ToList();
+                        ("SELECT * FROM \"UserCartSale\" where \"fkUser\"=@fkUser", new { fkUser = id }).ToList();
                 }
 
                 return true;

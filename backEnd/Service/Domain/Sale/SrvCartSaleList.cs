@@ -10,9 +10,11 @@ namespace Master.Service.Domain.Sale
         public IUserRepo userRepo = new UserRepo();
         public IUserCartSaleRepo userCartSaleRepo = new UserCartSaleRepo();
 
-        public bool List ( string conn, long user_id, out List<DtoCartSaleItem> cart )
+        public bool List ( string conn, long user_id, out List<DtoCartSaleItem> cart, out string total )
         {
             cart = new List<DtoCartSaleItem>();
+            total = "";
+            long _total = 0;
 
             User usr;
 
@@ -28,12 +30,17 @@ namespace Master.Service.Domain.Sale
             {
                 cart.Add(new DtoCartSaleItem
                 {
+                    cartId = item.id,
                     dtRegister = D(item.dtRegister),
                     price = Money(item.vrPrice),
                     productId = (int) item.nuSaleId,
                     productOption  = (int) item.nuSaleOption,
                 });
+
+                _total += (int) item.vrPrice;
             }
+
+            total = Money(_total);
 
             return true;
         }

@@ -4,6 +4,7 @@ using Master.Infra.Constant;
 using Master.Service.Domain.Sale;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
+using Remotion.Logging;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -35,6 +36,8 @@ namespace Api.Master.Controllers
 
             if (price == null)
                 price = SaleOptionPrice.translate(obj.productOption);
+            else
+                obj.productOption = 0;
 
             if (!srv.Register(network.pgConnection,
                                 I(u.id),
@@ -63,13 +66,15 @@ namespace Api.Master.Controllers
             var srv = new SrvCartSaleList();
 
             List<DtoCartSaleItem> lst_cart;
+            string total;
 
-            if (!srv.List(network.pgConnection, I(u.id), out lst_cart ))
+            if (!srv.List(network.pgConnection, I(u.id), out lst_cart, out total ))
                 return BadRequest(srv.Error);
 
             return Ok(new
             {
-                cart = lst_cart
+                cart = lst_cart,
+                total =  total
             });
 
             #endregion

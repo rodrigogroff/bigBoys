@@ -35,7 +35,7 @@ export default class {
             .then((resp) => {
               document.getElementById('loading').style.display = 'none'
               if (resp.ok == true) {
-                window.location.href = '/production';
+                window.location.href = '/cart';
               }
               else {
                 document.getElementById('mainPageNOK').style = "display:block"

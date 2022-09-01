@@ -8,6 +8,7 @@
 
     public class DtoCartSaleItem
     {
+        public long cartId { get; set; }
         public long productId { get; set; }
         public long productOption { get; set; }
         public string price { get; set; }
