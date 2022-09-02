@@ -2,7 +2,7 @@
 
 namespace Master.Entity.Database
 {
-    public class UserPreference
+    public class UserProductView
     {
         public long id { get; set; }
         public long? nuSaleId { get; set; }

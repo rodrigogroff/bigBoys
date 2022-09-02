@@ -2,25 +2,26 @@
 using Master.Repository;
 using System;
 
-namespace Master.Service.Domain.Sale
+namespace Master.Service.Domain.View
 {
-    public class SrvPreferenceRegister : SrvBaseService
+    public class SrvViewRegister : SrvBaseService
     {
         public IUserRepo userRepo = new UserRepo();
-        public IUserPreferenceRepo userPreferenceRepo = new UserPreferenceRepo();
+        public IUserViewRepo userViewRepo = new UserViewRepo();
 
         public bool Register(string conn, long user_id, long product_id)
         {
-            User usr;
-                        
-            if (!userRepo.GetUserById(conn, user_id, out usr))
-            {
-                return ReportError("Invalid Register Ex01");
-            }
+            User usr = null;
+                     
+            if (user_id > 0)
+                if (!userRepo.GetUserById(conn, user_id, out usr))
+                {
+                    return ReportError("Invalid Register Ex01");
+                }
 
-            userPreferenceRepo.Insert(conn, new UserPreference
+            userViewRepo.Insert(conn, new UserProductView
             {                
-                fkUser = user_id,
+                fkUser = usr == null ? 0 : user_id,
                 nuSaleId = product_id,
                 dtRegister = DateTime.Now,
                 nuDay = DateTime.Now.Day,

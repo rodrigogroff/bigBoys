@@ -134,6 +134,10 @@ namespace Master.Repository
             cmd.Parameters.AddWithValue("id", ((object)mdl.id) ?? DBNull.Value);
             cmd.Parameters.AddWithValue("fkUser", ((object)mdl.fkUser) ?? DBNull.Value);
             cmd.Parameters.AddWithValue("nuSaleId", ((object)mdl.nuSaleId) ?? DBNull.Value);
+            cmd.Parameters.AddWithValue("dtRegister", ((object)mdl.dtRegister) ?? DBNull.Value);
+            cmd.Parameters.AddWithValue("nuDay", ((object)mdl.nuDay) ?? DBNull.Value);
+            cmd.Parameters.AddWithValue("nuMonth", ((object)mdl.nuMonth) ?? DBNull.Value);
+            cmd.Parameters.AddWithValue("nuYear", ((object)mdl.nuYear) ?? DBNull.Value);
 
             #endregion
         }
@@ -150,6 +154,12 @@ namespace Master.Repository
 
                     using (var cmd = new NpgsqlCommand("update \"UserPreference\" set " +
                         "\"fkUser\"=@fkUser," +
+
+                        "\"dtRegister\"=@dtRegister," +
+                        "\"nuDay\"=@nuDay," +
+                        "\"nuMonth\"=@nuMonth," +
+                        "\"nuYear\"=@nuYear," +
+
                         "\"nuSaleId\"=@nuSaleId " +
                         "where id=@id", db))
                     {
@@ -178,8 +188,8 @@ namespace Master.Repository
                 {
                     db.Open();
 
-                    using (var cmd = new NpgsqlCommand("INSERT INTO \"UserPreference\" ( \"fkUser\",\"nuSaleId\" ) " +
-                                                                   "VALUES (@fkUser,@nuSaleId)" +
+                    using (var cmd = new NpgsqlCommand("INSERT INTO \"UserPreference\" ( \"fkUser\",\"dtRegister\",\"nuDay\",\"nuMonth\",\"nuYear\",\"nuSaleId\" ) " +
+                                                                   "VALUES (@fkUser,@dtRegister,@nuDay,@nuMonth,@nuYear,@nuSaleId)" +
                                                                    ";select currval('public.\"UserPreference_id_seq\"');", db))
                     {
                         setUserParams(cmd, mdl);

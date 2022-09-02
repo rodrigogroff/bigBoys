@@ -40,6 +40,10 @@ CREATE TABLE IF NOT EXISTS public."UserPreference" ( id bigserial NOT NULL, PRIM
 ALTER TABLE public."UserPreference" OWNER to postgres;
 ALTER TABLE public."UserPreference" ADD COLUMN if not exists "fkUser" int;
 ALTER TABLE public."UserPreference" ADD COLUMN if not exists "nuSaleId" int;
+ALTER TABLE public."UserPreference" ADD COLUMN if not exists "dtRegister" timestamp without time zone;
+ALTER TABLE public."UserPreference" ADD COLUMN if not exists "nuDay" int;
+ALTER TABLE public."UserPreference" ADD COLUMN if not exists "nuMonth" int;
+ALTER TABLE public."UserPreference" ADD COLUMN if not exists "nuYear" int;
 
 CREATE TABLE IF NOT EXISTS public."UserProductView" ( id bigserial NOT NULL, PRIMARY KEY (id)) WITH (OIDS = FALSE);
 ALTER TABLE public."UserProductView" OWNER to postgres;
