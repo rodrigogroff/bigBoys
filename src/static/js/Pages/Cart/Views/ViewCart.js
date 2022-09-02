@@ -12,7 +12,6 @@ export default class {
     document.getElementById('myAppMenu').innerHTML = Menu.getHtml()
     document.getElementById('myAppFooter').innerHTML = Footer.getHtml()
     document.getElementById('myAppLoader').innerHTML = Loader.getHtml()
-    document.getElementById('loading').style.display = 'block'
 
     return '';
   }

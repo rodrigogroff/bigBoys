@@ -23,7 +23,7 @@ namespace Master.Service.Domain.Sale
 
             DateTime dt = DateTime.Now;
 
-            UserSale mdl = new UserSale
+            var mdl = new UserSale
             {
                 bActive = true,
                 dtMail = null,

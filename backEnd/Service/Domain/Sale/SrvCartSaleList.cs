@@ -37,11 +37,15 @@ namespace Master.Service.Domain.Sale
             gmap = usr.stGMap;
 
             List<UserSale> lst_sale;
-
-            if (!userSaleRepo.GetRegisteredSalesByFkUser(conn, user_id, out lst_sale))
+            
+            if (!userSaleRepo.GetSalesByFkUser(conn, user_id, out lst_sale))
             {
-                return ReportError("Invalid list Ex02");
+                return ReportError("Invalid list Ex02.0");
             }
+
+            lst_sale = lst_sale.Where(y => y.nuSaleStage == SaleStage.Registered ||
+                                            y.nuSaleStage == SaleStage.Confirmed).
+                                ToList();
 
             List<UserCartSale> lst_cart;
 
@@ -66,7 +70,8 @@ namespace Master.Service.Domain.Sale
                     return ReportError("Invalid list Ex05");
                 }
 
-                saleStage = SaleStage.Registered;
+                saleStage = (long) s.nuSaleStage;
+                gmap = s.stGMap;
             }
 
             foreach (var item in lst_cart)

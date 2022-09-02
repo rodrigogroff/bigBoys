@@ -11,8 +11,8 @@ namespace Master.Repository
     public interface IUserSaleRepo
     {
         public bool GetSaleById(string conn, long id, out UserSale user);
-        public bool GetSalesByFkUser(string conn, long id, out List<UserSale> user);
-        public bool GetRegisteredSalesByFkUser(string conn, long id, out List<UserSale> user);
+        public bool GetSalesByFkUser(string conn, long id, out List<UserSale> list);
+        public bool GetSalesByFkUserAndStage(string conn, long id, long stage, out List<UserSale> list);
         public bool Update(string conn, UserSale mdl);
         public long Insert(string conn, UserSale mdl);
     }
@@ -55,7 +55,7 @@ namespace Master.Repository
                     db.Open();
 
                     list = db.Query<UserSale>
-                        ("SELECT * FROM \"UserSale\" where \"fkUser\"=@fkUser order by dtRegister", new { id }).ToList();
+                        ("SELECT * FROM \"UserSale\" where \"fkUser\"=@fkUser", new { fkUser = id }).ToList();
                 }
 
                 return true;
@@ -69,7 +69,7 @@ namespace Master.Repository
             #endregion
         }
 
-        public bool GetRegisteredSalesByFkUser(string conn, long id, out List<UserSale> list)
+        public bool GetSalesByFkUserAndStage(string conn, long id, long stage, out List<UserSale> list)
         {
             #region - code - 
 
@@ -83,7 +83,7 @@ namespace Master.Repository
                         new 
                         {
                             fkUser = id, 
-                            nuSaleStage = SaleStage.Registered 
+                            nuSaleStage = stage
                         }).
                         ToList();
                 }

@@ -124,5 +124,49 @@ namespace Api.Master.Controllers
 
             #endregion
         }
+
+        [HttpPost]
+        [Route("api/v1/sale/confirm_sale")]
+        public ActionResult confirm_sale([FromBody] DtoCartSaleUpdate obj)
+        {
+            #region - code - 
+
+            var u = GetCurrentAuthenticatedUser();
+
+            var srv = new SrvSaleUpdateConfirm();
+
+            if (!srv.Update(network.pgConnection, I(u.id), obj.gmap))
+            {
+                return BadRequest(srv.Error);
+            }
+
+            return Ok(new
+            {
+            });
+
+            #endregion
+        }
+
+        [HttpPost]
+        [Route("api/v1/sale/cancel_cart")]
+        public ActionResult cancel_cart()
+        {
+            #region - code - 
+
+            var u = GetCurrentAuthenticatedUser();
+
+            var srv = new SrvCartSaleCancel();
+
+            if (!srv.Cancel (network.pgConnection, I(u.id)))
+            {
+                return BadRequest(srv.Error);
+            }
+
+            return Ok(new
+            {
+            });
+
+            #endregion
+        }
     }
 }
