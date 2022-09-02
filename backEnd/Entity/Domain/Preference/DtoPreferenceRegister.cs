@@ -4,4 +4,9 @@
     {
         public long productId { get; set; }
     }
+
+    public class DtoPreferenceRemove
+    {
+        public long productId { get; set; }
+    }
 }

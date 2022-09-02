@@ -59,7 +59,7 @@ namespace Api.Master.Controllers
 
         [HttpPost]
         [Route("api/v1/pref/pref_remove")]
-        public ActionResult pref_remove([FromBody] DtoCartSaleRemove obj)
+        public ActionResult pref_remove([FromBody] DtoPreferenceRemove obj)
         {
             #region - code - 
 

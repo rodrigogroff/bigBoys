@@ -9,39 +9,49 @@ export default class {
     this.params = params;
 
     function getFormData() {
-
       var _par = Object.fromEntries(new URLSearchParams(location.search))
       var obj = Catalogo.getAll('', _par.id);
-
       if (obj == null)
         obj = CatalogoPoster.getAll('', _par.id);
-
       var formData = {
         productId: obj.id,
       };
-
-      console.log('formData');
-      console.log(formData);
-
       return formData;
     }
 
     var token = localStorage.getItem("token");
 
     if (token != null && token != undefined) {
-
-      console.log('1');
-
       postTokenPortal("v1/view/register", getFormData())
         .then((resp) => { })
         .catch((resp) => { });
+      postTokenPortal("v1/pref/pref_list", getFormData())
+        .then((resp) => {
+          var _par = Object.fromEntries(new URLSearchParams(location.search))
+          var found = false;
+          for (let i = 0; i < resp.payload.items.length; i++) {
+            var a = resp.payload.items[i]
+            if (a.productId == _par.id) {
+              found = true;
+              break;
+            }
+          }
+          if (found == true) {
+            document.getElementById('wishlist_rem').style.display = 'block'
+            document.getElementById('wishlist').style.display = 'none'
+          }
+          else {
+            document.getElementById('wishlist_rem').style.display = 'none'
+            document.getElementById('wishlist').style.display = 'block'
+          }
+        })
+        .catch((resp) => { });
     }
     else {
-
-      console.log('2');
-
       postPublicPortal("v1/view/register_anon", getFormData())
-        .then((resp) => { })
+        .then((resp) => {
+
+        })
         .catch((resp) => { });
     }
 
@@ -51,12 +61,29 @@ export default class {
           {
             if (token != null && token != undefined) {
               postTokenPortal("v1/pref/register", getFormData())
-                .then((resp) => { })
+                .then((resp) => {
+                  document.getElementById('wishlist').style.display = 'none'
+                  document.getElementById('wishlist_rem').style.display = 'block'
+                })
                 .catch((resp) => { });
             }
-            else {
+            else
               window.location.href = '/login';
+            break;
+          }
+
+        case "wishlist_rem":
+          {
+            if (token != null && token != undefined) {
+              postTokenPortal("v1/pref/pref_remove", getFormData())
+                .then((resp) => {
+                  document.getElementById('wishlist').style.display = 'block'
+                  document.getElementById('wishlist_rem').style.display = 'none'
+                })
+                .catch((resp) => { });
             }
+            else
+              window.location.href = '/login';
             break;
           }
 
