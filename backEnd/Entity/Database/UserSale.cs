@@ -7,6 +7,7 @@ namespace Master.Entity.Database
         public long id { get; set; }
         public long? fkUser { get; set; }
         public string stGMap { get; set; }
+        public string stGUID { get; set; }
         public DateTime? dtRegister { get; set; }
         public DateTime? dtProduction { get; set; }
         public DateTime? dtMail { get; set; }

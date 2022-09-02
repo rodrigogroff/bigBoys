@@ -11,5 +11,8 @@ namespace Master.Entity.Database
         public long? nuSaleOption { get; set; }
         public DateTime? dtRegister { get; set; }
         public long? fkSale { get; set; }
+        public long? nuDay { get; set; }
+        public long? nuMonth { get; set; }
+        public long? nuYear { get; set; }
     }
 }

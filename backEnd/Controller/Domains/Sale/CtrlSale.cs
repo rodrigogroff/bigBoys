@@ -12,7 +12,7 @@ namespace Api.Master.Controllers
     public partial class CtrlSale : MasterController
     {
         public CtrlSale(IOptions<LocalNetwork> _network) : base(_network) { }
-        
+
         [HttpPost]
         [Route("api/v1/sale/cart_add")]
         public ActionResult cart_add([FromBody] DtoCartSaleRegister obj)
@@ -74,7 +74,7 @@ namespace Api.Master.Controllers
             return Ok(new
             {
                 cart = lst_cart,
-                total =  total,
+                total = total,
                 saleStage = saleStage,
                 gmap = gmap
             });
@@ -90,7 +90,7 @@ namespace Api.Master.Controllers
 
             var u = GetCurrentAuthenticatedUser();
             var srv = new SrvCartSaleRemove();
-            
+
             if (!srv.Remove(network.pgConnection, I(u.id), obj.productId, obj.cartId))
             {
                 return BadRequest(srv.Error);
@@ -157,7 +157,7 @@ namespace Api.Master.Controllers
 
             var srv = new SrvCartSaleCancel();
 
-            if (!srv.Cancel (network.pgConnection, I(u.id)))
+            if (!srv.Cancel(network.pgConnection, I(u.id)))
             {
                 return BadRequest(srv.Error);
             }

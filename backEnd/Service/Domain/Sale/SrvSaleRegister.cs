@@ -25,13 +25,14 @@ namespace Master.Service.Domain.Sale
 
             var mdl = new UserSale
             {
+                stGUID = Guid.NewGuid().ToString(),
                 bActive = true,
                 dtMail = null,
                 dtProduction = null,
                 dtRegister = dt,
                 fkUser = user_id,
                 nuDay = dt.Day,
-                nuMonth = dt.Month,
+                nuMonth = dt.Month,                
                 nuYear = dt.Year,                
                 nuSaleStage = SaleStage.Registered,
                 stGMap = usr.stGMap,

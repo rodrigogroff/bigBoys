@@ -47,6 +47,9 @@ namespace Master.Service.Domain.Sale
             var mdl = new UserCartSale
             {
                 dtRegister = dt,
+                nuDay= dt.Day,
+                nuMonth = dt.Month,
+                nuYear = dt.Year,
                 fkUser = usr.id,
                 nuSaleId = product_id,
                 nuSaleOption = product_option,

@@ -120,6 +120,9 @@ namespace Master.Repository
             cmd.Parameters.AddWithValue("nuSaleOption", ((object)mdl.nuSaleOption) ?? DBNull.Value);
             cmd.Parameters.AddWithValue("vrPrice", ((object)mdl.vrPrice) ?? DBNull.Value);
             cmd.Parameters.AddWithValue("dtRegister", ((object)mdl.dtRegister) ?? DBNull.Value);
+            cmd.Parameters.AddWithValue("nuDay", ((object)mdl.nuDay) ?? DBNull.Value);
+            cmd.Parameters.AddWithValue("nuMonth", ((object)mdl.nuMonth) ?? DBNull.Value);
+            cmd.Parameters.AddWithValue("nuYear", ((object)mdl.nuYear) ?? DBNull.Value);
 
             #endregion
         }
@@ -140,6 +143,9 @@ namespace Master.Repository
                         "\"nuSaleId\"=@nuSaleId," +
                         "\"nuSaleOption\"=@nuSaleOption," +
                         "\"dtRegister\"=@dtRegister," +
+                        "\"nuDay\"=@nuDay," +
+                        "\"nuMonth\"=@nuMonth," +
+                        "\"nuYear\"=@nuYear," +
                         "\"vrPrice\"=@vrPrice " + 
                         "where id=@id", db))
                     {
@@ -168,8 +174,8 @@ namespace Master.Repository
                 {
                     db.Open();
 
-                    using (var cmd = new NpgsqlCommand("INSERT INTO \"UserCartSale\" ( \"fkUser\",\"fkSale\",\"nuSaleId\",\"vrPrice\",\"nuSaleOption\",\"dtRegister\" ) " +
-                                                                   "VALUES (@fkUser,@fkSale,@nuSaleId,@vrPrice,@nuSaleOption,@dtRegister)" +
+                    using (var cmd = new NpgsqlCommand("INSERT INTO \"UserCartSale\" ( \"fkUser\",\"fkSale\",\"nuSaleId\",\"vrPrice\",\"nuSaleOption\",\"nuDay\",\"nuMonth\",\"nuYear\",\"dtRegister\" ) " +
+                                                                   "VALUES (@fkUser,@fkSale,@nuSaleId,@vrPrice,@nuSaleOption,@nuDay,@nuMonth,@nuYear,@dtRegister)" +
                                                                    ";select currval('public.\"UserCartSale_id_seq\"');", db))
                     {
                         setUserParams(cmd, mdl);

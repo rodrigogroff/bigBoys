@@ -106,6 +106,7 @@ namespace Master.Repository
             cmd.Parameters.AddWithValue("id", ((object)mdl.id) ?? DBNull.Value);
             cmd.Parameters.AddWithValue("fkUser", ((object)mdl.fkUser) ?? DBNull.Value);
             cmd.Parameters.AddWithValue("stGMap", ((object)mdl.stGMap) ?? DBNull.Value);
+            cmd.Parameters.AddWithValue("stGUID", ((object)mdl.stGUID) ?? DBNull.Value);
             cmd.Parameters.AddWithValue("dtRegister", ((object)mdl.dtRegister) ?? DBNull.Value);
             cmd.Parameters.AddWithValue("dtProduction", ((object)mdl.dtProduction) ?? DBNull.Value);
             cmd.Parameters.AddWithValue("dtMail", ((object)mdl.dtMail) ?? DBNull.Value);
@@ -131,6 +132,7 @@ namespace Master.Repository
                     using (var cmd = new NpgsqlCommand("update \"UserSale\" set " +
                         "\"fkUser\"=@fkUser," +
                         "\"stGMap\"=@stGMap," +
+                        "\"stGUID\"=@stGUID," +
                         "\"dtRegister\"=@dtRegister," +
                         "\"dtProduction\"=@dtProduction," +
                         "\"dtMail\"=@dtMail," +
@@ -166,8 +168,8 @@ namespace Master.Repository
                 {
                     db.Open();
 
-                    using (var cmd = new NpgsqlCommand("INSERT INTO \"UserSale\" ( \"fkUser\",\"stGMap\",\"dtRegister\",\"dtProduction\",\"dtMail\",\"nuSaleStage\",\"bActive\",\"nuDay\",\"nuMonth\",\"nuYear\" ) " +
-                                                                   "VALUES (@fkUser,@stGMap,@dtRegister,@dtProduction,@dtMail,@nuSaleStage,@bActive,@nuDay,@nuMonth,@nuYear)" +
+                    using (var cmd = new NpgsqlCommand("INSERT INTO \"UserSale\" ( \"fkUser\",\"stGMap\",\"stGUID\",\"dtRegister\",\"dtProduction\",\"dtMail\",\"nuSaleStage\",\"bActive\",\"nuDay\",\"nuMonth\",\"nuYear\" ) " +
+                                                                   "VALUES (@fkUser,@stGMap,@stGUID,@dtRegister,@dtProduction,@dtMail,@nuSaleStage,@bActive,@nuDay,@nuMonth,@nuYear)" +
                                                                    ";select currval('public.\"UserSale_id_seq\"');", db))
                     {
                         setUserParams(cmd, mdl);
