@@ -25,7 +25,7 @@ export default class {
       postTokenPortal("v1/view/register", getFormData())
         .then((resp) => { })
         .catch((resp) => { });
-      postTokenPortal("v1/pref/pref_list", getFormData())
+      postTokenPortal("v1/pref/pref_list", {})
         .then((resp) => {
           var _par = Object.fromEntries(new URLSearchParams(location.search))
           var found = false;

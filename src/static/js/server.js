@@ -12,6 +12,7 @@ app.use("/src", express.static(path.resolve(__dirname, "src")));
 // rotas
 app.get("/", (req, res) => { res.sendFile(path.resolve(__dirname, "./index_dashboard.html")); });
 app.get("/catalog", (req, res) => { res.sendFile(path.resolve(__dirname, "./index_catalog.html")); });
+app.get("/catalog_user", (req, res) => { res.sendFile(path.resolve(__dirname, "./index_catalog_user.html")); });
 app.get("/catalog_poster", (req, res) => { res.sendFile(path.resolve(__dirname, "./index_catalog_poster.html")); });
 app.get("/item", (req, res) => { res.sendFile(path.resolve(__dirname, "./index_item.html")); });
 app.get("/faq", (req, res) => { res.sendFile(path.resolve(__dirname, "./index_faq.html")); });

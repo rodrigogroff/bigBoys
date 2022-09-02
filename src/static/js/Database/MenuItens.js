@@ -27,7 +27,7 @@ export default class {
             },
             {
               label: 'Preferidos',
-              link: '/wishlist',
+              link: '/catalog_user',
             },
             {
               label: 'Dúvidas',
