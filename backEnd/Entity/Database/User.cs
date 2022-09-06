@@ -13,5 +13,8 @@ namespace Master.Entity.Database
         public bool? bActive { get; set; }        
         public DateTime? dtJoin { get; set; }
         public DateTime? dtLastLogin { get; set; }
+        public long? nuDayJoin { get; set; }
+        public long? nuMonthJoin { get; set; }
+        public long? nuYearJoin { get; set; }
     }
 }

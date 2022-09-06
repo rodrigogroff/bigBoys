@@ -42,13 +42,13 @@ export default class {
             txt_cpf.focus()
           }
 
+          e.target.style = 'background-color:black;pointer-events:none;'
+
           var formData = {
             email: txt_email.value,
             cpf: txt_cpf.value,
           };
 
-          document.getElementById('form_btn_login').style.pointerEvents = "none";
-          document.getElementById('login').style.backgroundColor = 'DarkRed'
           document.getElementById('loading').style.display = 'block'
           document.getElementById('mainPageNOK').style.display = 'none'
 
@@ -63,20 +63,17 @@ export default class {
               }
               else {
                 document.getElementById('loading').style.display = 'none'
-                document.getElementById('form_btn_login').style.pointerEvents = "all";
-                document.getElementById('login').style.backgroundColor = 'red'
                 document.getElementById('mainPageNOK').style.display = 'block'
-                document.getElementById('failMsg').innerHTML = buildErrorMsg('Email ou telefone não encontrados')
+                document.getElementById('failMsg').innerHTML = buildErrorMsg('Email ou CPF não encontrados')
+                e.target.style = 'background-color:red;pointer-events:all;'
               }
             })
             .catch((resp) => {
               document.getElementById('loading').style.display = 'none'
-              document.getElementById('form_btn_login').style.pointerEvents = "all";
-              document.getElementById('login').style.backgroundColor = 'red'
               document.getElementById('mainPageNOK').style.display = 'block'
               document.getElementById('failMsg').innerHTML = buildErrorMsg(resp.msg)
+              e.target.style = 'background-color:red;pointer-events:all;'
             });
-
           break;
       }
     });

@@ -482,9 +482,9 @@ export function buildErrorMsg(msg) {
         <div style='background-color:red;width:400px' align='center'>
           <table style='width:380px'>
             <tr>
-              <td><h3 style='color:white'> Aviso do sistema</h3></td>
+              <td><h3 style='color:white;margin-top:2px;margin-bottom:2px;'> Aviso do sistema</h3></td>
               <td width='140px'> </td>
-              <td align='right'> &nbsp;&nbsp;&nbsp;<span class="close" onclick="document.getElementById('myModal').style.display = 'none'">&times;</span></td>
+              <td align='right'> &nbsp;&nbsp;&nbsp;<h3 class="close" style='margin-top:2px;' onclick="document.getElementById('myModal').style.display = 'none'">&times;</h3></td>
             </tr>
           </table>    
         </div>  

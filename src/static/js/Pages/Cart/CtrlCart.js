@@ -11,16 +11,25 @@ export default class {
       switch (e.target.id) {
 
         case "cancelar_item":
+
+          e.target.style = 'background-color:black;pointer-events:none;'
+
           postTokenPortal("v1/sale/cart_remove", {
             productId: e.target.attributes[2].value,
             cartId: e.target.attributes[3].value
           })
             .then((resp) => {
               window.location.href = '/cart';
-            });
+            })
+            .catch((resp) => {
+              e.target.style = 'background-color:red;pointer-events:all;'
+            })
           break;
 
         case "confirm_register":
+
+          e.target.style = 'background-color:black;pointer-events:none;'
+
           postTokenPortal("v1/sale/register", {})
             .then((resp) => {
               window.location.href = '/cart';
@@ -28,18 +37,30 @@ export default class {
           break;
 
         case "confirm_gmap":
+
+          e.target.style = 'background-color:black;pointer-events:none;'
+
           var txt_location = document.getElementById('location');
           postTokenPortal("v1/sale/confirm_sale", { gmap: txt_location.value })
             .then((resp) => {
               window.location.href = '/cart';
-            });
+            })
+            .catch((resp) => {
+              e.target.style = 'background-color:red;pointer-events:all;'
+            })
           break;
 
         case "cancel_cart":
+
+          e.target.style = 'background-color:black;pointer-events:none;'
+
           postTokenPortal("v1/sale/cancel_cart", {})
             .then((resp) => {
               window.location.href = '/cart';
-            });
+            })
+            .catch((resp) => {
+              e.target.style = 'background-color:red;pointer-events:all;'
+            })
           break;
 
         case "confirm_buy":

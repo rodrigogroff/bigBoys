@@ -448,6 +448,14 @@ body .normal-page{background:-webkit-radial-gradient(top, #5e1d1d, #25171f, #141
 			background-color: rgba(0,0,0,0.8); /* Black w/ opacity */
 		  }
 
+/* Modal Content/Box */
+.modal-header {
+	background-color: red;
+	margin: 15% auto; /* 15% from the top and centered */
+	border: 1px solid #888;
+	width: 400px; /* Could be more or less, depending on screen size */
+  }
+
 		  /* Modal Content/Box */
 		  .modal-content {
 			background-color: #fefefe;
@@ -467,7 +475,7 @@ body .normal-page{background:-webkit-radial-gradient(top, #5e1d1d, #25171f, #141
 		  
 		  .close:hover,
 		  .close:focus {
-			color: red;
+			color: white;
 			text-decoration: none;
 			cursor: pointer;
 		  }

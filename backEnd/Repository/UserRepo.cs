@@ -130,6 +130,9 @@ namespace Master.Repository
             cmd.Parameters.AddWithValue("bActive", ((object)mdl.bActive) ?? DBNull.Value);
             cmd.Parameters.AddWithValue("dtJoin", ((object)mdl.dtJoin) ?? DBNull.Value);
             cmd.Parameters.AddWithValue("dtLastLogin", ((object)mdl.dtLastLogin) ?? DBNull.Value);
+            cmd.Parameters.AddWithValue("nuDayJoin", ((object)mdl.nuDayJoin) ?? DBNull.Value);
+            cmd.Parameters.AddWithValue("nuMonthJoin", ((object)mdl.nuMonthJoin) ?? DBNull.Value);
+            cmd.Parameters.AddWithValue("nuYearJoin", ((object)mdl.nuYearJoin) ?? DBNull.Value);
 
             #endregion
         }
@@ -152,6 +155,9 @@ namespace Master.Repository
                         "\"stCPF\"=@stCPF," +
                         "\"bActive\"=@bActive," +
                         "\"dtJoin\"=@dtJoin," +
+                        "\"nuDayJoin\"=@nuDayJoin," +
+                        "\"nuMonthJoin\"=@nuMonthJoin," +
+                        "\"nuYearJoin\"=@nuYearJoin," +
                         "\"dtLastLogin\"=@dtLastLogin " +
                         "where id=@id", db))
                     {
@@ -180,8 +186,8 @@ namespace Master.Repository
                 {
                     db.Open();
 
-                    using (var cmd = new NpgsqlCommand("INSERT INTO \"User\" ( \"stEmail\",\"stMobile\",\"stCPF\",\"stName\",\"stGMap\",\"bActive\",\"dtJoin\",\"dtLastLogin\" ) " +
-                                                                   "VALUES (@stEmail,@stMobile,@stCPF,@stName,@stGMap,@bActive,@dtJoin,@dtLastLogin)" +
+                    using (var cmd = new NpgsqlCommand("INSERT INTO \"User\" ( \"stEmail\",\"stMobile\",\"stCPF\",\"stName\",\"stGMap\",\"bActive\",\"dtJoin\",\"nuDayJoin\",\"nuMonthJoin\",\"nuYearJoin\",\"dtLastLogin\" ) " +
+                                                                   "VALUES (@stEmail,@stMobile,@stCPF,@stName,@stGMap,@bActive,@dtJoin,@nuDayJoin,@nuMonthJoin,@nuYearJoin,@dtLastLogin)" +
                                                                    ";select currval('public.\"User_id_seq\"');", db))
                     {
                         setUserParams(cmd, mdl);

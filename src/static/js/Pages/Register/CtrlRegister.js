@@ -116,7 +116,8 @@ export default class {
             cpf: txt_cpf.value
           };
 
-          document.getElementById('form_register_btn_confirm').style.pointerEvents = "none";
+          e.target.style = 'background-color:black;pointer-events:none;'
+
           document.getElementById('confirm').style.backgroundColor = 'DarkRed'
           document.getElementById('loading').style.display = 'block'
 
@@ -130,17 +131,15 @@ export default class {
               }
               else {
                 document.getElementById('loading').style.display = 'none'
-                document.getElementById('form_register_btn_confirm').style.pointerEvents = "all";
                 document.getElementById('mainPageNOK').style.display = 'block'
-                document.getElementById('confirm').style.backgroundColor = 'red'
+                e.target.style = 'background-color:red;pointer-events:all;'
                 document.getElementById('failMsg').innerHTML = buildErrorMsg()
               }
             })
             .catch((resp) => {
               document.getElementById('loading').style.display = 'none'
-              document.getElementById('form_register_btn_confirm').style.pointerEvents = "all";
               document.getElementById('mainPageNOK').style.display = 'block'
-              document.getElementById('confirm').style.backgroundColor = 'red'
+              e.target.style = 'background-color:red;pointer-events:all;'
               document.getElementById('failMsg').innerHTML = buildErrorMsg(resp.msg)
             });
 

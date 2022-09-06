@@ -45,7 +45,10 @@ namespace Master.Service.Domain.Auth
                 stName = name,
                 stMobile = mobile,      
                 stGMap = gmap,
-                stCPF = cpf
+                stCPF = cpf,
+                nuDayJoin = DateTime.Now.Day,
+                nuMonthJoin = DateTime.Now.Month,
+                nuYearJoin = DateTime.Now.Year,
             };
 
             mdl_user.id = userRepo.Insert(conn, mdl_user);

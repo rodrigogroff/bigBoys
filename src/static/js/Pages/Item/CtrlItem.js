@@ -67,28 +67,29 @@ export default class {
                 })
                 .catch((resp) => { });
             }
-            else
-              window.location.href = '/login';
             break;
           }
 
         case "wishlist_rem":
           {
+            e.target.style = 'background-color:black;pointer-events:none;'
             if (token != null && token != undefined) {
               postTokenPortal("v1/pref/pref_remove", getFormData())
                 .then((resp) => {
                   document.getElementById('wishlist').style.display = 'block'
                   document.getElementById('wishlist_rem').style.display = 'none'
+                  e.target.style = 'background-color:red;pointer-events:all;'
                 })
-                .catch((resp) => { });
+                .catch((resp) => {
+                  e.target.style = 'background-color:red;pointer-events:all;'
+                });
             }
-            else
-              window.location.href = '/login';
             break;
           }
 
         case "add":
           {
+            e.target.style = 'background-color:black;pointer-events:none;'
             var formData = getFormData();
             formData.productOption = e.target.attributes[3].value;
             document.getElementById('loading').style.display = 'block'
@@ -101,6 +102,7 @@ export default class {
                 else {
                   document.getElementById('mainPageNOK').style = "display:block"
                   document.getElementById('failMsg').innerHTML = buildErrorMsg(resp.msg)
+                  e.target.style = 'background-color:red;pointer-events:all;'
                 }
               })
               .catch((resp) => {
@@ -108,11 +110,11 @@ export default class {
                 document.getElementById('loading').style.display = 'none'
                 document.getElementById('mainPageNOK').style = "display:block"
                 document.getElementById('failMsg').innerHTML = buildErrorMsg()
+                e.target.style = 'background-color:red;pointer-events:all;'
               });
             break;
           }
       }
-
     });
   }
 
