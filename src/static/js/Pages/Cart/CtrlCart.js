@@ -258,7 +258,7 @@ export default class {
       .catch((resp) => {
         document.getElementById('loading').style.display = 'none'
         document.getElementById('mainPageNOK').style = "display:block"
-        document.getElementById('failMsg').innerHTML = buildErrorMsg()
+        document.getElementById('failMsg').innerHTML = buildErrorMsg(resp.msg)
       })
 
     return "";

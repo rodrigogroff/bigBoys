@@ -74,7 +74,7 @@ export default class {
               document.getElementById('form_btn_login').style.pointerEvents = "all";
               document.getElementById('login').style.backgroundColor = 'red'
               document.getElementById('mainPageNOK').style.display = 'block'
-              document.getElementById('failMsg').innerHTML = buildErrorMsg()
+              document.getElementById('failMsg').innerHTML = buildErrorMsg(resp.msg)
             });
 
           break;

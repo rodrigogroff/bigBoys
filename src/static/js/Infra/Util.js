@@ -306,14 +306,12 @@ export function getTokenPortal(location, parameters) {
           res.json().then((data) => {
             resolve({
               ok: false,
+              unauthorized: res.status == 401 ? true : false,
               msg: data.message,
             });
           });
       })
       .catch((errorMsg) => {
-        if (errorMsg == 'TypeError: NetworkError when attempting to fetch resource.') {
-          window.location.href = '/login';
-        }
         resolve({
           ok: false,
           msg: errorMsg.message,
@@ -362,12 +360,9 @@ export function postTokenPortal(location, _obj) {
           });
       })
       .catch((errorMsg) => {
-        if (errorMsg == 'TypeError: NetworkError when attempting to fetch resource.') {
-          window.location.href = '/login';
-        }
         resolve({
           ok: false,
-          msg: errorMsg.toString(),
+          unauthorized: true,
         });
       });
   });
@@ -390,10 +385,7 @@ export function postPublicPortal(location, _obj) {
       }
     )
       .then((res) => {
-        if (res.status === 401) {
-          window.location.href = '/login';
-        }
-        else if (res.status === 400) {
+        if (res.status === 400) {
           res.json().then((data) => {
             reject({
               ok: false,
@@ -412,6 +404,8 @@ export function postPublicPortal(location, _obj) {
           res.json().then((data) => {
             resolve({
               ok: false,
+              unauthorized: res.status == 401 ? true : false,
+              msg: data.message,
             });
           });
         }
@@ -479,10 +473,29 @@ export function buildTableSimple(tableobj) {
 }
 
 export function buildErrorMsg(msg) {
-  if (msg == null || msg == undefined)
-    msg = "Ops - aconteceu um erro";
-
-  return '<span style="color:gray">Aviso do sistema</span><h3 style="margin-top:5px;color:red"> ' + msg + '</h3>'
+  if (msg == undefined)
+    msg = "Area restrita!<br><br>Favor logar-se no sistema <a href='/login' style='color:blue' >aqui</a>";
+  return `
+  <div id="myModal" class="modal" style='display:block'>
+    <div style='margin: 15% auto' align='center'>
+      <div style='background-color:white;width:400px;color:black'>
+        <div style='background-color:red;width:400px' align='center'>
+          <table style='width:380px'>
+            <tr>
+              <td><h3 style='color:white'> Aviso do sistema</h3></td>
+              <td width='140px'> </td>
+              <td align='right'> &nbsp;&nbsp;&nbsp;<span class="close" onclick="document.getElementById('myModal').style.display = 'none'">&times;</span></td>
+            </tr>
+          </table>    
+        </div>  
+        <br><br>
+        <h4 style='color:black'>${msg}</h4><br>
+        <br>
+        <br>
+        <br>
+      </div>  
+    </div>
+  </div>`
 }
 
 export function buildTable(tableobj, color, bgColor, styleClass, noResultMsg) {

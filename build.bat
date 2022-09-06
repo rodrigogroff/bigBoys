@@ -1,3 +1,8 @@
+
+del /s /q D:\repos\zxcv\dist\*
+rmdir /s /q D:\repos\zxcv\dist
+mkdir D:\repos\zxcv\dist
+
 call npm run build
 
 xcopy ".\src\static\js\server.js" .\dist /E /D /S /I /Q /Y /F

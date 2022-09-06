@@ -4,11 +4,13 @@ import Lancamentos from "@app/Components/Lancamentos";
 import DashGallery from "@app/Components/DashGallery";
 import Footer from "@app/Components/Footer";
 import WallpaperControl from "@app/Components/WallpaperControl";
+import PortalTitle from "@app/Components/PortalTitle";
 import Shuffle from "@app/Components/Shuffle";
 
 export default class {
   static getHtml() {
 
+    PortalTitle.getHtml();
     WallpaperControl.getHtml()
 
     document.getElementById('myAppMenu').innerHTML = Menu.getHtml()

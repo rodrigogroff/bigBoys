@@ -195,21 +195,6 @@ export default class {
           gallery: [{ image: 'src/static/minis/horde_dreadmarsh/8726/promoBig.jpg' },
           ],
         },
-
-        {
-          id: 8727,
-          active: true,
-          sculptPrice: 'R$ 260,00',
-          patreon: 'daybreak miniatures',
-          collection: 'HORDE_DREADMARSH',
-          link: '/item?id=8727',
-          catalogIndex: '/catalog',
-          imageBig: 'src/static/minis/horde_dreadmarsh/8727/promoBig.jpg',
-          catalogText: 'Miniatura em resina, 15 cm de altura, pintada em detalhes metálicos a mão.',
-          gallery: [{ image: 'src/static/minis/horde_dreadmarsh/8727/promoBig.jpg' },
-          ],
-        },
-
         {
           id: 8728,
           active: true,

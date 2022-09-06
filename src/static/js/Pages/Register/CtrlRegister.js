@@ -141,7 +141,7 @@ export default class {
               document.getElementById('form_register_btn_confirm').style.pointerEvents = "all";
               document.getElementById('mainPageNOK').style.display = 'block'
               document.getElementById('confirm').style.backgroundColor = 'red'
-              document.getElementById('failMsg').innerHTML = buildErrorMsg()
+              document.getElementById('failMsg').innerHTML = buildErrorMsg(resp.msg)
             });
 
           break;

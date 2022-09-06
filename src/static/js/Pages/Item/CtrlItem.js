@@ -91,9 +91,7 @@ export default class {
           {
             var formData = getFormData();
             formData.productOption = e.target.attributes[3].value;
-
             document.getElementById('loading').style.display = 'block'
-
             postTokenPortal("v1/sale/cart_add", formData)
               .then((resp) => {
                 document.getElementById('loading').style.display = 'none'
@@ -106,12 +104,11 @@ export default class {
                 }
               })
               .catch((resp) => {
-
+                console.log(resp)
                 document.getElementById('loading').style.display = 'none'
                 document.getElementById('mainPageNOK').style = "display:block"
                 document.getElementById('failMsg').innerHTML = buildErrorMsg()
               });
-
             break;
           }
       }
