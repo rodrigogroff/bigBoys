@@ -18,6 +18,7 @@ app.get("/item", (req, res) => { res.sendFile(path.resolve(__dirname, "./index_i
 app.get("/faq", (req, res) => { res.sendFile(path.resolve(__dirname, "./index_faq.html")); });
 app.get("/register", (req, res) => { res.sendFile(path.resolve(__dirname, "./index_register.html")); });
 app.get("/login", (req, res) => { res.sendFile(path.resolve(__dirname, "./index_login.html")); });
+app.get("/loginAdmin", (req, res) => { res.sendFile(path.resolve(__dirname, "./index_loginAdmin.html")); });
 app.get("/logout", (req, res) => { res.sendFile(path.resolve(__dirname, "./index_logout.html")); });
 app.get("/cart", (req, res) => { res.sendFile(path.resolve(__dirname, "./index_cart.html")); });
 app.get("/production", (req, res) => { res.sendFile(path.resolve(__dirname, "./index_production.html")); });

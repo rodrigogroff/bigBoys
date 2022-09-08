@@ -1,7 +1,5 @@
 
 import ViewCart from "./Views/ViewCart";
-import Catalogo from "@app/Database/CatalogoMinis";
-import CatalogoPoster from "@app/Database/CatalogoPosters";
 import { postTokenPortal, buildErrorMsg } from "@app/Infra/Util"
 
 export default class {
@@ -19,7 +17,10 @@ export default class {
             cartId: e.target.attributes[3].value
           })
             .then((resp) => {
-              window.location.href = '/cart';
+              var redir_cart = function () {
+                window.location.href = '/cart';
+              }
+              setTimeout(redir_cart, 500);
             })
             .catch((resp) => {
               e.target.style = 'background-color:red;pointer-events:all;'
@@ -92,9 +93,6 @@ export default class {
             html_cart += "<table><tr><td width='120px'></td><td width='16px'></td><td width='120px'></td><td></td><td width='8px'></td><td></td></tr>";
             for (let i = 0; i < resp.payload.cart.length; i = i + 1) {
               var c = resp.payload.cart[i]
-              var obj = Catalogo.getAll('', c.productId);
-              if (obj == null)
-                obj = CatalogoPoster.getAll('', c.productId);
               var tipo = 'Quadro ';
               if (parseInt(c.productOption) >= 1) {
                 if (c.productOption == 1)
@@ -104,8 +102,8 @@ export default class {
               }
               else
                 tipo = 'Miniatura';
-              html_cart += `<tr height='70px'><td><a href='${obj.link}'>
-                            <img src="${obj.imageBig}" style='max-height:66px' /></a></td><td></td>
+              html_cart += `<tr height='70px'><td><a href='/item?id=${c.productId}'>
+                            <img src="src/static/products/${c.productId}/promoBig.jpg" style='max-height:66px' /></a></td><td></td>
                             <td><br>${tipo}<br>Item ${c.productId}</td>
                             <td><br>R$ ${c.price}</td>
                             <td></td>
@@ -186,9 +184,6 @@ export default class {
 
             for (let i = 0; i < resp.payload.cart.length; i = i + 1) {
               var c = resp.payload.cart[i]
-              var obj = Catalogo.getAll('', c.productId);
-              if (obj == null)
-                obj = CatalogoPoster.getAll('', c.productId);
               var tipo = 'Quadro ';
               if (parseInt(c.productOption) >= 1) {
                 if (c.productOption == 1)
@@ -198,8 +193,8 @@ export default class {
               }
               else
                 tipo = 'Miniatura';
-              html_cart += `<tr height='70px'><td><a href='${obj.link}'>
-                            <img src="${obj.imageBig}" style='max-height:66px' /></a></td><td></td>
+              html_cart += `<tr height='70px'><td><a href='/item?id=${c.productId}'>
+                            <img src="src/static/products/${c.productId}/promoBig.jpg" style='max-height:66px' /></a></td><td></td>
                             <td><br>${tipo}<br>Item ${c.productId}</td>
                             <td><br>R$ ${c.price}</td>
                             <td></td>
@@ -241,9 +236,6 @@ export default class {
             html_cart += "<table><tr><td width='120px'></td><td width='16px'></td><td width='120px'></td><td></td><td width='8px'></td><td></td></tr>";
             for (let i = 0; i < resp.payload.cart.length; i = i + 1) {
               var c = resp.payload.cart[i]
-              var obj = Catalogo.getAll('', c.productId);
-              if (obj == null)
-                obj = CatalogoPoster.getAll('', c.productId);
               var tipo = 'Quadro ';
               if (parseInt(c.productOption) >= 1) {
                 if (c.productOption == 1)
@@ -253,8 +245,8 @@ export default class {
               }
               else
                 tipo = 'Miniatura';
-              html_cart += `<tr height='70px'><td><a href='${obj.link}'>
-                            <img src="${obj.imageBig}" style='max-height:66px' /></a></td><td></td>
+              html_cart += `<tr height='70px'><td><a href='/item?id=${c.productId}'>
+                            <img src="src/static/products/${c.productId}/promoBig.jpg" style='max-height:66px' /></a></td><td></td>
                             <td><br>${tipo}<br>Item ${c.productId}</td>
                             <td><br>R$ ${c.price}</td>
                             <td></td>

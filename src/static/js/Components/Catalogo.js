@@ -3,30 +3,21 @@ import Shuffle from "@app/Components/Shuffle";
 
 export default class {
 
-    static getHtml(objects, collection) {
+    static getHtml(objects) {
 
         var html = "<div align='center'><div class='flex-container'>";
 
-        objects.items = Shuffle.sort(objects.items)
+        objects = Shuffle.sort(objects)
 
-        for (let a = 0; a < objects.items.length; a++) {
-            var m = objects.items[a];
-            if (m.active == true) {
-                if (collection != null && collection != "") {
-                    if (m.collection == collection) {
-                        html += `<div id='${m.id}'>
-                                    <img src="${m.imageBig}" alt="cat figure" style='cursor:pointer;height:320px' onclick="document.location = '/item?id=' + ${m.id}" >
-                                </div>`
-                    }
-                }
-                else
-                    html += `<div id='${m.id}'>
-                            <img src="${m.imageBig}" alt="cat figure" style='cursor:pointer;height:320px' onclick="document.location = '/item?id=' + ${m.id}" >
-                        </div>`
-            }
+        for (let a = 0; a < objects.length; a++) {
+            var m = objects[a];
+            html += `<div id='${m.id}'>
+                        <img src="src/static/products/${m.id}/promoBig.jpg" alt="cat figure" 
+                        style='cursor:pointer;height:320px' onclick="document.location = '/item?id=' + ${m.id}" >
+                    </div>`
         }
 
-        if (objects.items.length > 0)
+        if (objects.length > 0)
             html += "</div></div>";
 
         return html;

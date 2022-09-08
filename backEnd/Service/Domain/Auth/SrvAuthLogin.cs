@@ -7,7 +7,7 @@ namespace Master.Service.Domain.Auth
     public class SrvAuthLogin : SrvBaseService
     {
         public IUserRepo userRepo = new UserRepo();
-
+        
         public bool Login(string conn, string email, string cpf, out DtoUser usr)
         {
             usr = new DtoUser();

@@ -11,8 +11,6 @@ namespace Api.Master.Controllers
     {
         public CtrlAuth(IOptions<LocalNetwork> _network) : base(_network) { }
 
-        
-
         [AllowAnonymous]
         [HttpPost]
         [Route("api/v1/auth/register")]
@@ -66,6 +64,36 @@ namespace Api.Master.Controllers
                 token = token,
                 userName = usr.name.Split (' ')[0],
                 mobile = usr.mobile
+            });
+
+            #endregion
+        }
+
+        [AllowAnonymous]
+        [HttpPost]
+        [Route("api/v1/auth/login_admin")]
+        public ActionResult auth_login_admin([FromBody] DtoAuthLoginAdmin obj)
+        {
+            #region - code - 
+
+            var srv = new SrvAuthLoginAdmin();
+
+            DtoUserAdmin usr;
+
+            if (!srv.Login(network.pgConnection,
+                             obj.cpf,
+                             obj.password,
+                             out usr))
+            {
+                return NotFound(new { message = "" });
+            }
+
+            var token = ComposeTokenForAdminSession(usr);
+
+            return Ok(new DtoToken
+            {
+                token = token,
+                userName = usr.name.Split(' ')[0],               
             });
 
             #endregion

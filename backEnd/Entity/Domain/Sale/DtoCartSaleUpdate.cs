@@ -2,6 +2,6 @@
 {
     public class DtoCartSaleUpdate
     {
-        public string gmap { get; set; }        
+        public string gmap { get; set; }
     }
 }

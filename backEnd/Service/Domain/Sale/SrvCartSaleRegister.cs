@@ -39,7 +39,7 @@ namespace Master.Service.Domain.Sale
 
             if (lst_sale.Count > 0)
             {
-                return ReportError("Finalize sua compra antes de criar um novo carrinho");
+                return ReportError("Finalize sua compra antes de acrescentar itens em um novo carrinho");
             }
 
             var dt = DateTime.Now;

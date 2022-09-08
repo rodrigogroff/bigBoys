@@ -31,9 +31,7 @@ const navigateTo = (url) => {
 };
 
 const router = () => {
-  document.querySelector("#myApp").innerHTML = new AppRouter(
-    window.location.pathname
-  ).getHtml();
+  new AppRouter(window.location.pathname).getHtml();
 };
 
 window.addEventListener("popstate", router);

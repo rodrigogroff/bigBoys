@@ -1,4 +1,9 @@
 ﻿
+CREATE TABLE IF NOT EXISTS public."Admin" ( id bigserial NOT NULL, PRIMARY KEY (id)) WITH (OIDS = FALSE);
+ALTER TABLE public."Admin" OWNER to postgres;
+ALTER TABLE public."Admin" ADD COLUMN if not exists "stCPF" character varying(250);
+ALTER TABLE public."Admin" ADD COLUMN if not exists "stPassword" character varying(250);
+
 CREATE TABLE IF NOT EXISTS public."User" ( id bigserial NOT NULL, PRIMARY KEY (id)) WITH (OIDS = FALSE);
 ALTER TABLE public."User" OWNER to postgres;
 ALTER TABLE public."User" ADD COLUMN if not exists "stEmail" character varying(250);

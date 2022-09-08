@@ -77,6 +77,33 @@ namespace Api.Master.Controllers
         }
 
         [NonAction]
+        public string ComposeTokenForAdminSession(DtoUserAdmin usr)
+        {
+            #region - code - 
+
+            var tokenHandler = new JwtSecurityTokenHandler();
+            var key = Encoding.ASCII.GetBytes(LocalNetwork.Secret);
+
+            var tokenDescriptor = new SecurityTokenDescriptor
+            {
+                Subject = new ClaimsIdentity(new Claim[]
+                {
+                    new Claim("_id", usr.id.ToString()),
+                    new Claim("_name", usr.name),
+                }),
+                Expires = DateTime.UtcNow.AddHours(24),
+                SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key),
+                                                                SecurityAlgorithms.HmacSha256Signature)
+            };
+
+            var token = tokenHandler.CreateToken(tokenDescriptor);
+
+            return tokenHandler.WriteToken(token);
+
+            #endregion
+        }
+
+        [NonAction]
         public long I(string myNumber)
         {
             return Convert.ToInt64(myNumber);

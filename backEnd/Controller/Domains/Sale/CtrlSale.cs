@@ -2,6 +2,7 @@
 using Master.Entity.Infra;
 using Master.Infra.Constant;
 using Master.Service.Domain.Sale;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
 using System.Collections.Generic;
@@ -23,7 +24,7 @@ namespace Api.Master.Controllers
 
             var srv = new SrvCartSaleRegister();
 
-            var prod = new CatalogFull().catalog.items.FirstOrDefault(y => y.id == obj.productId);
+            var prod = CatalogFull.catalog.items.FirstOrDefault(y => y.id == obj.productId);
 
             if (prod == null)
                 return BadRequest(new DtoServiceError
@@ -164,6 +165,54 @@ namespace Api.Master.Controllers
 
             return Ok(new
             {
+            });
+
+            #endregion
+        }
+
+        [AllowAnonymous]
+        [HttpPost]
+        [Route("api/v1/sale/sale_detail")]
+        public ActionResult sale_detail([FromBody] DtoCartSaleDetail obj)
+        {
+            #region - code - 
+
+            var srv = new SrvCartSaleDetail();
+
+            var item = new Item();
+
+            if (!srv.Detail(I(obj.sale_id), out item ))
+            {
+                return BadRequest(srv.Error);
+            }
+
+            return Ok(new
+            {
+                detail = item
+            });
+
+            #endregion
+        }
+
+        [AllowAnonymous]
+        [HttpPost]
+        [Route("api/v1/sale/sale_detail_listing")]
+        public ActionResult sale_detail_listing([FromBody] DtoCartSaleListing obj)
+        {
+            #region - code - 
+
+            var srv = new SrvCartSaleListing();
+
+            List<ItemId> list;
+
+            if (!srv.Listing(obj.option, obj.catalog, out list))
+            {
+                return BadRequest(srv.Error);
+            }
+
+            return Ok(new
+            {
+                items = list
             });
 
             #endregion

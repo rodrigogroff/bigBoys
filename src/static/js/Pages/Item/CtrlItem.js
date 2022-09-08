@@ -1,7 +1,5 @@
 
 import ViewItem from "./Views/ViewItem";
-import Catalogo from "@app/Database/CatalogoMinis";
-import CatalogoPoster from "@app/Database/CatalogoPosters";
 import { postTokenPortal, postPublicPortal, buildErrorMsg } from "@app/Infra/Util"
 
 export default class {
@@ -10,11 +8,8 @@ export default class {
 
     function getFormData() {
       var _par = Object.fromEntries(new URLSearchParams(location.search))
-      var obj = Catalogo.getAll('', _par.id);
-      if (obj == null)
-        obj = CatalogoPoster.getAll('', _par.id);
       var formData = {
-        productId: obj.id,
+        productId: _par.id,
       };
       return formData;
     }
@@ -59,13 +54,19 @@ export default class {
       switch (e.target.id) {
         case "wishlist":
           {
+            e.target.style = 'background-color:black;pointer-events:none;'
             if (token != null && token != undefined) {
               postTokenPortal("v1/pref/register", getFormData())
                 .then((resp) => {
-                  document.getElementById('wishlist').style.display = 'none'
-                  document.getElementById('wishlist_rem').style.display = 'block'
+                  e.target.style = 'background-color:red;pointer-events:all;'
+                  document.getElementById('wishlist').style = 'display:none'
+                  document.getElementById('wishlist_rem').style = 'display:block'
                 })
-                .catch((resp) => { });
+                .catch((resp) => {
+                  e.target.style = 'background-color:red;pointer-events:all;'
+                  document.getElementById('wishlist').style = 'display:none'
+                  document.getElementById('wishlist_rem').style = 'display:block'
+                });
             }
             break;
           }
@@ -76,12 +77,14 @@ export default class {
             if (token != null && token != undefined) {
               postTokenPortal("v1/pref/pref_remove", getFormData())
                 .then((resp) => {
-                  document.getElementById('wishlist').style.display = 'block'
-                  document.getElementById('wishlist_rem').style.display = 'none'
                   e.target.style = 'background-color:red;pointer-events:all;'
+                  document.getElementById('wishlist_rem').style = 'display:none'
+                  document.getElementById('wishlist').style = 'display:block'
                 })
                 .catch((resp) => {
                   e.target.style = 'background-color:red;pointer-events:all;'
+                  document.getElementById('wishlist_rem').style = 'display:none'
+                  document.getElementById('wishlist').style = 'display:block'
                 });
             }
             break;
@@ -109,7 +112,7 @@ export default class {
                 console.log(resp)
                 document.getElementById('loading').style.display = 'none'
                 document.getElementById('mainPageNOK').style = "display:block"
-                document.getElementById('failMsg').innerHTML = buildErrorMsg()
+                document.getElementById('failMsg').innerHTML = buildErrorMsg(resp.msg)
                 e.target.style = 'background-color:red;pointer-events:all;'
               });
             break;

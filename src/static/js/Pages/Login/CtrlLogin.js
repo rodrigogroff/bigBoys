@@ -32,13 +32,11 @@ export default class {
 
           if (txt_email.value != '' && txt_email.value.indexOf('@') > 0 && txt_email.value.indexOf('.') > 0) { } else {
             document.getElementById('validation_email').style.display = 'block'
-            passed = false;
             txt_email.focus()
           }
 
           if (txt_cpf.value != '' && txt_cpf.value.length == 14) { } else {
             document.getElementById('validation_cpf').style.display = 'block'
-            passed = false;
             txt_cpf.focus()
           }
 
@@ -64,14 +62,14 @@ export default class {
               else {
                 document.getElementById('loading').style.display = 'none'
                 document.getElementById('mainPageNOK').style.display = 'block'
-                document.getElementById('failMsg').innerHTML = buildErrorMsg('Email ou CPF não encontrados')
+                document.getElementById('failMsg').innerHTML = buildErrorMsg(resp.msg)
                 e.target.style = 'background-color:red;pointer-events:all;'
               }
             })
             .catch((resp) => {
               document.getElementById('loading').style.display = 'none'
               document.getElementById('mainPageNOK').style.display = 'block'
-              document.getElementById('failMsg').innerHTML = buildErrorMsg(resp.msg)
+              document.getElementById('failMsg').innerHTML = buildErrorMsg()
               e.target.style = 'background-color:red;pointer-events:all;'
             });
           break;

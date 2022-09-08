@@ -368,6 +368,58 @@ export function postTokenPortal(location, _obj) {
   });
 }
 
+export async function postPublicPortalAsync(location, _obj) {
+  var ApiLocation = getLocation();
+  var obj = JSON.stringify(_obj);
+  return new Promise((resolve, reject) => {
+    fetch(
+      ApiLocation.api_host + ":" + ApiLocation.api_port + "/api/" + location,
+      {
+        method: "POST",
+        headers:
+        {
+          "Content-Type": "application/json",
+          "Access-Control-Allow-Origin": "*"
+        },
+        body: obj,
+      }
+    )
+      .then((res) => {
+        if (res.status === 400) {
+          res.json().then((data) => {
+            reject({
+              ok: false,
+              msg: data.message,
+            });
+          });
+        }
+        else if (res.ok === true) {
+          res.json().then((data) => {
+            resolve({
+              ok: true,
+              payload: data,
+            });
+          });
+        } else {
+          res.json().then((data) => {
+            resolve({
+              ok: false,
+              unauthorized: res.status == 401 ? true : false,
+              msg: data.message,
+            });
+          });
+        }
+      })
+      .catch((errorMsg) => {
+        reject({
+          ok: false,
+          msg: "Ops, aconteceu um erro!",
+        });
+      });
+  });
+}
+
+
 export function postPublicPortal(location, _obj) {
   var ApiLocation = getLocation();
   var obj = JSON.stringify(_obj);
@@ -489,7 +541,7 @@ export function buildErrorMsg(msg) {
           </table>    
         </div>  
         <br><br>
-        <h4 style='color:black'>${msg}</h4><br>
+        <h4 style='color:black;margin-left:24px;margin-right:24px;'>${msg}</h4><br>
         <br>
         <br>
         <br>

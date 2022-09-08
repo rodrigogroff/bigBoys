@@ -1,17 +1,20 @@
 
 import Menu from "@app/Components/Menu";
-import Lancamentos from "@app/Components/Lancamentos";
+import Catalogo from "@app/Components/Catalogo";
 import DashGallery from "@app/Components/DashGallery";
 import Footer from "@app/Components/Footer";
 import WallpaperControl from "@app/Components/WallpaperControl";
 import PortalTitle from "@app/Components/PortalTitle";
 import Shuffle from "@app/Components/Shuffle";
+import UserLogin from "@app/Components/UserLogin";
+import { postPublicPortal } from "@app/Infra/Util"
 
 export default class {
   static getHtml() {
 
     PortalTitle.getHtml();
-    WallpaperControl.getHtml()
+    WallpaperControl.getHtml();
+    UserLogin.getHtml();
 
     document.getElementById('myAppMenu').innerHTML = Menu.getHtml()
 
@@ -20,7 +23,6 @@ export default class {
       { image: 'src/static/img/dash_4.jpg', width: '1080px', height: '643px' },
       { image: 'src/static/img/dash_2.jpg', width: '883px', height: '643px' },
       { image: 'src/static/img/dash_3.jpg', width: '1080px', height: '643px' },
-      { image: 'src/static/img/dash_7.jpg', width: '857px', height: '643px' },
       { image: 'src/static/img/dash_6.jpg', width: '1080px', height: '643px' },
       { image: 'src/static/img/dash_9.jpg', width: '1080px', height: '643px' },
     ];
@@ -29,21 +31,11 @@ export default class {
 
     document.getElementById('myAppShow').innerHTML = DashGallery.getHtml(gal)
 
-    document.getElementById('myAppLancamentos1').innerHTML = Lancamentos.getHtml('GND P1')
-    document.getElementById('myAppLancamentos2').innerHTML = Lancamentos.getHtml('GND P2')
-    document.getElementById('myAppLancamentos3').innerHTML = Lancamentos.getHtml('GUNS')
-    document.getElementById('myAppLancamentos4').innerHTML = Lancamentos.getHtml('FUTURE')
-    document.getElementById('myAppLancamentos5').innerHTML = Lancamentos.getHtml('CHARS1')
-
-    document.getElementById('myAppLancamentosM1').innerHTML = Lancamentos.getHtml('ORCS_POWER')
-    document.getElementById('myAppLancamentosM2').innerHTML = Lancamentos.getHtml('HORDE_DREADMARSH')
-    document.getElementById('myAppLancamentosM3').innerHTML = Lancamentos.getHtml('TOME_OF_DEMONS')
-    document.getElementById('myAppLancamentosM4').innerHTML = Lancamentos.getHtml('AFFLICTION')
+    postPublicPortal("v1/sale/sale_detail_listing", { option: 1, catalog: '*' })
+      .then((resp) => {
+        document.getElementById('myAppLancamentos1').innerHTML = Catalogo.getHtml(resp.payload.items)
+      });
 
     document.getElementById('myAppFooter').innerHTML = Footer.getHtml()
-
-    return '';
   }
 }
-
-//https://skywarriorthemes.com/gameaddict
