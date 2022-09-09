@@ -22,5 +22,3 @@ export default class {
     return '';
   }
 }
-
-//https://skywarriorthemes.com/gameaddict

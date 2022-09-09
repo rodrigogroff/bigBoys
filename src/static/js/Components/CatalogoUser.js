@@ -13,7 +13,7 @@ export default class {
                     var m = list[a];
                     html += `<div id='${m.id}'><img src="src/static/products/${m.id}/promoBig.jpg" 
                             alt="cat figure" style='cursor:pointer;height:320px' 
-                            onclick="document.location='/item?id=' + ${m.id}" ></div>`
+                            onclick="document.location='/item?id=' + ${m.id}'" ></div>`
                 }
                 if (list.length > 0)
                     html += "</div></div>";
