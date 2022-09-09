@@ -11,7 +11,12 @@
 *.userprefs
 
 # Build results
+.vs/
 dist/
+node_modules/
+backEnd/bin/
+backEnd/obj/
+backEnd/packages/
 [Dd]ebug/
 [Dd]ebugPublic/
 [Rr]elease/
