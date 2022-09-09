@@ -12,13 +12,16 @@ export default class {
 
                 var m = resp.payload.detail
 
+                var cat_text = m.catalogText
                 var carousel = '<ol class="carousel-indicators">';
 
                 carousel += `<li data-target="#bootstrap-carousel" data-slide-to="0" class="active"></li>`
                 carousel += `</ol><div class="carousel-inner">`
 
-                if (m.id < 8000)
+                if (m.id < 8000) {
                     carousel += `<div class="active item " data-slide-no="0"><a href='src/static/products/${m.id}/preview.jpg'><img alt="img0" src="src/static/products/${m.id}/promoBig.jpg" /></a></div>`
+                    cat_text = 'Quadro com acabamento em acetato transparente, protegendo a figura.'
+                }
                 else
                     carousel += `<div class="active item " data-slide-no="0"><a href='src/static/products/${m.id}/promoBig.jpg'><img alt="img0" src="src/static/products/${m.id}/promoBig.jpg" /></a></div>`
 
@@ -54,7 +57,7 @@ export default class {
                     buyer = `<h4 style='color:green'>
                     <div id="add" class="button" data="${m.id}" option="2"> Acrescentar no carrinho </div><br>
                     ${m.sculptPrice}<br>
-                    ${m.catalogText}<br>
+                    ${cat_text}<br>
                     </h4>`
                 }
 
