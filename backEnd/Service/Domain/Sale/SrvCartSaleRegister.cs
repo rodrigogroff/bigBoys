@@ -44,6 +44,18 @@ namespace Master.Service.Domain.Sale
 
             var dt = DateTime.Now;
 
+            var id_sale = userSaleRepo.Insert(conn, new UserSale
+            {
+                bActive = true,
+                dtRegister = dt,
+                fkUser = user_id,
+                nuDay = dt.Day,
+                nuMonth = dt.Month,
+                nuYear = dt.Year,
+                nuSaleStage = SaleStage.Open,
+                stGUID = Guid.NewGuid().ToString(),
+            });
+            
             var mdl = new UserCartSale
             {
                 dtRegister = dt,
@@ -54,7 +66,7 @@ namespace Master.Service.Domain.Sale
                 nuSaleId = product_id,
                 nuSaleOption = product_option,
                 vrPrice = I(price),      
-                fkSale = null,
+                fkSale = id_sale,
             };
 
             mdl.id = userCartSaleRepo.Insert(conn, mdl);

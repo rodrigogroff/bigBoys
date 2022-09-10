@@ -1,8 +1,8 @@
 ﻿using Master.Entity.Database;
 using Master.Infra.Constant;
 using Master.Repository;
-using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Master.Service.Domain.Sale
 {
@@ -21,43 +21,25 @@ namespace Master.Service.Domain.Sale
                 return ReportError("Invalid register Ex01");
             }
 
-            DateTime dt = DateTime.Now;
+            List<UserSale> lst_sales;
 
-            var mdl = new UserSale
+            userSaleRepo.GetSalesByFkUserAndStage(conn, user_id, SaleStage.Open, out lst_sales);
+
+            if (lst_sales == null)
             {
-                stGUID = Guid.NewGuid().ToString(),
-                bActive = true,
-                dtMail = null,
-                dtProduction = null,
-                dtRegister = dt,
-                fkUser = user_id,
-                nuDay = dt.Day,
-                nuMonth = dt.Month,                
-                nuYear = dt.Year,                
-                nuSaleStage = SaleStage.Registered,
-                stGMap = usr.stGMap,
-            };
-
-            mdl.id = userSaleRepo.Insert(conn, mdl);
-
-            if (mdl.id == 0)
-                return false;
-
-            List<UserCartSale> lst_cart;
-
-            if (!userCartSaleRepo.GetCartSalesByFkUser(conn, user_id, null, out lst_cart))
-            {
-                return ReportError("Invalid register Ex02");
+                return ReportError("Invalid update Ex01");
             }
 
-            foreach (var item in lst_cart)
+            if (lst_sales.Count == 0)
             {
-                item.fkSale = mdl.id;
-                if (!userCartSaleRepo.Update(conn, item))
-                {
-                    return ReportError("Invalid register Ex03 " + mdl.id);
-                }
+                return ReportError("Invalid update Ex02");
             }
+
+            var current_sale = lst_sales.OrderByDescending ( y=> y.dtRegister).FirstOrDefault();
+
+            current_sale.nuSaleStage = SaleStage.Registered;
+
+            userSaleRepo.Update(conn, current_sale);
 
             return true;
         }

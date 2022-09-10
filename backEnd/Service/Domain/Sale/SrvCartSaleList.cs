@@ -23,7 +23,7 @@ namespace Master.Service.Domain.Sale
             cart = new List<DtoCartSaleItem>();
             total = "";
             gmap = "";
-            saleStage = SaleStage.None;
+            saleStage = SaleStage.Open;
 
             long _total = 0;
 
@@ -51,7 +51,7 @@ namespace Master.Service.Domain.Sale
 
             if (lst_sale.Count == 0)
             {
-                if (!userCartSaleRepo.GetCartSalesByFkUser(conn, user_id, null, out lst_cart))
+                if (!userCartSaleRepo.GetCartSalesByFkUser(conn, user_id, null, null, out lst_cart))
                 {
                     return ReportError("Invalid list Ex03");
                 }
@@ -65,7 +65,7 @@ namespace Master.Service.Domain.Sale
                     return ReportError("Invalid list Ex04");
                 }
                 
-                if (!userCartSaleRepo.GetCartSalesByFkUser(conn, user_id, s.id, out lst_cart))
+                if (!userCartSaleRepo.GetCartSalesByFkUser(conn, user_id, s.id, null, out lst_cart))
                 {
                     return ReportError("Invalid list Ex05");
                 }

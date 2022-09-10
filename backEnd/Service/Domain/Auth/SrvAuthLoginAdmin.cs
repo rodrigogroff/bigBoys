@@ -21,13 +21,13 @@ namespace Master.Service.Domain.Auth
             if (string.IsNullOrEmpty(password))
                 return ReportError("Password information failed");
 
-            Admin db_user;
+            var db_user = new Entity.Database.Admin();
 
             if (!adminRepo.GetUserByCPF(conn, cpf, out db_user))
                 return ReportError("Error 0xE1");
 
             if (db_user.stPassword != password)
-                return ReportError("Error 0xE2");
+                return ReportError("Error 0xE3");
 
             usr.id = db_user.id.ToString();
             usr.name = "Administrador";

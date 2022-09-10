@@ -32,7 +32,7 @@ namespace Master.Service.Domain.Sale
             
             List<UserCartSale> list_cart;
 
-            if (!userCartSaleRepo.GetCartSalesByFkUser(conn, user_id, obj.id, out list_cart))
+            if (!userCartSaleRepo.GetCartSalesByFkUser(conn, user_id, obj.id, null, out list_cart))
                 return ReportError("Erro cancel Ex04");
 
             foreach (var item in list_cart)

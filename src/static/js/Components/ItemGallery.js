@@ -19,21 +19,12 @@ export default class {
                 carousel += `</ol><div class="carousel-inner">`
 
                 if (m.id < 8000) {
-                    carousel += `<div class="active item " data-slide-no="0"><a href='src/static/products/${m.id}/preview.jpg'><img alt="img0" src="src/static/products/${m.id}/promoBig.jpg" /></a></div>`
+                    carousel += `<div class="active item " data-slide-no="0"><a target='_blank' href='src/static/products/${m.id}/preview.jpg'><img alt="img0" src="src/static/products/${m.id}/preview.jpg" /></a></div>`
+                    carousel += `<div class="item " data-slide-no="1"><a target='_blank'><img alt="img0" src="src/static/products/${m.id}/promoBig.jpg" /></a></div>`
                     cat_text = 'Quadro com acabamento em acetato transparente, protegendo a figura.'
                 }
                 else
-                    carousel += `<div class="active item " data-slide-no="0"><a href='src/static/products/${m.id}/promoBig.jpg'><img alt="img0" src="src/static/products/${m.id}/promoBig.jpg" /></a></div>`
-
-                /*
-            for (var a = 0; a < obj.gallery.length; a++) {
-                var b = 8 - a;
-                var c = obj.gallery[a]
-                if (a == 0)
-                    carousel += `<div class="active item " data-slide-no="${a}"><a href='${c.image}'><img alt="${b}" src="${c.image}" /></a></div>`
-                else
-                    carousel += `<div class="item " data-slide-no="${a}"><a href='${c.image}'><img alt="${b}" src="${c.image}" /></a></div>`
-            } */
+                    carousel += `<div class="active item " data-slide-no="0"><a target='_blank' href='src/static/products/${m.id}/promoBig.jpg'><img alt="img0" src="src/static/products/${m.id}/promoBig.jpg" style='max-height:320px' /></a></div>`
 
                 carousel += `</div><a class="carousel-control left" href="#bootstrap-carousel" data-slide="prev"></a><a
                 class="carousel-control right" href="#bootstrap-carousel" data-slide="next"></a>`
@@ -60,6 +51,9 @@ export default class {
                     ${cat_text}<br>
                     </h4>`
                 }
+
+                if (m.patreon == null)
+                    m.patreon = 'big boys'
 
                 document.getElementById('myAppCarousel').innerHTML = carousel;
                 document.getElementById('myAppInfo').innerHTML = `<span style='text-size:small'>Criado por:</span><br>

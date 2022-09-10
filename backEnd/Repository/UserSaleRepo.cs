@@ -13,6 +13,7 @@ namespace Master.Repository
         public bool GetSaleById(string conn, long id, out UserSale user);
         public bool GetSalesByFkUser(string conn, long id, out List<UserSale> list);
         public bool GetSalesByFkUserAndStage(string conn, long id, long stage, out List<UserSale> list);
+        public bool GetSalesByDate(string conn, int day, int month, int year, out List<UserSale> list);
         public bool Update(string conn, UserSale mdl);
         public long Insert(string conn, UserSale mdl);
     }
@@ -84,6 +85,37 @@ namespace Master.Repository
                         {
                             fkUser = id, 
                             nuSaleStage = stage
+                        }).
+                        ToList();
+                }
+
+                return true;
+            }
+            catch
+            {
+                list = null;
+                return false;
+            }
+
+            #endregion
+        }
+
+        public bool GetSalesByDate(string conn, int day, int month, int year, out List<UserSale> list)
+        {
+            #region - code - 
+
+            try
+            {
+                using (var db = new NpgsqlConnection(conn))
+                {
+                    db.Open();
+                    list = db.Query<UserSale>
+                        ("SELECT * FROM \"UserSale\" where \"nuDay\"=@nuDay and \"nuMonth\"=@nuMonth and \"nuYear\"=@nuYear",
+                        new
+                        {
+                            nuDay = day,
+                            nuMonth = month,
+                            nuYear = year,
                         }).
                         ToList();
                 }

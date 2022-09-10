@@ -85,7 +85,7 @@ namespace Api.Master.Controllers
                              obj.password,
                              out usr))
             {
-                return NotFound(new { message = "" });
+                return NotFound(new { message = "CPF ou senha incorretas!" });
             }
 
             var token = ComposeTokenForAdminSession(usr);

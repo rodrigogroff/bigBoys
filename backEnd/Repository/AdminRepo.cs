@@ -24,6 +24,9 @@ namespace Master.Repository
 
                     user = db.QueryFirstOrDefault<Admin>
                         ("SELECT * FROM \"Admin\" where \"stCPF\"=@cpf", new { cpf });
+
+                    if (user == null)
+                        return false;
                 }
 
                 return true;

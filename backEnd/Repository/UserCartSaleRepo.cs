@@ -11,7 +11,7 @@ namespace Master.Repository
     {
         public bool GetCartSaleById(string conn, long id, out UserCartSale user);
         public bool DeleteCartSaleById(string conn, long id);
-        public bool GetCartSalesByFkUser(string conn, long id, long? fkSale, out List<UserCartSale> user);
+        public bool GetCartSalesByFkUser(string conn, long userId, long? fkSale, DateTime? dt, out List<UserCartSale> user);
         public bool Update(string conn, UserCartSale mdl);
         public long Insert(string conn, UserCartSale mdl);
     }
@@ -75,7 +75,7 @@ namespace Master.Repository
             #endregion
         }
 
-        public bool GetCartSalesByFkUser(string conn, long id, long? fkSale, out List<UserCartSale> list)
+        public bool GetCartSalesByFkUser(string conn, long userId, long? fkSale, DateTime? dt, out List<UserCartSale> list)
         {
             #region - code - 
 
@@ -85,16 +85,33 @@ namespace Master.Repository
                 {
                     db.Open();
 
-                    if (fkSale == null)
+                    if (userId > 0)
                     {
                         list = db.Query<UserCartSale>
-                            ("SELECT * FROM \"UserCartSale\" where \"fkUser\"=@fkUser", new { fkUser = id }).ToList();
+                            ("SELECT * FROM \"UserCartSale\" where \"fkUser\"=@fkUser and \"fkSale\"=@fkSale",
+                            new { fkUser = userId, fkSale = fkSale }).ToList();
                     }
                     else
                     {
-                        list = db.Query<UserCartSale>
-                            ("SELECT * FROM \"UserCartSale\" where \"fkUser\"=@fkUser and \"fkSale\"=@fkSale", 
-                            new { fkUser = id, fkSale = fkSale }).ToList();
+                        if (fkSale == null)
+                        {
+                            var _dt = Convert.ToDateTime(dt);
+
+                            list = db.Query<UserCartSale>
+                                ("SELECT * FROM \"UserCartSale\" where \"nuDay\"=@nuDay and \"nuMonth\"=@nuMonth and \"nuYear\"=@nuYear",
+                                new
+                                {
+                                    nuDay = _dt.Day,
+                                    nuMonth = _dt.Month,
+                                    nuYear = _dt.Year,
+                                }).ToList();
+                        }
+                        else
+                        {
+                            list = db.Query<UserCartSale>
+                                ("SELECT * FROM \"UserCartSale\" where \"fkSale\"=@fkSale",
+                                new { fkSale = fkSale }).ToList();
+                        }
                     }
                 }
 

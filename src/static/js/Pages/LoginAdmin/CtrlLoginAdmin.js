@@ -1,6 +1,6 @@
 
 import ViewLogin from "./Views/ViewLoginAdmin";
-import { postPublicPortal, buildErrorMsg } from "@app/Infra/Util"
+import { postPublicPortal, postTokenPortal, buildErrorMsg } from "@app/Infra/Util"
 
 export default class {
 
@@ -57,7 +57,13 @@ export default class {
                 localStorage.setItem("token", resp.payload.token);
                 localStorage.setItem("userName", resp.payload.userName);
                 localStorage.setItem("mobile", resp.payload.mobile);
-                window.location.href = '/production';
+
+                postTokenPortal("v1/admin/stats", {})
+                  .then((resp) => {
+
+                  })
+
+                //window.location.href = '/production';
               }
               else {
                 document.getElementById('loading').style.display = 'none'
