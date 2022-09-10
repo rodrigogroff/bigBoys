@@ -20,9 +20,9 @@ namespace Master.Service.Domain.Sale
                             out long saleStage, 
                             out string gmap )
         {
-            cart = new List<DtoCartSaleItem>();
             total = "";
             gmap = "";
+            cart = new List<DtoCartSaleItem>();            
             saleStage = SaleStage.Open;
 
             long _total = 0;
@@ -40,40 +40,31 @@ namespace Master.Service.Domain.Sale
             
             if (!userSaleRepo.GetSalesByFkUser(conn, user_id, out lst_sale))
             {
-                return ReportError("Invalid list Ex02.0");
+                return ReportError("Invalid list Ex02");
             }
 
-            lst_sale = lst_sale.Where(y => y.nuSaleStage == SaleStage.Registered ||
+            lst_sale = lst_sale.Where(y =>  y.nuSaleStage == SaleStage.Open ||
+                                            y.nuSaleStage == SaleStage.Registered ||
                                             y.nuSaleStage == SaleStage.Confirmed).
                                 ToList();
 
             List<UserCartSale> lst_cart;
 
-            if (lst_sale.Count == 0)
-            {
-                if (!userCartSaleRepo.GetCartSalesByFkUser(conn, user_id, null, null, out lst_cart))
-                {
-                    return ReportError("Invalid list Ex03");
-                }
-            }
-            else
-            {
-                var s = lst_sale.FirstOrDefault();
+            var s = lst_sale.FirstOrDefault();
 
-                if (s == null)
-                {
-                    return ReportError("Invalid list Ex04");
-                }
+            if (s == null)
+            {
+                return ReportError("Nenhum item em seu carrinho");
+            }
                 
-                if (!userCartSaleRepo.GetCartSalesByFkUser(conn, user_id, s.id, null, out lst_cart))
-                {
-                    return ReportError("Invalid list Ex05");
-                }
-
-                saleStage = (long) s.nuSaleStage;
-                gmap = s.stGMap;
+            if (!userCartSaleRepo.GetCartSalesByFkUser(conn, user_id, s.id, null, out lst_cart))
+            {
+                return ReportError("Invalid list Ex04");
             }
 
+            saleStage = (long) s.nuSaleStage;
+            gmap = s.stGMap;
+            
             foreach (var item in lst_cart)
             {
                 cart.Add(new DtoCartSaleItem

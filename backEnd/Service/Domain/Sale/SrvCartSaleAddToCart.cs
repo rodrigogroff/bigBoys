@@ -7,7 +7,7 @@ using System.Linq;
 
 namespace Master.Service.Domain.Sale
 {
-    public class SrvCartSaleRegister : SrvBaseService
+    public class SrvCartSaleAddToCart : SrvBaseService
     {
         public IUserRepo userRepo = new UserRepo();
         public IUserSaleRepo userSaleRepo = new UserSaleRepo();
@@ -33,18 +33,21 @@ namespace Master.Service.Domain.Sale
                 return ReportError("Invalid Register Ex02");
             }
 
-            lst_sale = lst_sale.Where ( y=> y.nuSaleStage == SaleStage.Registered || 
-                                            y.nuSaleStage == SaleStage.Confirmed ).
-                                ToList();
+            lst_sale = lst_sale.Where ( y=> y.nuSaleStage == SaleStage.Open ||
+                                            y.nuSaleStage == SaleStage.Registered || 
+                                            y.nuSaleStage == SaleStage.Confirmed ).ToList();
 
-            if (lst_sale.Count > 0)
+            if (lst_sale.Any (y => y.nuSaleStage == SaleStage.Registered ||
+                                   y.nuSaleStage == SaleStage.Confirmed))
             {
                 return ReportError("Finalize sua compra antes de acrescentar itens em um novo carrinho");
             }
 
             var dt = DateTime.Now;
 
-            var id_sale = userSaleRepo.Insert(conn, new UserSale
+            var current_sale = lst_sale.OrderByDescending(y => y.dtRegister).Where(y => y.nuSaleStage == SaleStage.Open).FirstOrDefault();
+
+            var id_sale = current_sale != null ? current_sale.id : userSaleRepo.Insert(conn, new UserSale
             {
                 bActive = true,
                 dtRegister = dt,

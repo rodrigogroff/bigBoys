@@ -22,7 +22,7 @@ namespace Api.Master.Controllers
 
             var u = GetCurrentAuthenticatedUser();
 
-            var srv = new SrvCartSaleRegister();
+            var srv = new SrvCartSaleAddToCart();
 
             var prod = CatalogFull.catalog.items.FirstOrDefault(y => y.id == obj.productId);
 
